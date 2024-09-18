@@ -4,9 +4,13 @@
   --hue: 200;
   --number-info: 2;
 
+  --title-weight: 600;
+  --subtitle-weight: 500;
+
   --primary-color35: hsl(var(--hue), 35%, 35%);
   --primary-color: hsl(var(--hue), 50%, 50%);
   --background-color: hsl(var(--hue), 98%, 98%);
+  --background-color-grey: hsl(var(--hue), 8%, 80%);
 
   --my-shadow-color: hsla(var(--hue), 50%, 50%, 0.2);
 
@@ -30,7 +34,7 @@ body {
 h1,
 h2,
 h3 {
-  font-weight: 600;
+  font-weight: var(--title-weight);
 }
 
 ul {
@@ -58,7 +62,7 @@ img {
   gap: 1.5rem;
 }
 
-/* ========================= */
+/* ======== Header ========== */
 
 .profile {
   position: relative;
@@ -105,7 +109,7 @@ img {
 
 .profile-role {
   font-size: var(--p-size);
-  font-weight: 500;
+  font-weight: var(--subtitle-weight);
 }
 
 .profile-info {
@@ -126,7 +130,7 @@ img {
 
 .profile-info-description {
   font-size: var(--p-size);
-  font-weight: 500;
+  font-weight: var(--subtitle-weight);
 }
 
 .button {
@@ -148,4 +152,34 @@ img {
 
 .button:hover {
   background-color: var(--primary-color35);
+}
+
+/* ======== Main ========== */
+
+.filter-content {
+  margin: 2rem 0 2.5rem;
+  background-color: var(--background-color-grey);
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 0.5rem;
+}
+
+.filter-button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  background-color: transparent;
+  color: var(--primary-color);
+  font-size: var(--h3-size);
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-button:hover {
+  background-color: var(--background-color);
 }
