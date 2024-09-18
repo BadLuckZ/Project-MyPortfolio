@@ -33,3 +33,30 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* ========================= */
+
+.container {
+  max-width: 968px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.profile {
+  position: relative;
+  padding-top: 4rem;
+}
+
+.profile-container {
+  row-gap: 2rem;
+}
+
+.profile-data {
+  display: grid;
+  text-align: center;
+}
