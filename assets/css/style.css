@@ -2,6 +2,8 @@
 
 :root {
   --hue: 200;
+  --number-info: 2;
+
   --primary-color20: hsl(var(--hue), 20%, 20%);
   --primary-color40: hsl(var(--hue), 40%, 40%);
   --primary-color: hsl(var(--hue), 50%, 50%);
@@ -121,4 +123,25 @@ img {
 
 .profile-social-link:hover {
   color: var(--primary-color40);
+}
+
+.profile-info {
+  grid-template-columns: repeat(var(--number-info), max-content);
+  justify-content: center;
+  align-items: center;
+  column-gap: 2.5rem;
+}
+
+.profile-info-group {
+  text-align: center;
+}
+
+.profile-info-number {
+  font-size: var(--h3-size);
+  margin-bottom: 0.25rem;
+}
+
+.profile-info-description {
+  font-size: var(--p-size);
+  font-weight: 500;
 }
