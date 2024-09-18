@@ -4,10 +4,11 @@
   --hue: 200;
   --number-info: 2;
 
-  --primary-color20: hsl(var(--hue), 20%, 20%);
-  --primary-color40: hsl(var(--hue), 40%, 40%);
+  --primary-color35: hsl(var(--hue), 35%, 35%);
   --primary-color: hsl(var(--hue), 50%, 50%);
-  --primary-color98: hsl(var(--hue), 98%, 98%);
+  --background-color: hsl(var(--hue), 98%, 98%);
+
+  --my-shadow-color: hsla(var(--hue), 50%, 50%, 0.2);
 
   --h2-size: 1.25rem;
   --h3-size: 1rem;
@@ -23,7 +24,7 @@
 body {
   font-family: Poppins, sans-serif;
   font-size: 1rem;
-  background-color: var(--primary-color95);
+  background-color: var(--background-color);
 }
 
 h1,
@@ -105,7 +106,6 @@ img {
 .profile-role {
   font-size: var(--p-size);
   font-weight: 500;
-  margin-bottom: 1rem;
 }
 
 .profile-info {
@@ -127,4 +127,25 @@ img {
 .profile-info-description {
   font-size: var(--p-size);
   font-weight: 500;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border-radius: 0.5rem;
+  transition: 0.3s;
+  box-shadow: 0 8px 24px var(--my-shadow-color);
+}
+
+.button i {
+  font-size: 1.25rem;
+}
+
+.button:hover {
+  background-color: var(--primary-color35);
 }
