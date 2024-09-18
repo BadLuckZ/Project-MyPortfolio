@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 :root {
-  --primary-color: hsl(174, 63%, 62%);
+  --primary-color: hsl(200, 60%, 60%);
+  --background-color: hsl(200, 98%, 98%);
 }
 
 * {
@@ -13,6 +14,7 @@
 body {
   font-family: Poppins, sans-serif;
   font-size: 1rem;
+  background-color: var(--background-color);
 }
 
 h1,
@@ -37,7 +39,7 @@ img {
 /* ========================= */
 
 .container {
-  max-width: 968px;
+  max-width: 1000px;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
@@ -62,8 +64,8 @@ img {
 }
 
 .profile-image-container {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -72,5 +74,16 @@ img {
 }
 
 .profile-image-container img {
-  width: 100px;
+  width: 100%;
+}
+
+.profile-border {
+  justify-self: center;
+  width: 165px;
+  height: 165px;
+  border: 4px solid var(--primary-color);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.5rem;
 }
