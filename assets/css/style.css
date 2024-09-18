@@ -60,3 +60,17 @@ img {
   display: grid;
   text-align: center;
 }
+
+.profile-image-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.profile-image-container img {
+  width: 100px;
+}
