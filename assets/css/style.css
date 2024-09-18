@@ -1,8 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 :root {
-  --primary-color: hsl(200, 60%, 60%);
-  --background-color: hsl(200, 98%, 98%);
+  --hue: 200;
+  --primary-color20: hsl(var(--hue), 20%, 20%);
+  --primary-color40: hsl(var(--hue), 40%, 40%);
+  --primary-color: hsl(var(--hue), 50%, 50%);
+  --primary-color98: hsl(var(--hue), 98%, 98%);
+
+  --h2-size: 1.25rem;
+  --h3-size: 1rem;
+  --p-size: 0.75rem;
 }
 
 * {
@@ -14,7 +21,7 @@
 body {
   font-family: Poppins, sans-serif;
   font-size: 1rem;
-  background-color: var(--background-color);
+  background-color: var(--primary-color95);
 }
 
 h1,
@@ -48,6 +55,8 @@ img {
   display: grid;
   gap: 1.5rem;
 }
+
+/* ========================= */
 
 .profile {
   position: relative;
@@ -86,4 +95,30 @@ img {
   display: grid;
   place-items: center;
   margin-bottom: 0.5rem;
+}
+
+.profile-name {
+  font-size: var(--h2-size);
+}
+
+.profile-role {
+  font-size: var(--p-size);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.profile-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.75rem;
+}
+
+.profile-social-link {
+  font-size: 1.25rem;
+  color: var(--primary-color20);
+}
+
+.profile-social-link:hover {
+  color: var(--primary-color40);
 }
