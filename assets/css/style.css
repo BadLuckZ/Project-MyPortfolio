@@ -264,3 +264,19 @@ img {
   margin: 2.5rem 0 2rem;
   text-align: center;
 }
+
+/* == Scrollbar === */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--background-color-grey);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color35);
+}
