@@ -32,9 +32,14 @@ body {
   background-color: var(--background-color);
 }
 
-h2,
+h2 {
+  font-weight: var(--title-weight);
+  font-size: var(--h2-size);
+}
+
 h3 {
   font-weight: var(--title-weight);
+  font-size: var(--h3-size);
 }
 
 p {
@@ -97,10 +102,6 @@ img {
   margin-bottom: 0.5rem;
 }
 
-.profile-name {
-  font-size: var(--h2-size);
-}
-
 .profile-info {
   grid-template-columns: repeat(var(--number-info), max-content);
   justify-content: center;
@@ -113,7 +114,6 @@ img {
 }
 
 .profile-info-number {
-  font-size: var(--h3-size);
   margin-bottom: 0.25rem;
 }
 
@@ -222,7 +222,6 @@ img {
 }
 
 .project-card-title {
-  font-size: var(--h3-size);
   margin-bottom: 0.5rem;
 }
 
@@ -257,4 +256,11 @@ img {
 
 .skill-name {
   line-height: 20px;
+}
+
+/* === Footer === */
+.footer-content {
+  display: block;
+  margin: 2.5rem 0 2rem;
+  text-align: center;
 }
