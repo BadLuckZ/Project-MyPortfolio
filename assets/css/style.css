@@ -307,6 +307,10 @@ img {
     row-gap: 1rem;
   }
 
+  .filter-content {
+    flex-direction: column;
+  }
+
   .skills-content {
     row-gap: 0.5rem;
   }
@@ -320,7 +324,7 @@ img {
   }
 
   .filter-content {
-    width: 100%;
+    width: 80%;
     max-width: 500px;
     margin: 3rem auto;
   }
