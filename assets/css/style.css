@@ -117,10 +117,15 @@ img {
   margin-bottom: 0.25rem;
 }
 
-.button {
+.profile-buttons {
   display: flex;
+  align-items: center;
   justify-content: center;
-  justify-self: center;
+  column-gap: 1rem;
+}
+
+.button {
+  display: block;
   align-items: center;
   column-gap: 0.5rem;
   padding: 1rem 2rem;
