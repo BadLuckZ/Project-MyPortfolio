@@ -317,9 +317,13 @@ img {
 }
 
 /* Tablet */
-@media screen and (min-width: 426px) and (max-width: 768px) {
+@media screen and (min-width: 426px) {
+  :root {
+    --number-skill: 2;
+  }
+
   .project-content {
-    grid-template-columns: 425px;
+    grid-template-columns: 375px;
     justify-content: center;
   }
 
@@ -327,5 +331,21 @@ img {
     width: 80%;
     max-width: 500px;
     margin: 3rem auto;
+  }
+}
+
+/* Laptop */
+@media screen and (min-width: 769px) {
+  :root {
+    --number-skill: 1;
+  }
+
+  .project-content {
+    grid-template-columns: repeat(2, 375px);
+  }
+
+  .skills-content {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-around;
   }
 }
