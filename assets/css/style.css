@@ -224,7 +224,7 @@ img {
 
 /* === Main (Skills) === */
 .skills-content {
-  row-gap: 3.5rem;
+  row-gap: 1rem;
 }
 
 .skills-title {
