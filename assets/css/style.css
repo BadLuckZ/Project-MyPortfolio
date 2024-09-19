@@ -311,3 +311,17 @@ img {
     row-gap: 0.5rem;
   }
 }
+
+/* Tablet */
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .project-content {
+    grid-template-columns: 425px;
+    justify-content: center;
+  }
+
+  .filter-content {
+    width: 100%;
+    max-width: 500px;
+    margin: 3rem auto;
+  }
+}
