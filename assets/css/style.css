@@ -69,6 +69,7 @@ img {
 .profile {
   position: relative;
   padding-top: 4rem;
+  align-items: center;
 }
 
 .profile-data {
@@ -225,6 +226,8 @@ img {
 
 /* === Main (Skills) === */
 .skills-content {
+  justify-content: center;
+  align-items: center;
   row-gap: 1rem;
 }
 
@@ -285,4 +288,26 @@ img {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--secondary-color);
+}
+
+/* === Responsive Part === */
+
+/* Mobile L */
+@media screen and (max-width: 425px) {
+  :root {
+    --number-skill: 1;
+  }
+
+  .profile-info {
+    column-gap: 1.5rem;
+  }
+
+  .profile-buttons {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  .skills-content {
+    row-gap: 0.5rem;
+  }
 }
