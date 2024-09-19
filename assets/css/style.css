@@ -175,8 +175,17 @@ img {
   transition: 0.3s;
 }
 
-.filter-button:hover {
+.filter-button:hover,
+.filter-button.filter-active {
   background-color: var(--background-color);
+}
+
+.filter-sections [data-content] {
+  display: none;
+}
+
+.filter-sections .skill-active[data-content] {
+  display: grid;
 }
 
 /* === Main (Project) === */
