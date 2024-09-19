@@ -55,13 +55,6 @@ img {
   height: auto;
 }
 
-/* ========================= */
-
-.container {
-  max-width: 1000px;
-  margin: 0 1.5rem;
-}
-
 .grid {
   display: grid;
   gap: 1.5rem;
@@ -72,10 +65,6 @@ img {
 .profile {
   position: relative;
   padding-top: 4rem;
-}
-
-.profile-container {
-  row-gap: 1.5rem;
 }
 
 .profile-data {
@@ -131,9 +120,10 @@ img {
 .button {
   display: flex;
   justify-content: center;
+  justify-self: center;
   align-items: center;
   column-gap: 0.5rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
   background-color: var(--primary-color);
   color: var(--background-color);
   border-radius: 0.5rem;
