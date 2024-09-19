@@ -3,6 +3,7 @@
 :root {
   --hue: 200;
   --number-info: 2;
+  --number-skill: 2;
 
   --title-weight: 600;
   --subtitle-weight: 500;
@@ -219,4 +220,37 @@ img {
 .project-card-title {
   font-size: var(--h3-size);
   margin-bottom: 0.5rem;
+}
+
+/* === Main (Skills) === */
+.skills-content {
+  row-gap: 3.5rem;
+}
+
+.skills-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.skills-box {
+  display: grid;
+  grid-template-columns: repeat(var(--number-skill), max-content);
+  justify-content: center;
+  row-gap: 1rem;
+  column-gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.skill-data {
+  display: flex;
+  column-gap: 0.5rem;
+}
+
+.skill-data i {
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+.skill-name {
+  line-height: 20px;
 }
