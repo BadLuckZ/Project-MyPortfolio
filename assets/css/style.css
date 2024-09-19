@@ -8,16 +8,16 @@
   --title-weight: 600;
   --subtitle-weight: 500;
 
-  --primary-color35: hsl(var(--hue), 35%, 35%);
-  --primary-color: hsl(var(--hue), 50%, 50%);
-  --background-color: hsl(var(--hue), 98%, 98%);
-  --background-color-grey: hsl(var(--hue), 8%, 80%);
-
-  --my-shadow-color: hsla(var(--hue), 50%, 50%, 0.2);
-
   --h2-size: 1.25rem;
   --h3-size: 1rem;
   --p-size: 0.75rem;
+
+  --primary-color: hsl(var(--hue), 50%, 50%);
+  --secondary-color: hsl(var(--hue), 35%, 35%);
+  --primary-background-color: hsl(var(--hue), 98%, 98%);
+  --secondary-background-color: hsl(var(--hue), 8%, 80%);
+
+  --my-shadow-color: hsla(var(--hue), 50%, 50%, 0.2);
 }
 
 * {
@@ -29,7 +29,7 @@
 body {
   font-family: Poppins, sans-serif;
   font-size: 1rem;
-  background-color: var(--background-color);
+  background-color: var(--primary-background-color);
 }
 
 h2 {
@@ -129,7 +129,7 @@ img {
   column-gap: 0.5rem;
   padding: 1rem 2rem;
   background-color: var(--primary-color);
-  color: var(--background-color);
+  color: var(--primary-background-color);
   border-radius: 0.5rem;
   transition: 0.3s;
   box-shadow: 0 8px 24px var(--my-shadow-color);
@@ -140,13 +140,13 @@ img {
 }
 
 .button:hover {
-  background-color: var(--primary-color35);
+  background-color: var(--secondary-color);
 }
 
 /* ======== Main ========== */
 .filter-content {
   margin: 2rem;
-  background-color: var(--background-color-grey);
+  background-color: var(--secondary-background-color);
   padding: 0.5rem;
   border-radius: 0.75rem;
   display: flex;
@@ -170,7 +170,7 @@ img {
 
 .filter-button:hover,
 .filter-button.filter-active {
-  background-color: var(--background-color);
+  background-color: var(--primary-background-color);
 }
 
 .filter-sections [data-content] {
@@ -216,7 +216,7 @@ img {
 
 .project-card-title,
 .project-card-subtitle {
-  color: var(--background-color);
+  color: var(--primary-background-color);
 }
 
 .project-card-title {
@@ -259,8 +259,8 @@ img {
 /* === Footer === */
 .footer {
   bottom: 0;
-  margin-top: 2.5rem;
-  border-top: 1px solid var(--background-color-grey);
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--secondary-background-color);
   box-shadow: 0px -5px 8px rgba(0, 0, 0, 0.4);
   justify-content: center;
   align-items: center;
@@ -275,7 +275,7 @@ img {
 ::-webkit-scrollbar {
   width: 0.5rem;
   border-radius: 0.5rem;
-  background-color: var(--background-color-grey);
+  background-color: var(--secondary-background-color);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -284,5 +284,5 @@ img {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--primary-color35);
+  background-color: var(--secondary-color);
 }
