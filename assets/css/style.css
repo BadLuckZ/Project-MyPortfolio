@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 :root {
-  --hue: 200;
+  --hue: 150;
   --number-info: 2;
   --number-skill: 2;
 
@@ -129,15 +129,12 @@ img {
   align-items: center;
   column-gap: 0.5rem;
   padding: 1rem 2rem;
+  font-size: var(--h3-size);
   background-color: var(--primary-color);
   color: var(--primary-background-color);
   border-radius: 0.5rem;
   transition: 0.3s;
   box-shadow: 0 8px 24px var(--my-shadow-color);
-}
-
-.button i {
-  font-size: 1.25rem;
 }
 
 .button:hover {
@@ -346,6 +343,39 @@ img {
 
   .skills-content {
     grid-template-columns: repeat(2, max-content);
-    justify-content: space-around;
+    column-gap: 6rem;
+  }
+}
+
+/* Laptop L */
+@media screen and (min-width: 1025px) {
+  :root {
+    --h2-size: 1.5rem;
+    --h3-size: 1.25rem;
+    --p-size: 1rem;
+  }
+
+  .profile-image-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .profile-border {
+    width: 220px;
+    height: 220px;
+  }
+
+  .profile-info {
+    column-gap: 3rem;
+  }
+
+  .button {
+    display: block;
+    column-gap: 1rem;
+    padding: 1.5rem 3rem;
+  }
+
+  .skills-title {
+    margin-bottom: 2rem;
   }
 }
