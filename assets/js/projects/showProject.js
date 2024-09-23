@@ -1,11 +1,11 @@
-import { project } from "./project.js";
+import { projects } from "./project.js";
 
 const project_section = document.getElementById("project");
 const project_amount = document.getElementById("my-project-number");
 
-project_amount.innerText = project.length;
+project_amount.innerText = projects.length;
 
-project.forEach((p) => {
+projects.forEach((p) => {
   const project_card = document.createElement("article");
   project_card.classList.add("project-card");
   project_card.innerHTML = `

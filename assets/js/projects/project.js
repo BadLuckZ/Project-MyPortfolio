@@ -1,4 +1,4 @@
-export const project = [
+export const projects = [
   {
     image: "assets/img/project/pixel-saga.png",
     subtitle: "JAVA",
