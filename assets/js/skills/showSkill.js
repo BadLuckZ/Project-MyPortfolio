@@ -24,7 +24,6 @@ skills.forEach((skill) => {
     `;
     skill_box.appendChild(skill_data);
   });
-
   skill_area.appendChild(skills_title);
   skill_area.appendChild(skill_box);
   skill_section.appendChild(skill_area);

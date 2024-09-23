@@ -9,15 +9,17 @@ projects.forEach((p) => {
   const project_card = document.createElement("article");
   project_card.classList.add("project-card");
   project_card.innerHTML = `
-  <img
-    src=${p.image}
-    class="project-card-image"
-  />
-  <div class="project-card-description">
-    <div>
-      <p class="project-card-subtitle">${p.subtitle}</p>
-      <h3 class="project-card-title">${p.title}</h3>
+  <a href='content.html'>
+    <img
+      src=${p.image}
+      class="project-card-image"
+    />
+    <div class="project-card-description">
+      <div>
+        <p class="project-card-subtitle">${p.subtitle}</p>
+        <h3 class="project-card-title">${p.title}</h3>
+      </div>
     </div>
-  </div>`;
+  </a>`;
   project_section.appendChild(project_card);
 });
