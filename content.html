@@ -4,47 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./assets/css/content.css" />
   </head>
   <body>
-    <header>
-      <h1>Pixel Saga Project</h1>
+    <header id="project-head">
+      <a href="index.html" id="project-back">
+        <i class="fa-solid fa-angles-left"></i>
+      </a>
+      <h1 id="project-name">Pixel Saga Project</h1>
     </header>
-    <section class="project-details">
+    <section id="project-details">
       <h2>Project Background</h2>
       <p>Blah Blah</p>
       <div>
-        <h3>Project Image</h3>
+        <h2>Project Image</h2>
         <img src="./assets/img/project/pixel-saga.png" alt="pixel-saga image" />
       </div>
       <div>
-        <h3>Project Preview</h3>
-        <iframe
-          width="600"
-          height="400"
-          src="./assets/videos/pixel-saga.mp4"
-          title="pixel-saga video"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        >
-        </iframe>
+        <h2>Project Preview</h2>
+        <!-- Replacing iframe with video tag -->
+        <video width="600" height="400" controls>
+          <source src="./assets/videos/pixel-saga.mp4" type="video/mp4" />
+        </video>
       </div>
       <div>
-        <h3>Technologies Used</h3>
+        <h2>Technologies Used</h2>
         <ul>
           <li>JAVA</li>
         </ul>
       </div>
       <div>
-        <h3>Key Features</h3>
+        <h2>Key Features</h2>
         <ul>
           <li>A</li>
           <li>B</li>
         </ul>
       </div>
       <div>
-        <h3>My Contribution</h3>
+        <h2>My Contribution</h2>
         <p>I was responsible for designing...</p>
       </div>
     </section>
