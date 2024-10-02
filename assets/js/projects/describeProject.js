@@ -1,0 +1,76 @@
+const data = JSON.parse(localStorage.getItem("selectedProject"));
+
+const project_name = document.getElementById("project-name");
+const background = document.getElementById("project-background");
+const image = document.getElementById("project-image");
+const preview = document.getElementById("project-preview");
+const tech_related = document.getElementById("project-tech-related");
+const learn = document.getElementById("project-learn");
+const contribution = document.getElementById("project-contribution");
+
+project_name.innerHTML = `${data.title}`;
+
+background.innerHTML = `
+    <h2>Project Background</h2>
+    <p>${data.background}</p>
+`;
+
+image.innerHTML = `
+    <h2>Project Image</h2>
+    <img src=${data.image} alt="${data.title} Image"/>
+`;
+
+preview.innerHTML = `
+    <h2>Project Preview</h2>
+    <video height="400" controls>
+        <source
+            src=${data.preview_video}
+            type="video/mp4"
+            id="project-video"
+        />
+    </video>
+`;
+
+if (data.can_demo) {
+  const button = document.createElement("button");
+  button.onclick = `window.location.href=${data.preview_demo}`;
+  button.innerHTML = 'Demo <i class="fa-sharp fa-solid fa-arrow-down"></i>';
+  preview.appendChild(button);
+}
+
+if (data.have_doc) {
+  const button = document.createElement("button");
+  button.innerHTML =
+    'Get The Document <i class="fa-sharp fa-solid fa-arrow-down"></i>';
+  const link_button = document.createElement("a");
+  link_button.href = data.preview_doc;
+  link_button.appendChild(button);
+  preview.appendChild(link_button);
+}
+
+const tech_related_element = document.createElement("ul");
+data.tech_related.forEach((t) => {
+  const tech = document.createElement("li");
+  tech.innerText = t;
+  tech_related_element.appendChild(tech);
+});
+tech_related.innerHTML = `
+    <h2>Technologies Related</h2>
+`;
+tech_related.appendChild(tech_related_element);
+
+const learn_element = document.createElement("ul");
+data.learn.forEach((l) => {
+  const learn_li = document.createElement("li");
+  learn_li.innerText = l;
+  learn_element.appendChild(learn_li);
+});
+learn.innerHTML = `
+    <h2>What I learn</h2>
+`;
+learn.appendChild(learn_element);
+
+contribution.innerHTML = `
+    <h2>My Contribution</h2>
+    <p>${data.contribution}</p>
+`;

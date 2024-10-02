@@ -8,6 +8,7 @@
 
   --h1-size: 2rem;
   --h2-size: 1.5rem;
+  --button-size: 1.25rem;
   --p-size: 1rem;
 
   --header-color: hsla(var(--hue), 98%, 98%);
@@ -64,12 +65,6 @@ video {
   height: auto;
 }
 
-img,
-video,
-ul {
-  margin-bottom: 20px;
-}
-
 /* == Header == */
 #project-head {
   display: flex;
@@ -103,6 +98,35 @@ ul {
   color: var(--font-color);
   border-radius: 8px;
   box-shadow: 0 4px 8px var(--my-shadow-color);
+}
+
+#project-background,
+#project-image,
+#project-preview,
+#project-tech-related,
+#project-learn {
+  padding: 0px 12px 20px 12px;
+}
+
+#project-contribution {
+  padding: 0 12px;
+}
+
+button {
+  padding: 12px;
+  margin-right: 8px;
+  font-size: var(--button-size);
+  background-color: var(--primary-color);
+  color: var(--primary-background-color);
+  border-radius: 0.5rem;
+  border: none;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 0 8px 24px var(--my-shadow-color);
+}
+
+button:hover {
+  background-color: var(--secondary-color);
 }
 
 /* == Scrollbar === */

@@ -9,7 +9,7 @@ projects.forEach((p) => {
   const project_card = document.createElement("article");
   project_card.classList.add("project-card");
   project_card.innerHTML = `
-  <a href='content.html'>
+  <a href='project-content.html'>
     <img
       src=${p.image}
       class="project-card-image"

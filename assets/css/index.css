@@ -132,6 +132,7 @@ img {
   font-size: var(--h3-size);
   background-color: var(--primary-color);
   color: var(--primary-background-color);
+  cursor: pointer;
   border-radius: 0.5rem;
   transition: 0.3s;
   box-shadow: 0 8px 24px var(--my-shadow-color);
