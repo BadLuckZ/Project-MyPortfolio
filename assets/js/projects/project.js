@@ -1,6 +1,21 @@
 export const projects = [
   {
     image: "assets/img/project/pixel-saga.png",
+    subtitle: "JasdAVA",
+    title: "Pixel Saga Game",
+  },
+  {
+    image: "assets/img/project/pixel-saga.png",
+    subtitle: "JAVaasA",
+    title: "Pixel Saga Game",
+  },
+  {
+    image: "assets/img/project/pixel-saga.png",
+    subtitle: "JAVAa",
+    title: "Pixel Saga Game",
+  },
+  {
+    image: "assets/img/project/pixel-saga.png",
     subtitle: "JAVA",
     title: "Pixel Saga Game",
   },

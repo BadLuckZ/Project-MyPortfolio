@@ -21,5 +21,8 @@ projects.forEach((p) => {
       </div>
     </div>
   </a>`;
+  project_card.addEventListener("click", () => {
+    localStorage.setItem("selectedProject", JSON.stringify(p));
+  });
   project_section.appendChild(project_card);
 });
