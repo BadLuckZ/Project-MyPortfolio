@@ -1,7 +1,6 @@
 const data = JSON.parse(localStorage.getItem("selected"));
 
 if (data.image.length > 1) {
-  const slides = document.querySelector(".image-slider");
   const images = document.querySelectorAll(".image-slider img");
   const dots = document.querySelectorAll(".image-dot");
 
@@ -20,7 +19,6 @@ if (data.image.length > 1) {
     images.forEach((image) => {
       image.style.display = "none";
     });
-
     images[currentIndex].style.display = "block";
 
     dots.forEach((dot) => dot.classList.remove("dot-active"));

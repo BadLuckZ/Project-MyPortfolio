@@ -101,13 +101,14 @@ header {
 
 #background,
 #preview,
+#image,
 #tech-related,
 #learn,
 #contribution {
   padding: 0px 12px 24px 12px;
 }
 
-button {
+.preview-button {
   padding: 12px;
   margin-right: 8px;
   font-size: var(--button-size);
@@ -120,7 +121,7 @@ button {
   box-shadow: 0 8px 24px var(--my-shadow-color);
 }
 
-button:hover {
+.preview-button:hover {
   background-color: var(--secondary-color);
 }
 
@@ -142,7 +143,7 @@ button:hover {
 .image-slider img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 #prevBtn,
@@ -153,12 +154,12 @@ button:hover {
   height: 50px;
   background-color: var(--primary-color);
   color: white;
-  font-size: 30px;
+  font-size: var(--button-size);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  cursor: pointer;
+  border: none;
   z-index: 1;
   cursor: pointer;
 }
@@ -169,11 +170,11 @@ button:hover {
 }
 
 #prevBtn {
-  left: 0.75rem;
+  left: 0;
 }
 
 #nextBtn {
-  right: 0.75rem;
+  right: 0;
 }
 
 .image-dots {

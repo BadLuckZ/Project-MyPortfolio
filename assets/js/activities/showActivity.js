@@ -1,4 +1,4 @@
-import { activities } from "./activities.js";
+import { activities } from "./activity.js";
 
 const activity_section = document.getElementById("activity");
 const activity_amount = document.getElementById("my-activity-number");

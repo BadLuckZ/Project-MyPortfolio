@@ -62,12 +62,14 @@ preview.innerHTML = `
 if (data.can_demo) {
   const button = document.createElement("button");
   button.onclick = `window.location.href=${data.preview_demo}`;
+  button.classList.add("preview-button");
   button.innerHTML = 'Demo <i class="fa-sharp fa-solid fa-arrow-down"></i>';
   preview.appendChild(button);
 }
 
 if (data.have_doc) {
   const button = document.createElement("button");
+  button.classList.add("preview-button");
   button.innerHTML =
     'Get The Document <i class="fa-sharp fa-solid fa-arrow-down"></i>';
   const link_button = document.createElement("a");
