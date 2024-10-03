@@ -8,9 +8,9 @@
   --title-weight: 600;
   --subtitle-weight: 500;
 
-  --h2-size: 1.25rem;
-  --h3-size: 1rem;
-  --p-size: 0.75rem;
+  --h2-size: 1.5rem;
+  --h3-size: 1.25rem;
+  --p-size: 1rem;
 
   --primary-color: hsl(var(--hue), 50%, 50%);
   --secondary-color: hsl(var(--hue), 35%, 35%);
@@ -328,8 +328,8 @@ img {
   }
 
   .filter-content {
-    width: 80%;
-    max-width: 500px;
+    width: 60%;
+    max-width: 750px;
     margin: 3rem auto;
   }
 }
@@ -354,9 +354,9 @@ img {
 /* Laptop L */
 @media screen and (min-width: 1025px) {
   :root {
-    --h2-size: 1.5rem;
-    --h3-size: 1.25rem;
-    --p-size: 1rem;
+    --h2-size: 1.75rem;
+    --h3-size: 1.5rem;
+    --p-size: 1.25rem;
   }
 
   .profile-image-container {

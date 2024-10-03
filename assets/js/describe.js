@@ -11,17 +11,19 @@ const contribution = document.getElementById("contribution");
 head.innerHTML = data.title;
 
 background.innerHTML = `
-    <h2>Project Background</h2>
+    <h2>Background</h2>
     <p>${data.background}</p>
 `;
 
-image.innerHTML = `
-    <h2>Project Image</h2>
+if (data.image.length === 1) {
+  image.innerHTML = `
     <img src=${data.image} alt="${data.title} Image"/>
 `;
+} else if (data.image.length > 1) {
+}
 
 preview.innerHTML = `
-    <h2>Project Preview</h2>
+    <h2>Preview Video</h2>
     <video height="400" controls>
         <source
             src=${data.preview_video}
@@ -51,7 +53,7 @@ if (data.have_doc) {
 const tech_related_element = document.createElement("ul");
 data.tech_related.forEach((t) => {
   const tech = document.createElement("li");
-  tech.innerText = t;
+  tech.innerHTML = `<p>${t}</p>`;
   tech_related_element.appendChild(tech);
 });
 tech_related.innerHTML = `
@@ -62,7 +64,7 @@ tech_related.appendChild(tech_related_element);
 const learn_element = document.createElement("ul");
 data.learn.forEach((l) => {
   const learn_li = document.createElement("li");
-  learn_li.innerText = l;
+  learn_li.innerHTML = `<p>${l}</p>`;
   learn_element.appendChild(learn_li);
 });
 learn.innerHTML = `
