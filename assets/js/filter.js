@@ -5,9 +5,9 @@ buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const target = document.querySelector(button.dataset.target);
     contents.forEach((content) => {
-      content.classList.remove("skill-active");
+      content.classList.remove("content-active");
     });
-    target.classList.add("skill-active");
+    target.classList.add("content-active");
 
     buttons.forEach((btn) => {
       btn.classList.remove("filter-active");

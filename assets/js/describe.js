@@ -1,14 +1,14 @@
-const data = JSON.parse(localStorage.getItem("selectedProject"));
+const data = JSON.parse(localStorage.getItem("selected"));
 
-const project_name = document.getElementById("project-name");
-const background = document.getElementById("project-background");
-const image = document.getElementById("project-image");
-const preview = document.getElementById("project-preview");
-const tech_related = document.getElementById("project-tech-related");
-const learn = document.getElementById("project-learn");
-const contribution = document.getElementById("project-contribution");
+const head = document.getElementById("head-name");
+const background = document.getElementById("background");
+const image = document.getElementById("image");
+const preview = document.getElementById("preview");
+const tech_related = document.getElementById("tech-related");
+const learn = document.getElementById("learn");
+const contribution = document.getElementById("contribution");
 
-project_name.innerHTML = `${data.title}`;
+head.innerHTML = data.title;
 
 background.innerHTML = `
     <h2>Project Background</h2>

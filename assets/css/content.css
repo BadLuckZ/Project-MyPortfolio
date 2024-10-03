@@ -66,7 +66,7 @@ video {
 }
 
 /* == Header == */
-#project-head {
+header {
   display: flex;
   position: relative;
   justify-content: center;
@@ -75,22 +75,22 @@ video {
   background-color: var(--primary-color);
 }
 
-#project-back {
+#back {
   position: absolute;
   left: 20px;
 }
 
-#project-back > i {
+#back > i {
   font-size: var(--h2-size);
   color: var(--header-color);
 }
 
-#project-name {
+#head-name {
   color: var(--header-color);
 }
 
 /* == Main == */
-#project-details {
+#details {
   max-width: 800px;
   margin: 60px auto;
   padding: 20px;
@@ -100,15 +100,15 @@ video {
   box-shadow: 0 4px 8px var(--my-shadow-color);
 }
 
-#project-background,
-#project-image,
-#project-preview,
-#project-tech-related,
-#project-learn {
+#background,
+#image,
+#preview,
+#tech-related,
+#learn {
   padding: 0px 12px 20px 12px;
 }
 
-#project-contribution {
+#contribution {
   padding: 0 12px;
 }
 

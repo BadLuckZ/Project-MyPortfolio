@@ -26,12 +26,12 @@
       </div>
       <div class="profile-info grid">
         <div class="profile-info-group">
-          <h3 class="profile-info-number" id="my-grade">0.00</h3>
-          <p class="profile-info-description">GPA</p>
+          <h3 class="profile-info-number" id="my-project-number"></h3>
+          <p class="profile-info-description">Projects</p>
         </div>
         <div class="profile-info-group">
-          <h3 class="profile-info-number" id="my-project-number">0</h3>
-          <p class="profile-info-description">Projects</p>
+          <h3 class="profile-info-number" id="my-activity-number"></h3>
+          <p class="profile-info-description">Activities</p>
         </div>
       </div>
       <div class="profile-buttons">
@@ -45,15 +45,19 @@
         <button class="filter-button filter-active" data-target="#project">
           Projects
         </button>
+        <button class="filter-button" data-target="#activity">
+          Activities
+        </button>
         <button class="filter-button" data-target="#skill">Skills</button>
       </ul>
       <div class="filter-sections">
         <div
-          class="project-content grid skill-active"
+          class="project-content grid content-active"
           data-content
           id="project"
         ></div>
-        <div class="skills-content grid" data-content id="skill"></div>
+        <div class="activity-content grid" data-content id="activity"></div>
+        <div class="skill-content grid" data-content id="skill"></div>
       </div>
     </main>
     <footer class="footer">
@@ -62,5 +66,6 @@
   </body>
   <script src="assets/js/filter.js"></script>
   <script type="module" src="assets/js/projects/showProject.js"></script>
+  <script type="module" src="assets/js/activities/showActivity.js"></script>
   <script type="module" src="assets/js/skills/showSkill.js"></script>
 </html>

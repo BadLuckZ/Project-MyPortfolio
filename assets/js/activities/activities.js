@@ -1,14 +1,13 @@
-export const projects = [
+export const activities = [
   {
-    title: "Pixel Saga Game",
+    title: "JAVA",
     subtitle: "JAVA",
     background: "Blah Blah",
-    image: "assets/img/project/pixel-saga.png",
+    image: [
+      "assets/img/project/pixel-saga.png",
+      "assets/img/profile/my-profile",
+    ],
     preview_video: "./assets/videos/pixel-saga.mp4",
-    can_demo: false,
-    preview_demo: null,
-    have_doc: true,
-    preview_doc: "./assets/pdf/pixel-saga.pdf",
     tech_related: ["JAVA"],
     learn: ["AAA", "BBB"],
     contribution: "What I have done was Blah Blah",

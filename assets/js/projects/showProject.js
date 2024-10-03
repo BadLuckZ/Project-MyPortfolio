@@ -7,22 +7,22 @@ project_amount.innerText = projects.length;
 
 projects.forEach((p) => {
   const project_card = document.createElement("article");
-  project_card.classList.add("project-card");
+  project_card.classList.add("card");
   project_card.innerHTML = `
-  <a href='project-content.html'>
+  <a href='content.html'>
     <img
       src=${p.image}
-      class="project-card-image"
+      class="card-image"
     />
-    <div class="project-card-description">
+    <div class="card-description">
       <div>
-        <p class="project-card-subtitle">${p.subtitle}</p>
-        <h3 class="project-card-title">${p.title}</h3>
+        <p class="card-subtitle">${p.subtitle}</p>
+        <h3 class="card-title">${p.title}</h3>
       </div>
     </div>
   </a>`;
   project_card.addEventListener("click", () => {
-    localStorage.setItem("selectedProject", JSON.stringify(p));
+    localStorage.setItem("selected", JSON.stringify(p));
   });
   project_section.appendChild(project_card);
 });
