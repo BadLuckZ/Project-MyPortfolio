@@ -15,11 +15,37 @@ background.innerHTML = `
     <p>${data.background}</p>
 `;
 
-if (data.image.length === 1) {
+if (data.image.length == 1) {
   image.innerHTML = `
     <img src=${data.image} alt="${data.title} Image"/>
 `;
 } else if (data.image.length > 1) {
+  const slider = document.createElement("div");
+  slider.classList.add("image-slider");
+  data.image.forEach((imgLink) => {
+    const img = document.createElement("img");
+    img.src = imgLink;
+    slider.appendChild(img);
+  });
+  const leftBtn = document.createElement("button");
+  leftBtn.setAttribute("id", "prevBtn");
+  leftBtn.innerText = "<<";
+  const rightBtn = document.createElement("button");
+  rightBtn.setAttribute("id", "nextBtn");
+  rightBtn.innerText = ">>";
+  const dots = document.createElement("div");
+  dots.classList.add("image-dots");
+  for (let i = 0; i < data.image.length; i++) {
+    const dot = document.createElement("dot");
+    dot.classList.add("image-dot");
+    dot.setAttribute("data-slide", i);
+    dots.appendChild(dot);
+  }
+
+  image.appendChild(slider);
+  image.appendChild(leftBtn);
+  image.appendChild(rightBtn);
+  image.appendChild(dots);
 }
 
 preview.innerHTML = `

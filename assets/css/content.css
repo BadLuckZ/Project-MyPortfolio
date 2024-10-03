@@ -127,29 +127,36 @@ button:hover {
 
 /* Image Slider (Activitites) */
 #image {
-  padding: 0 0 20px 0;
   display: flex;
-  justify-content: center;
-  position: relative;
   width: 100%;
-  height: 500px;
+  height: auto;
+  justify-content: center;
+  border-radius: 10px;
+  position: relative;
   overflow: hidden;
+}
+
+#image img {
   border-radius: 10px;
 }
 
 .image-slider {
   display: flex;
+  width: max-content;
+  position: relative;
+  overflow: hidden;
+  height: auto;
   transition: transform 0.5s ease-in-out;
 }
 
 .image-slider img {
-  width: fit-content;
+  max-width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-.image-prev,
-.image-next {
+#prevBtn,
+#nextBtn {
   position: absolute;
   top: 50%;
   width: 50px;
@@ -164,14 +171,15 @@ button:hover {
   cursor: pointer;
   transform: translateY(-50%);
   z-index: 1;
+  cursor: pointer;
 }
 
-.image-prev {
-  left: 10px;
+#prevBtn {
+  left: 0.75rem;
 }
 
-.image-next {
-  right: 10px;
+#nextBtn {
+  right: 0.75rem;
 }
 
 .image-dots {

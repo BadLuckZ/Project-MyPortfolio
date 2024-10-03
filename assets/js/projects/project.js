@@ -3,7 +3,7 @@ export const projects = [
     title: "Pixel Saga Game",
     subtitle: "JAVA",
     background: "Blah Blah",
-    image: "assets/img/project/pixel-saga.png",
+    image: ["assets/img/project/pixel-saga.png"],
     preview_video: "./assets/videos/pixel-saga.mp4",
     can_demo: false,
     preview_demo: null,

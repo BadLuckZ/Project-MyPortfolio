@@ -4,8 +4,9 @@ export const activities = [
     subtitle: "JAVA",
     background: "Blah Blah",
     image: [
+      "assets/img/profile/my-profile.jpg",
       "assets/img/project/pixel-saga.png",
-      "assets/img/profile/my-profile",
+      "assets/img/profile/my-profile.jpg",
     ],
     preview_video: "./assets/videos/pixel-saga.mp4",
     tech_related: ["JAVA"],
