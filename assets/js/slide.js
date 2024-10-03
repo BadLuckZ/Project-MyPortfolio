@@ -17,7 +17,11 @@ if (data.image.length > 1) {
       currentIndex = index;
     }
 
-    slides.style.transform = `translateX(${-currentIndex * 100}%)`;
+    images.forEach((image) => {
+      image.style.display = "none";
+    });
+
+    images[currentIndex].style.display = "block";
 
     dots.forEach((dot) => dot.classList.remove("dot-active"));
     dots[currentIndex].classList.add("dot-active");

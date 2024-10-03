@@ -4,6 +4,8 @@ export const activities = [
     subtitle: "JAVA",
     background: "Blah Blah",
     image: [
+      "assets/img/project/pixel-saga.png",
+      "assets/img/project/pixel-saga.png",
       "assets/img/profile/my-profile.jpg",
       "assets/img/project/pixel-saga.png",
       "assets/img/profile/my-profile.jpg",
