@@ -130,13 +130,12 @@ header {
   padding-bottom: 24px;
   position: relative;
   justify-self: center;
-  border-radius: 10px;
   overflow: hidden;
 }
 
 .image-slider {
   width: 100%;
-  height: 600px;
+  aspect-ratio: 12/9;
   padding-bottom: 12px;
 }
 
@@ -150,8 +149,9 @@ header {
 #nextBtn {
   position: absolute;
   top: 50%;
-  width: 50px;
-  height: 50px;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
   background-color: var(--primary-color);
   color: white;
   font-size: var(--button-size);
@@ -162,6 +162,7 @@ header {
   border: none;
   z-index: 1;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 #prevBtn:hover,
@@ -180,21 +181,66 @@ header {
 .image-dots {
   display: flex;
   justify-content: center;
+  margin-top: 12px;
 }
 
 .image-dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 5px;
+  height: 16px;
+  width: 16px;
+  margin: 0 4px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.3s ease;
 }
 
+.image-dot:hover {
+  background-color: #888;
+}
+
 .dot-active {
   background-color: var(--primary-color);
+}
+
+@media screen and (max-width: 425px) {
+  #image {
+    overflow: visible;
+  }
+
+  .image-slider img {
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  #prevBtn,
+  #nextBtn {
+    display: none;
+  }
+
+  .image-slider {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .image-dots {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .image-dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+  }
+
+  #prevBtn,
+  #nextBtn {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* == Scrollbar === */

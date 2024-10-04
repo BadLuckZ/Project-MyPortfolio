@@ -40,4 +40,22 @@ if (data.image.length > 1) {
   });
 
   showSlide(currentIndex);
+
+  function updateSliderForScreenSize() {
+    const screenWidth = window.innerWidth;
+    const images = document.querySelectorAll(".image-slider img");
+
+    if (screenWidth <= 425) {
+      images.forEach((image) => {
+        image.style.display = "block";
+      });
+    } else {
+      images.forEach((image, index) => {
+        image.style.display = index === currentIndex ? "block" : "none";
+      });
+    }
+  }
+
+  updateSliderForScreenSize();
+  window.addEventListener("resize", updateSliderForScreenSize);
 }

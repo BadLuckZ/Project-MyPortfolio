@@ -49,14 +49,16 @@ if (data.image.length == 1) {
 }
 
 preview.innerHTML = `
-    <h2>Preview Video</h2>
-    <video height="400" controls>
-        <source
-            src=${data.preview_video}
-            type="video/mp4"
-            id="project-video"
-        />
-    </video>
+    <div>
+      <h2>Preview Video</h2>
+      <video height="400" controls>
+          <source
+              src=${data.preview_video}
+              type="video/mp4"
+              id="project-video"
+          />
+      </video>
+    </div>
 `;
 
 if (data.can_demo) {
