@@ -14,7 +14,6 @@ export const activities = [
     tech_related: ["JAVA"],
     learn: ["AAA", "BBB"],
     contribution: "What I have done was Blah Blah",
-    github: "https://github.com/BadLuckZ/Project-PixelSaga.git",
   },
 ].sort((e1, e2) => {
   if (e1.subtitle === e2.subtitle) {

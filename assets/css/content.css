@@ -88,6 +88,24 @@ header {
   color: var(--header-color);
 }
 
+.head-button {
+  color: var(--header-color);
+  background-color: var(--primary-color);
+  margin-left: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.head-button:hover {
+  color: var(--primary-color);
+  background-color: var(--header-color);
+}
+
+.head-button > i {
+  padding: 8px;
+}
+
 /* == Main == */
 #details {
   max-width: 800px;

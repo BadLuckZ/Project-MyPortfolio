@@ -9,6 +9,13 @@ const learn = document.getElementById("learn");
 const contribution = document.getElementById("contribution");
 
 head.innerHTML = data.title;
+if (data.github) {
+  const button = document.createElement("a");
+  button.classList.add("head-button");
+  button.href = data.github;
+  button.innerHTML = '<i class="fa-brands fa-github"></i>';
+  head.appendChild(button);
+}
 
 background.innerHTML = `
     <h2>Background</h2>
