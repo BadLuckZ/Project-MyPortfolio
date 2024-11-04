@@ -1,5 +1,22 @@
 export const projects = [
   {
+    title: "Pixel Saga Game",
+    subtitle: "JAVA",
+    background: "Blah Blah",
+    cover_image: "assets/img/project/pixel-saga/cover.png",
+    images: ["assets/img/project/pixel-saga/cover.png"],
+    can_preview_video: true,
+    preview_video: "./assets/videos/pixel-saga.mp4",
+    can_demo: false,
+    preview_demo: "",
+    have_doc: true,
+    preview_doc: "assets/pdf/pixel-saga.pdf",
+    tech_related: ["JAVA"],
+    learn: ["AAA", "BBB"],
+    contribution: "What I have done was Blah Blah",
+    github: "https://github.com/BadLuckZ/Project-PixelSaga.git",
+  },
+  {
     title: "E-Commerce Web by Skooldio",
     subtitle: "React",
     background: `This is the group project from <b>Skooldio Bootcamp, Web Development Bootcamp #2</b>.
@@ -50,23 +67,6 @@ export const projects = [
             the selected options will be saved, and the cart will be updated on every page.
             Furthermore, when users go to the other items or other pages and come back to this item, 
             the selected options will display.</dd>`,
-  },
-  {
-    title: "Pixel Saga Game",
-    subtitle: "JAVA",
-    background: "Blah Blah",
-    cover_image: "assets/img/project/pixel-saga/cover.png",
-    images: ["assets/img/project/pixel-saga/cover.png"],
-    can_preview_video: true,
-    preview_video: "./assets/videos/pixel-saga.mp4",
-    can_demo: false,
-    preview_demo: "",
-    have_doc: true,
-    preview_doc: "assets/pdf/pixel-saga.pdf",
-    tech_related: ["JAVA"],
-    learn: ["AAA", "BBB"],
-    contribution: "What I have done was Blah Blah",
-    github: "https://github.com/BadLuckZ/Project-PixelSaga.git",
   },
 ].sort((e1, e2) => {
   if (e1.subtitle === e2.subtitle) {

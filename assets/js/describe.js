@@ -75,7 +75,7 @@ if (data.can_demo) {
   button.classList.add("preview-button");
   button.innerHTML = 'Demo <i class="fa-sharp fa-solid fa-arrow-down"></i>';
   button.addEventListener("click", () => {
-    window.location.href = `${data.preview_demo}`;
+    window.open(data.preview_demo, "_blank");
   });
   preview.appendChild(button);
 }
