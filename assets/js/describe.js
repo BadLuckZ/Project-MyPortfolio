@@ -22,14 +22,14 @@ background.innerHTML = `
     <p>${data.background}</p>
 `;
 
-if (data.image.length == 1) {
+if (data.images.length == 1) {
   image.innerHTML = `
-    <img src=${data.image} alt="${data.title} Image"/>
+    <img src=${data.images[0]} alt="${data.title} Image"/>
 `;
-} else if (data.image.length > 1) {
+} else if (data.images.length > 1) {
   const slider = document.createElement("div");
   slider.classList.add("image-slider");
-  data.image.forEach((imgLink) => {
+  data.images.forEach((imgLink) => {
     const img = document.createElement("img");
     img.src = imgLink;
     slider.appendChild(img);
@@ -42,7 +42,7 @@ if (data.image.length == 1) {
   rightBtn.innerText = ">>";
   const dots = document.createElement("div");
   dots.classList.add("image-dots");
-  for (let i = 0; i < data.image.length; i++) {
+  for (let i = 0; i < data.images.length; i++) {
     const dot = document.createElement("dot");
     dot.classList.add("image-dot");
     dot.setAttribute("data-slide", i);
@@ -55,7 +55,8 @@ if (data.image.length == 1) {
   image.appendChild(dots);
 }
 
-preview.innerHTML = `
+if (data.can_preview_video) {
+  preview.innerHTML = `
     <div>
       <h2>Preview Video</h2>
       <video height="400" controls>
@@ -67,12 +68,15 @@ preview.innerHTML = `
       </video>
     </div>
 `;
+}
 
 if (data.can_demo) {
   const button = document.createElement("button");
-  button.onclick = `window.location.href=${data.preview_demo}`;
   button.classList.add("preview-button");
   button.innerHTML = 'Demo <i class="fa-sharp fa-solid fa-arrow-down"></i>';
+  button.addEventListener("click", () => {
+    window.location.href = `${data.preview_demo}`;
+  });
   preview.appendChild(button);
 }
 
@@ -88,9 +92,9 @@ if (data.have_doc) {
 }
 
 const tech_related_element = document.createElement("ul");
-data.tech_related.forEach((t) => {
+data.tech_related.forEach((t, idx) => {
   const tech = document.createElement("li");
-  tech.innerHTML = `<p>${t}</p>`;
+  tech.innerHTML = `<p><dd>${idx + 1}. ${t}</dd></p>`;
   tech_related_element.appendChild(tech);
 });
 tech_related.innerHTML = `
@@ -98,16 +102,10 @@ tech_related.innerHTML = `
 `;
 tech_related.appendChild(tech_related_element);
 
-const learn_element = document.createElement("ul");
-data.learn.forEach((l) => {
-  const learn_li = document.createElement("li");
-  learn_li.innerHTML = `<p>${l}</p>`;
-  learn_element.appendChild(learn_li);
-});
 learn.innerHTML = `
-    <h2>What I learn</h2>
+  <h2>What I Learn</h2>
+  <p>${data.learn}</p>
 `;
-learn.appendChild(learn_element);
 
 contribution.innerHTML = `
     <h2>My Contribution</h2>

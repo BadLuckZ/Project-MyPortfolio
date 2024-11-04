@@ -1,6 +1,5 @@
 const data = JSON.parse(localStorage.getItem("selected"));
-
-if (data.image.length > 1) {
+if (data.images.length > 1) {
   const images = document.querySelectorAll(".image-slider img");
   const dots = document.querySelectorAll(".image-dot");
 

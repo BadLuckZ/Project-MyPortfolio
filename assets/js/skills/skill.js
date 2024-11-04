@@ -1,13 +1,5 @@
 export const skills = [
   {
-    id: 3,
-    title: "Data Analyst",
-    content: [
-      { name: "Python", ability: "Intermediate" },
-      { name: "R", ability: "Basic" },
-    ],
-  },
-  {
     id: 2,
     title: "Front End Developer",
     content: [

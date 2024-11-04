@@ -195,6 +195,10 @@ img {
   background-color: var(--primary-background-color);
 }
 
+.filter-sections {
+  padding-bottom: 60px;
+}
+
 .filter-sections [data-content] {
   display: none;
 }

@@ -11,7 +11,7 @@ projects.forEach((p) => {
   project_card.innerHTML = `
   <a href='content.html'>
     <img
-      src=${p.image}
+      src=${p.cover_image}
       class="card-image"
     />
     <div class="card-description">
