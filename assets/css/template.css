@@ -13,17 +13,18 @@
   --button-size: 1.25rem;
   --p-size: 1rem;
 
-  --primary-color: hsl(var(--hue), 50%, 50%);
-  --secondary-color: hsl(var(--hue), 35%, 35%);
+  --color-8-80: hsl(var(--hue), 8%, 80%);
 
-  --primary-background-color: hsl(var(--hue), 98%, 98%);
-  --secondary-background-color: hsl(var(--hue), 95%, 95%);
-  --tertiary-background-color: hsl(var(--hue), 8%, 80%);
+  --color-8: hsl(var(--hue), 8%, 8%);
+  --color-10: hsla(var(--hue), 10%, 10%);
+  --color-35: hsl(var(--hue), 35%, 35%);
+  --color-50: hsl(var(--hue), 50%, 50%);
+  --color-80: hsl(var(--hue), 80%, 80%);
+  --color-95: hsl(var(--hue), 95%, 95%);
+  --color-98: hsl(var(--hue), 98%, 98%);
 
-  --header-color: hsla(var(--hue), 98%, 98%);
-  --font-color: hsla(var(--hue), 10%, 10%);
-
-  --my-shadow-color: hsla(var(--hue), 20%, 20%, 0.2);
+  --color-20-shadow-20: hsla(var(--hue), 20%, 20%, 0.2);
+  --color-20-shadow-70: hsla(var(--hue), 20%, 20%, 0.7);
 
   --number-info: 2;
   --number-skill: 2;
@@ -38,7 +39,7 @@
 
 body {
   font-size: 1rem;
-  background-color: var(--primary-background-color);
+  background-color: var(--color-95);
 }
 
 h1 {
