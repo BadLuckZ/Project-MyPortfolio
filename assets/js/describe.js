@@ -18,8 +18,8 @@ if (data.github) {
 }
 
 background.innerHTML = `
-    <h2>Background</h2>
-    <p>${data.background}</p>
+  <h2 style="margin-bottom: 12px;">Background</h2>
+  <p>${data.background}</p>
 `;
 
 if (data.images.length == 1) {
@@ -36,10 +36,10 @@ if (data.images.length == 1) {
   });
   const leftBtn = document.createElement("button");
   leftBtn.setAttribute("id", "prevBtn");
-  leftBtn.innerText = "<<";
+  leftBtn.innerHTML = '<i class="fa-solid fa-angles-left"></i>';
   const rightBtn = document.createElement("button");
   rightBtn.setAttribute("id", "nextBtn");
-  rightBtn.innerText = ">>";
+  rightBtn.innerHTML = '<i class="fa-solid fa-angles-right"></i>';
   const dots = document.createElement("div");
   dots.classList.add("image-dots");
   for (let i = 0; i < data.images.length; i++) {

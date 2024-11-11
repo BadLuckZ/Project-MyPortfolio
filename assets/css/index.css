@@ -1,62 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-
-:root {
-  --hue: 150;
-  --number-info: 2;
-  --number-skill: 2;
-
-  --title-weight: 600;
-  --subtitle-weight: 500;
-
-  --h2-size: 1.5rem;
-  --h3-size: 1.25rem;
-  --p-size: 1rem;
-
-  --primary-color: hsl(var(--hue), 50%, 50%);
-  --secondary-color: hsl(var(--hue), 35%, 35%);
-  --primary-background-color: hsl(var(--hue), 98%, 98%);
-  --secondary-background-color: hsl(var(--hue), 8%, 80%);
-}
-
-* {
-  font-family: Poppins, sans-serif;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  font-size: 1rem;
-  background-color: var(--primary-background-color);
-}
-
-h2 {
-  font-weight: var(--title-weight);
-  font-size: var(--h2-size);
-}
-
-h3 {
-  font-weight: var(--title-weight);
-  font-size: var(--h3-size);
-}
-
-p {
-  font-size: var(--p-size);
-  font-weight: var(--subtitle-weight);
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
+@import url("./template.css");
 
 .grid {
   display: grid;
@@ -168,7 +110,7 @@ img {
 .filter-content {
   width: 85%;
   margin: 2rem;
-  background-color: var(--secondary-background-color);
+  background-color: var(--tertiary-background-color);
   padding: 0.5rem;
   border-radius: 0.75rem;
   display: flex;
@@ -288,7 +230,7 @@ img {
 ::-webkit-scrollbar {
   width: 0.5rem;
   border-radius: 0.5rem;
-  background-color: var(--secondary-background-color);
+  background-color: var(--tertiary-background-color);
 }
 
 ::-webkit-scrollbar-thumb {
