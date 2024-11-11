@@ -5,6 +5,7 @@
 
   --title-weight: 600;
   --subtitle-weight: 500;
+  --content-weight: 400;
 
   --h1-size: 2rem;
   --h2-size: 1.5rem;
@@ -23,13 +24,13 @@
 }
 
 * {
+  font-family: Poppins, sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
 body {
-  font-family: Poppins, sans-serif;
   font-size: 1rem;
   background-color: var(--secondary-background-color);
 }
@@ -47,7 +48,7 @@ h2 {
 
 p {
   font-size: var(--p-size);
-  font-weight: var(--subtitle-weight);
+  font-weight: var(--content-weight);
 }
 
 ul {
