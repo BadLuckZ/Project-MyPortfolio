@@ -12,7 +12,9 @@ head.innerHTML = data.title;
 if (data.github) {
   const button = document.createElement("a");
   button.classList.add("head-button");
-  button.href = data.github;
+  button.addEventListener("click", () => {
+    window.open(data.github, "_blank");
+  });
   button.innerHTML = '<i class="fa-brands fa-github"></i>';
   head.appendChild(button);
 }

@@ -194,41 +194,6 @@
   margin-bottom: 0.5rem;
 }
 
-/* === Main (Skills) === */
-.skill-content {
-  justify-content: center;
-  align-items: center;
-  row-gap: 1rem;
-}
-
-.skills-title {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.skills-box {
-  display: grid;
-  grid-template-columns: repeat(var(--number-skill), max-content);
-  justify-content: center;
-  row-gap: 1rem;
-  column-gap: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.skill-data {
-  display: flex;
-  column-gap: 0.5rem;
-}
-
-.skill-data i {
-  font-size: 1rem;
-  color: var(--color-50);
-}
-
-.skill-name {
-  line-height: 20px;
-}
-
 /* == Scrollbar === */
 ::-webkit-scrollbar {
   width: 0.5rem;
