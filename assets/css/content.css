@@ -70,8 +70,9 @@
   background-color: var(--color-50);
   margin-left: 1rem;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 8px;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .head-button:hover {
