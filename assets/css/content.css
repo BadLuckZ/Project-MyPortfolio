@@ -1,7 +1,6 @@
 @import url("./template.css");
 
 /* == Header == */
-/* == Header == */
 #head {
   display: flex;
   justify-content: center;
@@ -48,20 +47,6 @@
 @media screen and (max-width: 425px) {
   #head-name {
     flex-direction: column;
-  }
-
-  #back {
-    top: 16px;
-    left: 16px;
-    bottom: 0px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  #back {
-    top: 20px;
-    left: 20px;
-    bottom: 0px;
   }
 }
 

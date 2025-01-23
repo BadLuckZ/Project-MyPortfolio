@@ -28,8 +28,6 @@ export const projects = [
         On top of that, some bugs take several patches to get fixed, even though they don’t seem that 
         hard to resolve. However, after working on this project with my friend, I understood 
         why these situations happen. 
-        <dd style="color: grey;"><i>P.S. I apologize for the harsh criticisms I’ve made about many games in the past. From now on, 
-        I’ll focus on providing constructive feedback instead.</i></dd>
       </dd>
       <br>
       <dd>
