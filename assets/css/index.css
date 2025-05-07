@@ -152,46 +152,56 @@
 }
 
 /* === Main (Project + Activities) === */
+
 .card {
+  display: flex;
+  background-color: var(--color-50);
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
   margin: 0 16px;
 }
 
-.card img {
-  width: 100%;
-  height: 100%;
-}
-
 .card-description {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    hsla(var(--hue), 20%, 40%, 0.3) 0%,
-    hsla(var(--hue), 20%, 4%, 1) 95%
-  );
-  bottom: -100%;
-  left: 0;
-  display: grid;
-  align-items: flex-end;
-  padding: 1.25rem;
-  transition: 0.3s;
-}
-
-.card:hover .card-description {
-  bottom: 0;
-}
-
-.card-title,
-.card-subtitle {
+  padding: 1rem;
   color: var(--color-98);
 }
 
 .card-title {
   margin-bottom: 0.5rem;
+  font-size: var(--h2-size);
+}
+
+.card-subtitle {
+  font-size: var(--h3-size);
+}
+
+/* Hover Card in Laptop */
+@media screen and (min-width: 769px) {
+  .card img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-description {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      hsla(var(--hue), 20%, 40%, 0.3) 0%,
+      hsla(var(--hue), 20%, 4%, 1) 95%
+    );
+    bottom: -100%;
+    left: 0;
+    display: grid;
+    align-items: flex-end;
+    transition: 0.3s;
+  }
+
+  .card:hover .card-description {
+    bottom: 0;
+  }
 }
 
 /* == Scrollbar === */
