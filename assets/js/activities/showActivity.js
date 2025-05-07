@@ -11,13 +11,13 @@ activities.forEach((p) => {
   activity_card.innerHTML = `
   <a href='content.html'>
     <img
-      src=${p.image[0]}
+      src=${p.cover_image}
       class="card-image"
     />
     <div class="card-description">
       <div>
-        <p class="card-subtitle">${p.subtitle}</p>
-        <h3 class="card-title">${p.title}</h3>
+        <h3 class="card-subtitle">${p.subtitle}</h3>
+        <h2 class="card-title">${p.title}</h2>
       </div>
     </div>
   </a>`;
