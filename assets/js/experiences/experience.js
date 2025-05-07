@@ -1,6 +1,6 @@
 export const experiences = [
   {
-    title: "Openhouse CU 2025",
+    title: "Chula Openhouse 2025",
     subtitle: "Frontend Developer",
     start_month: 2,
     start_year: 2025,
