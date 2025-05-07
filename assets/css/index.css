@@ -169,11 +169,11 @@
 
 .card-title {
   margin-bottom: 0.5rem;
-  font-size: var(--h2-size);
+  font-size: var(--h3-size);
 }
 
 .card-subtitle {
-  font-size: var(--h3-size);
+  font-size: var(--p-size);
 }
 
 /* Hover Card in Laptop */
@@ -202,6 +202,15 @@
 
   .card:hover .card-description {
     bottom: 0;
+  }
+
+  .card-title {
+    margin-bottom: 0.5rem;
+    font-size: var(--h2-size);
+  }
+
+  .card-subtitle {
+    font-size: var(--h3-size);
   }
 }
 
@@ -256,7 +265,7 @@
   }
 
   .project-content,
-  .activity-content {
+  .experience-content {
     grid-template-columns: 375px;
     justify-content: center;
   }
@@ -274,7 +283,7 @@
   }
 
   .project-content,
-  .activity-content {
+  .experience-content {
     grid-template-columns: repeat(2, 375px);
   }
 

@@ -1,14 +1,13 @@
 export const projects = [
   {
     title: "Pixel Saga Game",
-    subtitle: "JAVA",
+    subtitle: "Java",
     start_month: 4,
     start_year: 2024,
-    background: `<b>This is our final project for Programming Methodology in Year 1 Semester 2 with 
-      my friend (Napongthorn Charoenlap).
-      <br><br>We started this project in April 2024 and finished in May 2024.</b>
+    information: `<b>This is the group project for Programming Methodology Subject.
+      <br>This project started in April 2024 and finished in May 2024.</b>
       <br><br>
-      The project is called <b>Pixel Saga</b>. It's a roguelike platformer game featuring pixel art. 
+      We call this project <b>Pixel Saga</b>. It's a roguelike platformer game featuring pixel art. 
       The objective is to survive as long as possible by defeating enemies in various levels and conquering bosses. 
       Players can choose a class at the beginning of the game and get perks to enhance their abilities. 
       There are also areas where players can purchase new perks and upgrade existing perks to become stronger.`,
@@ -20,27 +19,30 @@ export const projects = [
     preview_demo: "",
     have_doc: true,
     preview_doc: "assets/pdf/pixel_saga.pdf",
-    tech_related: ["JAVA"],
+    tech_related: ["Java"],
     learn: `There are 2 things I can learn by doing this project
       <br><br>
       <dd>
         1. <b>I’ve learned the challenges and hardships of game development.</b>
         <br>
-        I’ve always had long-standing questions about game development: 
+        I’ve always had questions about game development-for example, 
         why do so many games I’ve played have bugs? Why aren’t they thoroughly tested before release? 
-        On top of that, some bugs take several patches to get fixed, even though they don’t seem that 
-        hard to resolve. However, after working on this project with my friend, I understood 
-        why these situations happen. 
+        However, after working on this project with my friend, I understood why these situations happen.
+        We tried to play our game as much as we can to solve the bugs inside the project and when our time 
+        to present the project came, it still had bugs in our project.
       </dd>
       <br>
       <dd>
-        2. <b>This is my first chance to code with my friend. I thought it wouldn't be that hard but it's not like that.</b>
+        2. <b>This is my first chance to code with my friend. 
+        I thought it wouldn't be that hard but it's not like that.</b>
         <br>
         Although our communication went well, many functions we wanted to code were harder 
-        than we thought due to our lack of experience. So we decided not to code many functions, 
-        such as selling items and coding players' skills.
+        than we thought due to our lack of experience and knowledge. So we decided to code 
+        the main features first such as movement systems
+        and animations. When we had some time, we learned how to code things we wanted and applied to our projects.
+        That situation improves our coding skills.
       </dd>`,
-    contribution: `<b>The main parts I contributed to this project are as follows</b>
+    contribution: `<b>The parts I contributed to this project are as follows...</b>
       <br><br>
       <dd>
         1. <b>Player Movement</b><br> I coded the basic movement system for the player (left-right movement) 
@@ -75,10 +77,11 @@ export const projects = [
     subtitle: "React",
     start_month: 10,
     start_year: 2024,
-    background: `<b>This is the group project from Skooldio Bootcamp, Web Development Bootcamp #2.
-      <br><br>We started this project in October 2024 and finished in the same month.</b>
-      <br><br>The website should have a responsive and visually appealing design that works seamlessly 
-      across multiple platforms and should function appropriately using the knowledge from the boot camp.
+    information: `<b>This is the group project from Skooldio Bootcamp, Web Development Bootcamp #2.
+      <br>This project started in October 2024 and finished in the same month.</b>
+      <br><br>This project is about creating the website that should have a responsive and appealing 
+      design that works across multiple platforms and should function appropriately 
+      using the knowledge from the boot camp.
       <br><br>The website has 4 parts
       <dd>1. <b>HomePage</b> which is the first page.</dd>
       <dd>2. <b>CategoryPage</b> which displays a variety of product categories and allows users to filter 
@@ -105,18 +108,15 @@ export const projects = [
     have_doc: false,
     preview_doc: "",
     tech_related: ["React", "CSS", "JavaScript"],
-    learn: `There are 2 things I can learn by doing this project
+    learn: `Here are things I can learn by doing this project
       <br><br>
       <dd>
-        1. I can practice my frontend skills like React, JavaScript and CSS and learn many new things 
-        that I haven't know before like useContext in React and TailwindCSS.
-      </dd>
-      <br>
-      <dd>
-        2. This is my first chance to code with other people that I haven't known before and
-        it takes a lot of my effort and time not only to code in my part but also to communicate with 
-        other people and to
-        prepare the presentation. But for me, it is a good experience.
+        1. <b>This is the first chance coding real-world project with other people that I haven't known before.</b> 
+        <br>
+        It takes a lot of my effort and time not only to code in my part but also to communicate with 
+        other people and to prepare the presentation. I took a lead of this group by separating parts of the projects
+        and assign to each member in the team and I tried to help other members when they have some questions.
+        That helps me improve my leadership skills and improve my communication skills.
       </dd>`,
     contribution: `My main responsibility is at the CategoryPage and DetailPage. 
       <br><br>
@@ -127,7 +127,7 @@ export const projects = [
       </dd>
       <br>
       <dd> 
-        2. In <b>DetallPage</b>, users will see the item's selected detail. Users can interact with its images and 
+        2. In <b>DetailPage</b>, users will see the item's selected detail. Users can interact with its images and 
         can select the size, color, and quantity options. After clicking the "Add to cart" button, 
         the selected options will be saved, and the cart will be updated on every page.
         Furthermore, when users go to the other items or other pages and come back to this item, 

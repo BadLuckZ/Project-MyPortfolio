@@ -1,7 +1,7 @@
 const data = JSON.parse(localStorage.getItem("selected"));
 
 const head = document.getElementById("head-name");
-const background = document.getElementById("background");
+const information = document.getElementById("information");
 const image = document.getElementById("image");
 const preview = document.getElementById("preview");
 const tech_related = document.getElementById("tech-related");
@@ -19,9 +19,9 @@ if (data.github) {
   head.appendChild(button);
 }
 
-background.innerHTML = `
-  <h2 style="margin-bottom: 12px;">Background</h2>
-  <p>${data.background}</p>
+information.innerHTML = `
+  <h2 style="margin-bottom: 12px;">Information</h2>
+  <p>${data.information}</p>
 `;
 
 if (data.images.length == 1) {
