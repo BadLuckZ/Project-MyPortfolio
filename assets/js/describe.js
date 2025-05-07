@@ -94,15 +94,17 @@ if (data.have_doc) {
 }
 
 const tech_related_element = document.createElement("ul");
-data.tech_related.forEach((t, idx) => {
-  const tech = document.createElement("li");
-  tech.innerHTML = `<p><dd>${idx + 1}. ${t}</dd></p>`;
-  tech_related_element.appendChild(tech);
-});
-tech_related.innerHTML = `
+if (data.tech_related.length > 0) {
+  data.tech_related.forEach((t, idx) => {
+    const tech = document.createElement("li");
+    tech.innerHTML = `<p><dd>${idx + 1}. ${t}</dd></p>`;
+    tech_related_element.appendChild(tech);
+  });
+  tech_related.innerHTML = `
     <h2>Technologies Related</h2>
 `;
-tech_related.appendChild(tech_related_element);
+  tech_related.appendChild(tech_related_element);
+}
 
 learn.innerHTML = `
   <h2>What I Learn</h2>

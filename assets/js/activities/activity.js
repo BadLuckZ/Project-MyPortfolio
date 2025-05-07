@@ -27,6 +27,7 @@ export const activities = [
     preview_demo: "",
     have_doc: false,
     preview_doc: "",
+    tech_related: ["Next.js", "TailwindCSS", "TypeScript"],
     learn: `There are ... things I can learn by participating in this project
       <br><br>
       <dd>

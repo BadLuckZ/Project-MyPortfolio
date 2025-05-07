@@ -159,6 +159,7 @@
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
+  margin: 0 16px;
 }
 
 .card-description {
