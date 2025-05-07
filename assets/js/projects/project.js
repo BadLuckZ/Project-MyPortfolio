@@ -2,13 +2,16 @@ export const projects = [
   {
     title: "Pixel Saga Game",
     subtitle: "JAVA",
-    background: `<b>This is my final project for Programming Methodology in Year 1 Semester 2 doing with 
-      my friend (Napongthorn Charoenlap).</b>
+    start_month: 4,
+    start_year: 2024,
+    background: `<b>This is our final project for Programming Methodology in Year 1 Semester 2 with 
+      my friend (Napongthorn Charoenlap).
+      <br><br>We started this project in April 2024 and finished in May 2024.</b>
       <br><br>
       The project is called <b>Pixel Saga</b>. It's a roguelike platformer game featuring pixel art. 
       The objective is to survive as long as possible by defeating enemies in various levels and conquering bosses. 
       Players can choose a class at the beginning of the game and get perks to enhance their abilities. 
-      There are also areas where players can purchase new perks and upgrade existing perks to become stronger`,
+      There are also areas where players can purchase new perks and upgrade existing perks to become stronger.`,
     cover_image: "assets/img/project/pixel-saga/cover.png",
     images: ["assets/img/project/pixel-saga/cover.png"],
     can_preview_video: true,
@@ -70,7 +73,10 @@ export const projects = [
   {
     title: "E-Commerce Web",
     subtitle: "React",
-    background: `<b>This is the group project from Skooldio Bootcamp, Web Development Bootcamp #2</b>.
+    start_month: 10,
+    start_year: 2024,
+    background: `<b>This is the group project from Skooldio Bootcamp, Web Development Bootcamp #2.
+      <br><br>We started this project in October 2024 and finished in the same month.</b>
       <br><br>The website should have a responsive and visually appealing design that works seamlessly 
       across multiple platforms and should function appropriately using the knowledge from the boot camp.
       <br><br>The website has 4 parts
@@ -130,6 +136,12 @@ export const projects = [
     github: "https://github.com/BadLuckZ/Project-Sandbox-Div-Centering.git",
   },
 ].sort((e1, e2) => {
+  if (e1.start_year === e2.start_year) {
+    return e1.start_year < e2.start_year ? 1 : -1;
+  }
+  if (e1.start_month === e2.start_month) {
+    return e1.start_month < e2.start_month ? 1 : -1;
+  }
   if (e1.subtitle === e2.subtitle) {
     return e1.title < e2.title ? -1 : 1;
   }

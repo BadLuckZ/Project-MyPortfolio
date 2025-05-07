@@ -2,6 +2,8 @@ export const activities = [
   {
     title: "Openhouse CU 2025",
     subtitle: "Frontend Developer",
+    start_month: 2,
+    start_year: 2025,
     background: `<b>Test.</b>
       <br><br>
       Test`,
@@ -46,6 +48,12 @@ export const activities = [
       `,
   },
 ].sort((e1, e2) => {
+  if (e1.start_year === e2.start_year) {
+    return e1.start_year < e2.start_year ? 1 : -1;
+  }
+  if (e1.start_month === e2.start_month) {
+    return e1.start_month < e2.start_month ? 1 : -1;
+  }
   if (e1.subtitle === e2.subtitle) {
     return e1.title < e2.title ? -1 : 1;
   }
