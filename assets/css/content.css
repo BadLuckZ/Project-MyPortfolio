@@ -91,6 +91,7 @@
 
 .preview-button {
   padding: 12px;
+  min-width: 120px;
   margin-right: 8px;
   font-size: var(--button-size);
   background-color: var(--color-50);

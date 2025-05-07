@@ -12,11 +12,11 @@ export const projects = [
     cover_image: "assets/img/project/pixel-saga/cover.png",
     images: ["assets/img/project/pixel-saga/cover.png"],
     can_preview_video: true,
-    preview_video: "./assets/videos/pixel-saga.mp4",
+    preview_video: "./assets/videos/pixel_saga.mp4",
     can_demo: false,
     preview_demo: "",
     have_doc: true,
-    preview_doc: "assets/pdf/pixel-saga.pdf",
+    preview_doc: "assets/pdf/pixel_saga.pdf",
     tech_related: ["JAVA"],
     learn: `There are 2 things I can learn by doing this project
       <br><br>

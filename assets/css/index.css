@@ -88,7 +88,7 @@
 .main-button {
   background-color: var(--color-50);
   color: var(--color-98);
-  padding: 1rem 2rem;
+  padding: 1rem;
 }
 
 .main-button:hover {
