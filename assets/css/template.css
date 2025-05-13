@@ -14,7 +14,6 @@
   --p-size: 1rem;
 
   --color-8-80: hsl(var(--hue), 8%, 80%);
-
   --color-8: hsl(var(--hue), 8%, 8%);
   --color-10: hsla(var(--hue), 10%, 10%);
   --color-35: hsl(var(--hue), 35%, 35%);
@@ -77,6 +76,8 @@ video {
   max-width: 100%;
   height: auto;
 }
+
+/* ================ */
 
 .hidden{
   display: none;

@@ -103,6 +103,8 @@
   background-color: var(--color-80);
 }
 
+/* ================ */
+
 /* ======== Main ========== */
 .filter-content {
   width: 85%;
@@ -146,7 +148,6 @@
   display: grid;
 }
 
-/* === Main (Project + Activities) === */
 .project-content, 
 .experience-content {
   display: flex;
@@ -242,6 +243,8 @@
   }
 }
 
+/* ================ */
+
 /* == Scrollbar === */
 ::-webkit-scrollbar {
   width: 0.5rem;
@@ -257,6 +260,8 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-35);
 }
+
+/* ================ */
 
 /* === Responsive Part === */
 
@@ -387,3 +392,5 @@
     padding: 1rem 2rem;
   }
 }
+
+/* ================ */

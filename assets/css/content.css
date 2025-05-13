@@ -69,6 +69,8 @@
   padding: 8px;
 }
 
+/* =========== */
+
 /* == Main == */
 #details {
   max-width: 800px;
@@ -226,6 +228,8 @@
     height: 40px;
   }
 }
+
+/* =========== */
 
 /* == Scrollbar === */
 ::-webkit-scrollbar {
