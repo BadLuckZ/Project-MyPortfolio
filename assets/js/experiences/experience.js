@@ -1,7 +1,8 @@
 export const experiences = [
   {
     title: "Chula Openhouse 2025",
-    subtitle: "Frontend Developer",
+    subtitle: "Next.js",
+    type: "Frontend Development",
     start_month: 2,
     start_year: 2025,
     information: `<b>This is the project from ISD (Information System Development), Chulalongkorn University.

@@ -2,6 +2,7 @@ export const projects = [
   {
     title: "Pixel Saga Game",
     subtitle: "Java",
+    type: "University",
     start_month: 4,
     start_year: 2024,
     information: `<b>This is the group project for Programming Methodology Subject.
@@ -73,8 +74,9 @@ export const projects = [
     github: "https://github.com/BadLuckZ/Project-PixelSaga.git",
   },
   {
-    title: "E-Commerce Web",
+    title: "E-Commerce Website",
     subtitle: "React",
+    type: "Frontend Development",
     start_month: 10,
     start_year: 2024,
     information: `<b>This is the group project from Skooldio Bootcamp, Web Development Bootcamp #2.

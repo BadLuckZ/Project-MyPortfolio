@@ -28,6 +28,8 @@
 
   --number-info: 2;
   --number-skill: 2;
+
+  --card-width: 375px;
 }
 
 * {

@@ -79,7 +79,7 @@
 
 .main-button,
 .sub-button {
-  font-size: var(--h3-size);
+  font-size: var(--button-size);
   cursor: pointer;
   border-radius: 0.5rem;
   transition: 0.3s;
@@ -127,7 +127,7 @@
   padding: 1rem;
   background-color: transparent;
   color: var(--color-50);
-  font-size: var(--h3-size);
+  font-size: var(--button-size);
   font-family: Poppins, sans-serif;
   font-weight: 500;
   cursor: pointer;
@@ -152,6 +152,33 @@
 }
 
 /* === Main (Project + Activities) === */
+.project-content, 
+.experience-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 0 1rem;
+}
+
+.project-cardbox, 
+.experience-cardbox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-cardbox-header, 
+.experience-cardbox-header {
+  font-size: var(--h2-size);
+}
+
+.project-container, 
+.experience-container {
+  grid-template-columns: repeat(var(--number-skill), var(--card-width));
+  justify-content: center;
+}
 
 .card {
   display: flex;
@@ -159,12 +186,18 @@
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
-  margin: 0 16px;
+  max-width: var(--card-width);
+  max-height: auto;
 }
 
 .card-description {
   padding: 1rem;
   color: var(--color-98);
+}
+
+.card-description > div {
+  display: flex;
+  flex-direction: column;
 }
 
 .card-title {
@@ -236,6 +269,12 @@
 @media screen and (max-width: 425px) {
   :root {
     --number-skill: 1;
+    --h1-size: 1.5rem;
+    --h2-size: 1.5rem;
+    --h3-size: 1.25rem;
+    --button-size: 1rem;
+    --p-size: 1rem;
+    --card-width: auto;
   }
 
   .profile-info {
@@ -245,10 +284,6 @@
   .profile-buttons {
     flex-direction: column;
     row-gap: 1rem;
-  }
-
-  .skill-content {
-    row-gap: 0.5rem;
   }
 }
 
@@ -261,13 +296,60 @@
 /* Tablet */
 @media screen and (min-width: 426px) {
   :root {
-    --number-skill: 2;
+    --number-skill: 1;
+    --h1-size: 1.75rem;
+    --h2-size: 1.5rem;
+    --h3-size: 1.25rem;
+    --button-size: 1rem;
+    --p-size: 1rem;
+    --card-width: 350px;
   }
 
-  .project-content,
-  .experience-content {
-    grid-template-columns: 375px;
-    justify-content: center;
+  .filter-content {
+    max-width: 750px;
+    margin: 3rem auto;
+  }
+
+  .main-button {
+    padding: 1.5rem 2rem;
+  }
+
+  .sub-button {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Laptop */
+@media screen and (min-width: 769px) {
+  :root {
+    --number-skill: 2;
+    --h1-size: 1.75rem;
+    --h2-size: 1.5rem;
+    --h3-size: 1.25rem;
+    --button-size: 1.25rem;
+    --p-size: 1rem;
+    --card-width: 400px;
+  }
+
+  .filter-content {
+    max-width: 750px;
+    margin: 3rem auto;
+  }
+
+  .main-button {
+    padding: 1.5rem 2.5rem;
+  }
+
+  .sub-button {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Extra Adjustment */
+@media screen and (min-width: 769px) and (max-width: 875px) {
+  :root {
+    --number-skill: 1;
+    --card-width: 350px
   }
 
   .filter-content {
@@ -276,28 +358,15 @@
   }
 }
 
-/* Laptop */
-@media screen and (min-width: 769px) {
-  :root {
-    --number-skill: 1;
-  }
-
-  .project-content,
-  .experience-content {
-    grid-template-columns: repeat(2, 375px);
-  }
-
-  .skill-content {
-    grid-template-columns: repeat(2, max-content);
-    column-gap: 6rem;
-  }
-}
-
 /* Laptop L */
 @media screen and (min-width: 1025px) {
   :root {
-    --h2-size: 1.75rem;
+    --number-skill: 2;
+    --card-width: 400px;
+    --h1-size: 2rem;
+    --h2-size: 1.5rem;
     --h3-size: 1.25rem;
+    --button-size: 1.25rem;
     --p-size: 1rem;
   }
 
@@ -320,10 +389,6 @@
   }
 
   .sub-button {
-    padding: 1rem 1.5rem;
-  }
-
-  .skills-title {
-    margin-bottom: 2rem;
+    padding: 1rem 2rem;
   }
 }
