@@ -3,7 +3,8 @@ const data = JSON.parse(localStorage.getItem("selected"));
 const head = document.getElementById("head-name");
 const information = document.getElementById("information");
 const image = document.getElementById("image");
-const preview = document.getElementById("preview");
+const preview_video = document.getElementById("preview-video");
+const preview_buttons = document.getElementById("preview-buttons");
 const tech_related = document.getElementById("tech-related");
 const learn = document.getElementById("learn");
 const contribution = document.getElementById("contribution");
@@ -58,7 +59,7 @@ if (data.images.length == 1) {
 }
 
 if (data.can_preview_video) {
-  preview.innerHTML = `
+  preview_video.innerHTML = `
     <div>
       <h2>Preview Video</h2>
       <video height="400" controls>
@@ -70,6 +71,8 @@ if (data.can_preview_video) {
       </video>
     </div>
 `;
+} else {
+  preview_video.classList.add("hidden");
 }
 
 if (data.can_demo) {
@@ -79,7 +82,7 @@ if (data.can_demo) {
   button.addEventListener("click", () => {
     window.open(data.preview_demo, "_blank");
   });
-  preview.appendChild(button);
+  preview_buttons.appendChild(button);
 }
 
 if (data.have_doc) {
@@ -90,7 +93,11 @@ if (data.have_doc) {
   const link_button = document.createElement("a");
   link_button.href = data.preview_doc;
   link_button.appendChild(button);
-  preview.appendChild(link_button);
+  preview_buttons.appendChild(link_button);
+}
+
+if (preview_buttons.childNodes.length == 0) {
+  preview_buttons.classList.add("hidden");
 }
 
 const tech_related_element = document.createElement("ul");
@@ -104,6 +111,8 @@ if (data.tech_related.length > 0) {
     <h2>Technologies Related</h2>
 `;
   tech_related.appendChild(tech_related_element);
+} else {
+  tech_related.classList.add("hidden");
 }
 
 learn.innerHTML = `

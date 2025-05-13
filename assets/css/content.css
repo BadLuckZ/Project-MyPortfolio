@@ -81,7 +81,8 @@
 }
 
 #information,
-#preview,
+#preview-video,
+#preview-buttons,
 #image,
 #tech-related,
 #learn,
@@ -90,8 +91,8 @@
 }
 
 .preview-button {
-  padding: 12px;
-  min-width: 120px;
+  padding: 16px 24px;
+  width: fit-content;
   margin-right: 8px;
   font-size: var(--button-size);
   background-color: var(--color-50);
@@ -107,9 +108,8 @@
   background-color: var(--color-35);
 }
 
-/* Image Slider (Activitites) */
+/* Image Slider */
 #image {
-  padding-bottom: 24px;
   position: relative;
   justify-self: center;
   z-index: 1;
@@ -193,7 +193,6 @@
 
   .image-slider img {
     display: block;
-    margin-bottom: 12px;
   }
 
   #prevBtn,
@@ -205,6 +204,8 @@
     aspect-ratio: auto;
     display: flex;
     flex-direction: column;
+    gap: 12px;
+    padding-bottom: 0;
   }
 
   .image-dots {

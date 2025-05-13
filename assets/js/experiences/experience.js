@@ -6,7 +6,7 @@ export const experiences = [
     start_month: 2,
     start_year: 2025,
     information: `<b>This is the project from ISD (Information System Development), Chulalongkorn University.
-      <br>This project started in February 2024 and finished in April 2024.</b>
+      <br>This project started in February 2025 and finished in April 2025.</b>
       <br><br>This project is about building a website that helps people register for Chulalongkorn University's Open House 2025 
       and also share information from each faculty in the university.
       <br><br>This project mainly focuses on mobile users, since a Line Official Account has been set up 
