@@ -135,7 +135,7 @@ export const projects = [
         Furthermore, when users go to the other items or other pages and come back to this item, 
         the selected options will display.
       </dd>`,
-    github: "https://github.com/BadLuckZ/Project-Sandbox-Div-Centering.git",
+    github: "https://github.com/BadLuckZ/Project-ECommerce-Div-Centering.git",
   },
 ].sort((e1, e2) => {
   if (e1.start_year === e2.start_year) {
