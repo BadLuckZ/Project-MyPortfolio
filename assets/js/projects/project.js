@@ -1,4 +1,93 @@
+// const template_project = {
+//   title: "",
+//   subtitle: "",
+//   type: "",
+//   start_month: 0,
+//   start_year: 0,
+//   information: "",
+//   cover_image: "",
+//   images: [],
+//   can_preview_video: false,
+//   preview_video: "",
+//   can_demo: false,
+//   preview_demo: "",
+//   have_doc: false,
+//   preview_doc: "",
+//   tech_related: [],
+//   learn: "",
+//   contribution: "",
+//   github: "",
+// };
+
 export const projects = [
+  {
+    title: "My Flashcard",
+    subtitle: "React",
+    type: "Frontend Development",
+    start_month: 5,
+    start_year: 2025,
+    information: `<b>This flashcard project was personally developed to help me remember 
+      English vocabulary in preparation for the TOEIC Test in August 2025 😔.
+      <br>This project started in May 2025 and it took me around 2 weeks to do since I was an intern.</b>
+      <br><br>
+      The project has a responsive design, so it works well on phones, 
+      tablets, and computers. I made it simple and easy to use, so I can focus on 
+      learning and remembering words without any distractions.
+      <br><br> This project contains 3 parts
+      <dd>1. <b>EntryPage</b> which is the first page. It gives a simple welcome and lets users start the learning experience.</dd>
+      <dd>2. <b>CategoryPage</b> which shows different vocabulary decks grouped by topics like Business, Travel, or Daily Life. 
+      Users can pick the deck they want to study. Furthermore, users can rename decks or remove unused decks.</dd>
+      <dd>3. <b>DeckPage</b> which displays flashcards from the selected deck. 
+      At the front of each card, it shows a word and its type. On the other side, it shows its meaning and a sample sentence. 
+      Cards can be flipped and browsed through.Furthermore, users can adjust card's information and remove cards from the deck.</dd>
+      `,
+    cover_image: "assets/img/project/flashcard/cover.png",
+    images: [
+      "assets/img/project/flashcard/content01.png",
+      "assets/img/project/flashcard/content02.png",
+      "assets/img/project/flashcard/content03.png",
+      "assets/img/project/flashcard/content04.png",
+      "assets/img/project/flashcard/content05.png",
+      "assets/img/project/flashcard/content06.png",
+      "assets/img/project/flashcard/content07.png",
+      "assets/img/project/flashcard/content08.png",
+      "assets/img/project/flashcard/content09.png",
+    ],
+    can_preview_video: false,
+    preview_video: "",
+    can_demo: true,
+    preview_demo: "https://project-flashcard-seven.vercel.app/",
+    have_doc: false,
+    preview_doc: "",
+    tech_related: ["React", "TailwindCSS", "JavaScript"],
+    learn: `Here're what I learned from doing this project.
+      <dd>
+      1. <b>This is my first time making a full personal project by 
+      myself in a short amount of time.</b>
+      <br>
+      I planned everything on my own — from the design to the features. 
+      It took a lot of time to design since I wasn’t very good at it (still not great 😔). 
+      <br>
+      Because of the short timeline, I had to manage my time carefully to finish everything.
+      <br>
+      In the end, the design is fine for me and its functionality went well, 
+      and I think this helped me improve at building and completing real projects.
+      </dd>
+      <br>
+      <dd>
+      2. <b>I can create a responsive and user-friendly website.</b>
+      <br>
+      This project made me take on 3 roles: Designer, Developer, and User. 
+      I had to think about how the app looks, how it works, and how it feels to use.
+      <br>
+      Doing all of this helped me understand how important it is to make a website that is both 
+      functional and easy to use on any device.
+      </dd>
+      `,
+    contribution:
+      "Since this is my personal project, It means I has built all things in this project by myself😊.",
+    github: "https://github.com/BadLuckZ/Project-Flashcard",
+  },
   {
     title: "Pixel Saga Game",
     subtitle: "Java",
@@ -110,7 +199,7 @@ export const projects = [
     have_doc: false,
     preview_doc: "",
     tech_related: ["React", "CSS", "JavaScript"],
-    learn: `Here are things I can learn by doing this project
+    learn: `Here're things I can learn by doing this project
       <br><br>
       <dd>
         1. <b>This is the first chance coding real-world project with other people that I haven't known before.</b> 

@@ -1,3 +1,23 @@
+// const template_experience = {
+//   title: "",
+//   subtitle: "",
+//   type: "",
+//   start_month: 0,
+//   start_year: 0,
+//   information: "",
+//   cover_image: "",
+//   images: [],
+//   can_preview_video: false,
+//   preview_video: "",
+//   can_demo: false,
+//   preview_demo: "",
+//   have_doc: false,
+//   preview_doc: "",
+//   tech_related: [],
+//   learn: "",
+//   contribution: "",
+// };
+
 export const experiences = [
   {
     title: "Chula Openhouse 2025",
