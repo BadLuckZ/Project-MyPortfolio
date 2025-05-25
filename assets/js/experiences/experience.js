@@ -101,10 +101,10 @@ export const experiences = [
       `,
   },
 ].sort((e1, e2) => {
-  if (e1.start_year === e2.start_year) {
+  if (e1.start_year !== e2.start_year) {
     return e1.start_year < e2.start_year ? 1 : -1;
   }
-  if (e1.start_month === e2.start_month) {
+  if (e1.start_month !== e2.start_month) {
     return e1.start_month < e2.start_month ? 1 : -1;
   }
   if (e1.subtitle === e2.subtitle) {
