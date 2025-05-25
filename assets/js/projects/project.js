@@ -28,7 +28,7 @@ export const projects = [
     start_year: 2025,
     information: `<b>This flashcard project was personally developed to help me remember 
       English vocabulary in preparation for the TOEIC Test in August 2025 😔.
-      <br>This project started in May 2025 and it took me around 2 weeks to do since I was an intern.</b>
+      <br>This project started in May 2025 and it took me around 2 weeks to do due to my internship.</b>
       <br><br>
       The project has a responsive design, so it works well on phones, 
       tablets, and computers. I made it simple and easy to use, so I can focus on 
@@ -70,7 +70,7 @@ export const projects = [
       <br>
       Because of the short timeline, I had to manage my time carefully to finish everything.
       <br>
-      In the end, the design is fine for me and its functionality went well, 
+      In the end, the design is fine for me, it is easy to use, and its functionality went well, 
       and I think this helped me improve at building and completing real projects.
       </dd>
       <br>
