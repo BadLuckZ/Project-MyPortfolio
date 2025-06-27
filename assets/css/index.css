@@ -148,7 +148,7 @@
   display: grid;
 }
 
-.project-content, 
+.project-content,
 .experience-content {
   display: flex;
   flex-direction: column;
@@ -158,19 +158,19 @@
   padding: 0 1rem;
 }
 
-.project-cardbox, 
+.project-cardbox,
 .experience-cardbox {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.project-cardbox-header, 
+.project-cardbox-header,
 .experience-cardbox-header {
   font-size: var(--h2-size);
 }
 
-.project-container, 
+.project-container,
 .experience-container {
   grid-template-columns: repeat(var(--number-skill), var(--card-width));
   justify-content: center;
@@ -280,16 +280,16 @@
   .profile-info {
     column-gap: 1.5rem;
   }
-
-  .profile-buttons {
-    flex-direction: column;
-    row-gap: 1rem;
-  }
 }
 
 @media screen and (max-width: 600px) {
   .filter-content {
     flex-direction: column;
+  }
+
+  .profile-buttons {
+    flex-direction: column;
+    row-gap: 1rem;
   }
 }
 
@@ -349,7 +349,7 @@
 @media screen and (min-width: 769px) and (max-width: 875px) {
   :root {
     --number-skill: 1;
-    --card-width: 350px
+    --card-width: 350px;
   }
 
   .filter-content {
