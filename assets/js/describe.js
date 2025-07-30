@@ -78,7 +78,7 @@ if (data.can_preview_video) {
 if (data.can_demo) {
   const button = document.createElement("button");
   button.classList.add("preview-button");
-  button.innerHTML = 'Demo <i class="fa-sharp fa-solid fa-arrow-down"></i>';
+  button.innerHTML = 'Demo <i class="fa-solid fa-play"></i>';
   button.addEventListener("click", () => {
     window.open(data.preview_demo, "_blank");
   });
@@ -86,13 +86,23 @@ if (data.can_demo) {
 }
 
 if (data.have_doc) {
-  const button = document.createElement("button");
-  button.classList.add("preview-button");
-  button.innerHTML =
-    'Get The Document <i class="fa-sharp fa-solid fa-arrow-down"></i>';
   const link_button = document.createElement("a");
-  link_button.href = data.preview_doc;
-  link_button.appendChild(button);
+  link_button.classList.add("preview-button");
+  if (data.doc_type == "pdf") {
+    link_button.href = data.preview_doc;
+    link_button.innerHTML = `
+      Read The Documentation 
+      <i class="fa-solid fa-file"></i>
+    `;
+  } else if (data.doc_type == "article") {
+    link_button.addEventListener("click", () => {
+      window.location.href = data.preview_doc;
+    });
+    link_button.innerHTML = `
+      Read The Article
+      <i class="fas fa-newspaper"></i>
+    `;
+  }
   preview_buttons.appendChild(link_button);
 }
 

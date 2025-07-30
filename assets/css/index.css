@@ -81,6 +81,9 @@
 }
 
 .main-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   background-color: var(--color-50);
   color: var(--color-98);
   padding: 1rem;

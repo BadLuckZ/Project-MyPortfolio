@@ -12,6 +12,7 @@
 //   can_demo: false,
 //   preview_demo: "",
 //   have_doc: false,
+//   doc_type: "" -> pdf | article | ""
 //   preview_doc: "",
 //   tech_related: [],
 //   learn: "",
@@ -20,6 +21,59 @@
 // };
 
 export const projects = [
+  {
+    title: "Bitcoin Signal Prediction",
+    subtitle: "Python",
+    type: "Data Science",
+    start_month: 6,
+    start_year: 2025,
+    information: `<b>This is my personal project called Bitcoin Signal Prediction.
+      <br>This project started in June 2025 and it took me 2 months to complete this project.</b>
+      <br><br>
+      My purpose is to develop <b>a predictive model for Bitcoin trading signals</b> using Data Science and Machine Learning techniques. 
+      The main goal is to help make better trading decisions by analyzing real-time market data from APIs and generating buy or sell signals based on that data.
+      <br><br>
+      This project is built by Python and contains many key features such as <b>Data Collection</b>, <b>Feature Engineering</b>, <b>Model Training</b>, <b>Model Evaluation</b>, and <b>Backtesting</b>.`,
+    cover_image: "assets/img/project/bitcoin-signal-prediction/cover.png",
+    images: [
+      "assets/img/project/bitcoin-signal-prediction/content01.png",
+      "assets/img/project/bitcoin-signal-prediction/content02.png",
+      "assets/img/project/bitcoin-signal-prediction/content03.png",
+      "assets/img/project/bitcoin-signal-prediction/content04.png",
+    ],
+    can_preview_video: false,
+    preview_video: "",
+    can_demo: false,
+    preview_demo: "",
+    have_doc: true,
+    doc_type: "article",
+    preview_doc:
+      "https://medium.com/@BadLuckZ/building-crypto-trading-signal-models-from-api-to-machine-learning-models-f374cda06eda",
+    tech_related: ["Python"],
+    learn: `There are 3 things I can learn by doing this project
+      <br><br>
+      <dd>
+        1. <b>I learned how to create a machine learning model for predicting Bitcoin signals.</b>
+        <br>
+        I practiced collecting data, preparing it, and training a model to make predictions. I also learned how to check if the model works well or not.
+      </dd>
+      <br>
+      <dd>
+        2. <b>I got better at using Python and Data Science tools to solve real problems.</b>
+        <br>
+        I learned how to use Python libraries like pandas and scikit-learn to work with real-time data, try different ways to improve my model, and fix issues that came up during the project. 
+        I also learned how to think step by step to solve problems and make decisions based on data.
+      </dd>
+      <br>
+      <dd>
+        3. <b>This project gave me a chance to study trading knowledge.</b>
+        <br>
+        I can learn new trading terms, how different indicators work, and basic concepts about crypto trading, which helped me understand how real traders make decisions.
+      </dd>`,
+    contribution:
+      "Since this is my personal project, It means I has built everything in this project by myself😊.",
+    github: "https://github.com/BadLuckZ/Project-Bitcoin-Signal-Prediction.git",
+  },
   {
     title: "My Flashcard",
     subtitle: "React",
@@ -58,6 +112,7 @@ export const projects = [
     can_demo: true,
     preview_demo: "https://project-flashcard-seven.vercel.app/",
     have_doc: false,
+    doc_type: "",
     preview_doc: "",
     tech_related: ["React", "TailwindCSS", "JavaScript"],
     learn: `Here're what I learned from doing this project.
@@ -119,6 +174,7 @@ export const projects = [
     can_demo: false,
     preview_demo: "",
     have_doc: true,
+    doc_type: "pdf",
     preview_doc: "assets/pdf/pixel_saga.pdf",
     tech_related: ["Java"],
     learn: `There are 2 things I can learn by doing this project
@@ -168,9 +224,8 @@ export const projects = [
       <br>
       Additionally, I also assisted my partner in some aspects of this project. For example, 
       I contributed to defining the stats for both the player and monsters, designing 
-      and creating various in-game scenes, and writing this project's sdocumentation.
+      and creating various in-game scenes, and writing this project's documentation.
       `,
-
     github: "https://github.com/BadLuckZ/Project-PixelSaga.git",
   },
   {
@@ -208,6 +263,7 @@ export const projects = [
     can_demo: true,
     preview_demo: "https://project-sandbox-div-centering.vercel.app/",
     have_doc: false,
+    doc_type: "",
     preview_doc: "",
     tech_related: ["React", "CSS", "JavaScript"],
     learn: `Here're things I can learn by doing this project
