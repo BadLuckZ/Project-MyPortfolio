@@ -12,12 +12,12 @@
 //   can_demo: false,
 //   preview_demo: "",
 //   have_doc: false,
-//   doc_type: "" -> pdf | article | ""
+//   doc_type: "", (pdf | article | "")
 //   preview_doc: "",
 //   tech_related: [],
 //   learn: "",
 //   contribution: "",
-//   github: "",
+//   github: ""
 // };
 
 export const projects = [

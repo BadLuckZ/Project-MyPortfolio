@@ -12,10 +12,12 @@
 //   can_demo: false,
 //   preview_demo: "",
 //   have_doc: false,
+//   doc_type: "", (pdf | article | "")
 //   preview_doc: "",
 //   tech_related: [],
 //   learn: "",
 //   contribution: "",
+//   github: ""
 // };
 
 export const experiences = [
@@ -73,6 +75,7 @@ export const experiences = [
     can_demo: false,
     preview_demo: "",
     have_doc: false,
+    doc_type: "",
     preview_doc: "",
     tech_related: ["Next.js", "TailwindCSS", "TypeScript"],
     learn: `There are 2 things I can learn by participating in this project.
@@ -119,6 +122,98 @@ export const experiences = [
         4. In <b>Feedback Section</b>, I built the entry page based on the Figma design.
       </dd>
       `,
+    github: "",
+  },
+  {
+    title: "Botnoi Turbo Platform",
+    subtitle: "Next.js",
+    type: "Frontend Development",
+    start_month: 6,
+    start_year: 2025,
+    information: `<b>This project was from IBOTNOI COMPANY LIMITED as my first-time Frontend Dev Intern.
+      <br>I worked on this project from June 2025 to July 2025.</b>
+      <br><br>The goal was to make a website where users can turn text into speech easily and the website should 
+      work well on phones and computers.
+      <br><br>Users can upload a script, type their own text, or use AI to make a script. 
+      They can pick different voices and languages. Furthermore, users can buy points by getting 
+      packages or subscriptions. User's points are used to convert text to speech.
+      <br><br>This website has the following main features:
+      <dd>1. <b>Register and Login Popup</b> where users must sign up or log in before using the website. Login options: email, Google, or Line.</dd>
+      <dd>2. <b>Input Section</b> where users can upload scripts, type text, or use AI to create blogs.</dd>
+      <dd>3. <b>Blog Section</b> where users can see and manage their blogs, use points to convert text to speech, and download voices.</dd>
+      <dd>4. <b>Model Selection</b> where users can choose the voice model for text-to-speech.</dd>
+      <dd>5. <b>Payment Section</b> where users can buy points with packages or subscriptions.</dd>
+      <dd>6. <b>Account Section</b> where users can see and edit their account info.</dd>
+      <dd>7. <b>Subscription Section</b> where users can see and manage their subscriptions.</dd>
+      <br>Every action shows a popup to tell users if it worked or not. With all of these features, 
+      I believe the website is easy to use and helpful.
+    `,
+    cover_image: "assets/img/experience/botnoi-turbo-platform/cover.png",
+    images: [
+      "assets/img/experience/botnoi-turbo-platform/content01.png",
+      "assets/img/experience/botnoi-turbo-platform/content02.png",
+      "assets/img/experience/botnoi-turbo-platform/content03.png",
+      "assets/img/experience/botnoi-turbo-platform/content04.png",
+      "assets/img/experience/botnoi-turbo-platform/content05.png",
+      "assets/img/experience/botnoi-turbo-platform/content06.png",
+      "assets/img/experience/botnoi-turbo-platform/content07.png",
+    ],
+    can_preview_video: false,
+    preview_video: "",
+    can_demo: false,
+    preview_demo: "",
+    have_doc: false,
+    doc_type: "",
+    preview_doc: "",
+    tech_related: ["Next.js", "TailwindCSS", "TypeScript"],
+    learn: `There are 3 things I can learn by participating in this project.
+      <br><br>
+      <dd>1. <b>This was my first time leading the frontend team.</b>
+      <br>This was my first time as a Frontend Developer Intern, and my task was to guide my team and 
+        share tasks. At first, I felt nervous because I wanted everything to go well, 
+        but I learned how to communicate and help my team work together.
+      </dd>
+      <br>
+      <dd>2. <b>I understood the importance of building and using global components.</b>
+      <br>At first, I knew global components were useful, but I didn’t realize how important they were until I had to make 
+        shared components for everyone. It was sometimes hard to keep the code clean and simple for others to use.
+        When my teammates used my components and said it helped them, this made me more confident in my coding and teamwork skills.
+      </dd>
+      <br>
+      <dd>3. <b>This was my first time reviewing and organizing project structure.</b>
+      <br>As a leader of frontend team, one of the jobs is checking my team's code and 
+        planning how the project should be organized. Sometimes it was hard to give feedback, 
+        but I learned how important it is to keep the code simple and clear. 
+        I feel more confident now about working in a team and leading a project.
+      </dd>
+      `,
+    contribution: `<b>Here's my participation in this project (only about my coding part)</b>
+    <br><br>
+    <dd>1. <b>Responsive Design</b> My first task is creating a responsive layout using TailwindCSS. 
+      I made sure the website looks good on all devices.
+    </dd>
+    <br>
+    <dd>2. <b>Component Library</b> I created a library of reusable components using React. 
+      This made it easier for my team to build new features quickly and maintain consistency 
+      across the app.
+    </dd>
+    <br>
+    <dd>3. <b>Input Section</b> I worked on this section to display the content inside the document 
+      and make sure that users can split the content into multiple blogs correctly.
+    </dd>
+    <br>
+    <dd>4. <b>Model Selection Section</b> I worked on this section to allow users to filter and select 
+      different models for their content generation.
+    </dd>
+    <br>
+    <dd>5. <b>Blog Section</b> I worked on this section to allow users to create and 
+      manage their blogs. This involved playing speech from blog's content 
+      and allowing users to edit the blog's content and download the voices.
+    </dd>
+    <br>
+    <dd>6. <b>Payment Section</b> I worked on this section to display packages and subscriptions information from the backend.
+    `,
+    github: "",
   },
 ].sort((e1, e2) => {
   if (e1.start_year !== e2.start_year) {
