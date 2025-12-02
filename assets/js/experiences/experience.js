@@ -24,7 +24,7 @@ export const experiences = [
   {
     title: "Chula Openhouse 2025",
     subtitle: "Next.js",
-    type: "Frontend Development",
+    type: "Web Development",
     start_month: 2,
     start_year: 2025,
     information: `<b>This is the project from ISD (Information System Development), Chulalongkorn University.
@@ -127,7 +127,7 @@ export const experiences = [
   {
     title: "Botnoi Turbo Platform",
     subtitle: "Next.js",
-    type: "Frontend Development",
+    type: "Web Development",
     start_month: 6,
     start_year: 2025,
     information: `<b>This project was from IBOTNOI COMPANY LIMITED as my first-time Frontend Dev Intern.

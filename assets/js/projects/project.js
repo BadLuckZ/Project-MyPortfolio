@@ -22,6 +22,120 @@
 
 export const projects = [
   {
+    title: "Baan-Saat",
+    subtitle: "React",
+    type: "Web Development",
+    start_month: 8,
+    start_year: 2025,
+    information: `<b>This is the group project for Software Engineering Subject in Year 3.
+      <br>This project started in August 2025 and finished in November 2025.</b>
+      <br><br>This project is about creating a matching platform between customers and cleaning service providers. 
+      Customers can post their service requirements and wait for interested service providers to apply. 
+      When customers find a suitable provider, the system matches them together and opens communication channels 
+      for discussion, payment processing, and post-service reviews.
+      <br><br>The website features include:
+      <dd>1. <b>Role-based Home Pages</b> that display different content for customers and service providers.</dd>
+      <dd>2. <b>Service Creation and Editing Pages</b> (Customer-only) for posting and managing service requests.</dd>
+      <dd>3. <b>Service Detail Pages</b> showing comprehensive information about posted services.</dd>
+      <dd>4. <b>Application Submission and Editing Pages</b> (Provider-only) for applying to service requests.</dd>
+      <dd>5. <b>Application Detail Pages</b> displaying provider application information.</dd>
+      <dd>6. <b>Accept/Reject Pages</b> for customers to review and respond to provider applications.</dd>
+      <dd>7. <b>Chat and Payment Pages</b> for communication, work updates, and payment processing.</dd>
+      <dd>8. <b>Review Pages</b> for post-service feedback and ratings.</dd>
+      <dd>9. <b>Account Pages</b> with role-specific menus showing different options for customers and providers.</dd>
+      <dd>10. <b>Profile Pages</b> that display different information based on user roles, visible to relevant parties.</dd>`,
+    cover_image: "assets/img/project/baan-saat/cover.png",
+    images: [
+      "assets/img/project/baan-saat/content01.png",
+      "assets/img/project/baan-saat/content02.png",
+      "assets/img/project/baan-saat/content03.png",
+      "assets/img/project/baan-saat/content04.png",
+      "assets/img/project/baan-saat/content05.png",
+      "assets/img/project/baan-saat/content06.png",
+      "assets/img/project/baan-saat/content07.png",
+      "assets/img/project/baan-saat/content08.png",
+      "assets/img/project/baan-saat/content09.png",
+      "assets/img/project/baan-saat/content10.png",
+      "assets/img/project/baan-saat/content11.png",
+      "assets/img/project/baan-saat/content12.png",
+      "assets/img/project/baan-saat/content13.png",
+      "assets/img/project/baan-saat/content14.png",
+      "assets/img/project/baan-saat/content15.png",
+      "assets/img/project/baan-saat/content16.png",
+      "assets/img/project/baan-saat/content17.png",
+      "assets/img/project/baan-saat/content18.png",
+    ],
+    can_preview_video: false,
+    preview_video: "",
+    can_demo: false,
+    preview_demo: "",
+    have_doc: false,
+    doc_type: "",
+    preview_doc: "",
+    tech_related: ["React", "TailwindCSS", "Express", "MongoDB", "Vercel"],
+    learn: `Here're things I can learn by doing this project
+      <br><br>
+      <dd>
+        1. <b>Gained hands-on experience with Agile Development methodology and Software Engineering workflows.</b> 
+        <br>
+        I practiced working in Sprints, conducting Sprint Retrospective Meetings, and presenting work to the Product Owner. 
+        This experience helped me understand real-world software development processes and team collaboration dynamics.
+      </dd>
+      <br>
+      <dd>
+        2. <b>Developed leadership and project management skills.</b> 
+        <br>
+        As the team leader, I was responsible for controlling and monitoring the project progress, coordinating tasks among 
+        team members, and ensuring timely delivery of features. This improved my ability to manage people and handle 
+        project responsibilities effectively.
+      </dd>
+      <br>
+      <dd>
+        3. <b>Enhanced full-stack development capabilities.</b> 
+        <br>
+        I applied my knowledge across the entire stack, working on both Frontend implementation using React and TailwindCSS, 
+        Backend API development using Express and MongoDB, and deployment processes using Vercel. This involvement 
+        strengthened my understanding of how different parts of a web application work together.
+      </dd>`,
+    contribution: `My main responsibility covered full-stack development across multiple features. 
+      <br><br>
+      <dd> 
+        1. <b>Home Page</b> - Implemented the UI according to Figma designs and created APIs to fetch and display 
+        customer services based on user roles.
+      </dd>
+      <br>
+      <dd> 
+        2. <b>Service Creation and Editing Pages</b> - Developed both frontend UI implementation and backend APIs 
+        for creating, updating, and deleting customer service requests.
+      </dd>
+      <br>
+      <dd> 
+        3. <b>Service Detail Page</b> - Built the complete feature including UI implementation and API development 
+        to retrieve and display detailed service information.
+      </dd>
+      <br>
+      <dd> 
+        4. <b>Account Page</b> - Created role-based menu displays with corresponding UI and APIs to fetch 
+        user information based on roles and current menu selections.
+      </dd>
+      <br>
+      <dd> 
+        5. <b>Application Submission and Editing Pages</b> - Implemented the full feature including UI design 
+        and APIs for service providers to create and update their service applications.
+      </dd>
+      <br>
+      <dd> 
+        6. <b>Application Detail Page</b> - Developed both frontend and backend components to display 
+        comprehensive information about service provider applications.
+      </dd>
+      <br>
+      <dd> 
+        7. <b>Chat and Payment Page</b> - Contributed to the service status update functionality, implementing 
+        the UI according to Figma designs and creating APIs to update service statuses throughout the workflow.
+      </dd>`,
+    github: "",
+  },
+  {
     title: "Bitcoin Signal Prediction",
     subtitle: "Python",
     type: "Data Science",
@@ -77,7 +191,7 @@ export const projects = [
   {
     title: "My Flashcard",
     subtitle: "React",
-    type: "Frontend Development",
+    type: "Web Development",
     start_month: 5,
     start_year: 2025,
     information: `<b>This flashcard project was personally developed to help me remember 
@@ -146,10 +260,10 @@ export const projects = [
   {
     title: "Pixel Saga Game",
     subtitle: "Java",
-    type: "University",
+    type: "Others",
     start_month: 4,
     start_year: 2024,
-    information: `<b>This is the group project for Programming Methodology Subject.
+    information: `<b>This is the group project for Programming Methodology Subject in Year 1.
       <br>This project started in April 2024 and finished in May 2024.</b>
       <br><br>
       We call this project <b>Pixel Saga</b>. It's a roguelike platformer game featuring pixel art. 
@@ -231,7 +345,7 @@ export const projects = [
   {
     title: "E-Commerce Website",
     subtitle: "React",
-    type: "Frontend Development",
+    type: "Web Development",
     start_month: 10,
     start_year: 2024,
     information: `<b>This is the group project from Skooldio Bootcamp, Web Development Bootcamp #2.
