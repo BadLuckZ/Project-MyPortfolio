@@ -22,6 +22,149 @@
 
 export const experiences = [
   {
+    title: "CUCM Reward 2025",
+    subtitle: "React",
+    type: "Web Development",
+    start_month: 10,
+    start_year: 2025,
+    information: `<b>This is the project from ISD (Information System Development), Chulalongkorn University.
+    <br>This project started in October 2025 and finished in December 2025.</b>
+    <br><br>
+    This project is about building a reward-based web application for CUCM (Chula Chiangmai) Camp 2025,
+    designed to encourage interaction between participants and staff through
+    gifting, coin transactions, and event-based activities.
+    <br><br>
+    The system supports four roles: <b>Participant</b>, <b>Staff</b>, 
+    <b>Moderator</b>, and <b>Admin</b>. Each role has clearly defined permissions
+    and access scopes to ensure proper control, fairness, and system stability.
+    <br><br>
+    Participants and staff can log in using a username and a 6-digit PIN.
+    After logging in, users can answer a one-time secret question, which is later
+    used as a validation mechanism for sending gifts between users.
+    This answer can only be reset by an Admin.
+    <br><br>
+    The core features for <b>Participant</b> and <b>Staff</b> include:
+    <dd>
+      1. Viewing personal information such as name, nickname, and school.
+    </dd>
+    <dd>
+      2. Sending gifts to other users by correctly answering the recipient’s secret question.
+      Each user has a limited number of gift attempts per hour and cannot send gifts
+      to the same person more than once per reset cycle.
+    </dd>
+    <dd>
+      3. Receiving coins from gifts and redeeming event codes to earn additional coins.
+    </dd>
+    <dd>
+      4. Using coins to support the central staff team or purchase tickets
+      for prize draws.
+    </dd>
+    <dd>
+      5. Viewing transaction history including coin earnings, coin usage,
+      and gifting records.
+    </dd>
+    <dd>
+      6. Competing on a leaderboard that can be filtered by role or viewed overall.
+    </dd>
+    <br>
+    For <b>Moderator</b>, the system provides tools to create events and manage
+    active redeem codes for participants.
+    <br><br>
+    And for <b>Admin</b>, the system includes advanced management features such as
+    toggling system access by role, resetting user secret answers,
+    adjusting coin balances, configuring ticket prices,
+    managing events, and exporting ticket purchase data in CSV format
+    for prize drawing.
+  `,
+    cover_image: "assets/img/experience/cucm-isd-2025/cover.png",
+    images: [
+      "assets/img/experience/cucm-isd-2025/content01.png",
+      "assets/img/experience/cucm-isd-2025/content02.png",
+      "assets/img/experience/cucm-isd-2025/content03.png",
+      "assets/img/experience/cucm-isd-2025/content04.png",
+      "assets/img/experience/cucm-isd-2025/content05.png",
+      "assets/img/experience/cucm-isd-2025/content06.png",
+      "assets/img/experience/cucm-isd-2025/content07.png",
+      "assets/img/experience/cucm-isd-2025/content08.png",
+      "assets/img/experience/cucm-isd-2025/content09.png",
+      "assets/img/experience/cucm-isd-2025/content10.png",
+      "assets/img/experience/cucm-isd-2025/content11.png",
+      "assets/img/experience/cucm-isd-2025/content12.png",
+      "assets/img/experience/cucm-isd-2025/content13.png",
+      "assets/img/experience/cucm-isd-2025/content14.png",
+      "assets/img/experience/cucm-isd-2025/content15.png",
+      "assets/img/experience/cucm-isd-2025/content16.png",
+      "assets/img/experience/cucm-isd-2025/content17.png",
+      "assets/img/experience/cucm-isd-2025/content18.png",
+      "assets/img/experience/cucm-isd-2025/content19.png",
+      "assets/img/experience/cucm-isd-2025/content20.png",
+      "assets/img/experience/cucm-isd-2025/content21.png",
+      "assets/img/experience/cucm-isd-2025/content22.png",
+      "assets/img/experience/cucm-isd-2025/content23.png",
+    ],
+    can_preview_video: false,
+    preview_video: "",
+    can_demo: false,
+    preview_demo: "",
+    have_doc: false,
+    doc_type: "",
+    preview_doc: "",
+    tech_related: ["React", "TailwindCSS", "TypeScript"],
+    learn: `There are 3 key takeaways I gained from participating in this project.
+    <br><br>
+    <dd>
+      1. <b>Taking the role of Senior Frontend Developer in a real project.</b>
+      <br>
+      This was my first time acting as a Senior Frontend Developer,
+      where I was responsible for planning frontend features,
+      dividing tasks among team members, and ensuring overall progress.
+    </dd>
+    <br>
+    <dd>
+      2. <b>Managing code quality and team collaboration.</b>
+      <br>
+      I regularly reviewed pull requests, checked code consistency,
+      verified feature correctness, and merged code to ensure that
+      all parts worked together smoothly within the system.
+    </dd>
+    <br>
+    <dd>
+      3. <b>Designing frontend architecture for complex business logic.</b>
+      <br>
+      I gained experience in structuring frontend logic to support
+      real-world constraints such as role-based permissions,
+      limited actions, cooldown resets, and one-time access flows.
+    </dd>
+  `,
+    contribution: `<b>The parts I contributed to this project are as follows.</b>
+    <br><br>
+    <dd>
+      1. As a <b>Senior Frontend Developer</b>, I planned the overall frontend feature set,
+      defined workflows for each user role, and divided tasks among frontend team members
+      while tracking progress throughout the development period.
+    </dd>
+    <br>
+    <dd>
+      2. I was responsible for <b>Participant and Staff features</b>,
+      including dashboards, gifting workflow, redeem code flow,
+      coin usage, ticket purchasing, transaction history,
+      and leaderboard logic.
+    </dd>
+    <br>
+    <dd>
+      3. I reviewed, tested, and merged frontend code from team members,
+      ensuring consistency in coding style, correctness of logic,
+      and smooth integration with backend APIs.
+    </dd>
+    <br>
+    <dd>
+      4. I implemented the <b>authentication flow</b> using username and 6-digit PIN,
+      including role-based access control and post-login redirection.
+    </dd>
+  `,
+    github: "",
+  },
+  {
     title: "Chula Openhouse 2025",
     subtitle: "Next.js",
     type: "Web Development",
