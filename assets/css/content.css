@@ -167,7 +167,9 @@
 }
 
 .image-dots {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(15, auto);
+  gap: 8px;
   justify-content: center;
   margin-top: 12px;
 }
