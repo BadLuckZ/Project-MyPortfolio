@@ -25,11 +25,13 @@ information.innerHTML = `
   <p>${data.information}</p>
 `;
 
-if (data.images.length == 1) {
+if (data.images.length == 0) {
+  image.classList.add("hidden");
+} else if (data.images.length == 1) {
   image.innerHTML = `
     <img src=${data.images[0]} alt="${data.title} Image"/>
 `;
-} else if (data.images.length > 1) {
+} else {
   const slider = document.createElement("div");
   slider.classList.add("image-slider");
   data.images.forEach((imgLink) => {
@@ -62,13 +64,14 @@ if (data.can_preview_video) {
   preview_video.innerHTML = `
     <div>
       <h2>Preview Video</h2>
-      <video height="400" controls>
-          <source
-              src=${data.preview_video}
-              type="video/mp4"
-              id="project-video"
-          />
-      </video>
+      <iframe width="560" height="315" 
+        src=${data.preview_video}
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
     </div>
 `;
 } else {
@@ -91,7 +94,7 @@ if (data.have_doc) {
   if (data.doc_type == "pdf") {
     link_button.href = data.preview_doc;
     link_button.innerHTML = `
-      Read The Documentation 
+      Document
       <i class="fa-solid fa-file"></i>
     `;
   } else if (data.doc_type == "article") {
@@ -99,7 +102,7 @@ if (data.have_doc) {
       window.location.href = data.preview_doc;
     });
     link_button.innerHTML = `
-      Read The Article
+      Article
       <i class="fas fa-newspaper"></i>
     `;
   }

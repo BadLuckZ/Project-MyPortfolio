@@ -189,6 +189,88 @@ export const projects = [
     github: "https://github.com/BadLuckZ/Project-Bitcoin-Signal-Prediction.git",
   },
   {
+    title: "Buriram Constituency 1 Election Analysis 2026",
+    subtitle: "Python",
+    type: "Data Science",
+    start_month: 4,
+    start_year: 2026,
+    information: `<b>This is my group project (4 members) called Buriram Constituency 1 Election Analysis.
+      <br>This project started in April 2026 and it took 1 month to complete this analysis.</b>
+      <br><br>
+      This project analyzes the 2026 Thai general election results for Buriram Constituency 1
+      by extracting data from official Election Commission of Thailand (ECT) PDF documents
+      using OCR technology, then validating, cleaning, and visualizing the data to uncover
+      voting patterns and candidate performance insights across all polling stations.
+      <br><br>
+      This project is built by Python and contains many key features such as <b>OCR (Optical Character Recognition)</b> powered by Typhoon,
+      <b>Data Validation</b>, <b>Data Analysis</b>, <b>Error Analysis</b>, and an interactive <b>Dashboard &amp; Visualization</b>.`,
+    cover_image: "assets/img/project/buriram-1-election-2026/cover.png",
+    images: [],
+    can_preview_video: true,
+    preview_video:
+      "https://www.youtube.com/embed/3aMKVPE20jU?si=NXiEi3ByrxBnSlrn",
+    can_demo: true,
+    preview_demo: "https://polar-bear-cu-dsde-buriram-1.streamlit.app/",
+    have_doc: true,
+    doc_type: "pdf",
+    preview_doc: "assets/pdf/buriram_1_election_2026.pdf",
+    tech_related: ["Python"],
+    learn: `There are 4 things I can learn by doing this project
+      <br><br>
+      <dd>
+        1. <b>I've learned how to extract structured data from real-world government documents using OCR.</b>
+        <br>
+        I practiced using Typhoon, an LLM-based OCR engine, to extract election result tables from 
+        scanned ECT PDF documents. It was more challenging than I expected because the documents were 
+        inconsistent and noisy, so I had to handle many edge cases throughout the pipeline.
+      </dd>
+      <br>
+      <dd>
+        2. <b>I got better at designing data validation and cleaning systems.</b>
+        <br>
+        After extracting the data, I learned how to write validation rules to detect and correct 
+        OCR errors such as misread numbers, missing values, and formatting inconsistencies. 
+        This helped me understand how important data quality is before doing any analysis.
+      </dd>
+      <br>
+      <dd>
+        3. <b>This project gave me a chance to practice real data analysis and error analysis.</b>
+        <br>
+        I analyzed election results to identify voting patterns and candidate performance across 
+        polling stations. At the same time, I performed error analysis to measure OCR accuracy, 
+        which helped me understand how to evaluate the quality of an entire data pipeline.
+      </dd>
+      <br>
+      <dd>
+        4. <b>I learned how to present data clearly through dashboards and visualizations.</b>
+        <br>
+        I got to build an interactive dashboard to communicate complex election data in a way 
+        that is easy to understand. This improved my ability to think about how to present 
+        data meaningfully to different audiences.
+      </dd>
+      <br>`,
+    contribution: `My main responsibility covered the OCR pipeline and data validation parts of the project.
+      <br><br>
+      <dd>
+        1. <b>OCR Pipeline</b> - Set up and configured the Typhoon-based OCR engine to extract 
+        election result tables from scanned ECT PDF documents, and handled preprocessing to 
+        improve extraction accuracy.
+      </dd>
+      <br>
+      <dd>
+        2. <b>Data Validation</b> - Designed and implemented validation rules to detect and 
+        correct errors in the OCR output, ensuring the data was accurate and consistent 
+        before passing it to the analysis stage.
+      </dd>
+      <br>
+      <dd>
+        3. <b>Error Analysis</b> - Measured OCR accuracy by comparing extracted data against 
+        reference values, identified common error patterns, and summarized findings to 
+        evaluate overall pipeline quality.
+      </dd>`,
+    github: "https://github.com/polar-bear-cu/dsde-buriram-1",
+  },
+  {
     title: "My Flashcard",
     subtitle: "React",
     type: "Web Development",
@@ -284,7 +366,8 @@ export const projects = [
       "assets/img/project/pixel-saga/content10.png",
     ],
     can_preview_video: true,
-    preview_video: "./assets/videos/pixel_saga.mp4",
+    preview_video:
+      "https://www.youtube.com/embed/WqLh7IHoWOo?si=YuGKMm_LFeSpZEkU",
     can_demo: false,
     preview_demo: "",
     have_doc: true,
