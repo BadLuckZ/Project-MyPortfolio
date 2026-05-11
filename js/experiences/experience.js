@@ -261,6 +261,124 @@ export const experiences = [
     github: "",
   },
   {
+    title: "Chula Openhouse 2026",
+    subtitle: "Frontend",
+    type: "Web Development",
+    start_month: 1,
+    start_year: 2026,
+    information: `<b>This is the project from ISD (Information System Development), Chulalongkorn University.
+      <br>This project started in January 2026 and finished in April 2026.</b>
+      <br><br>This project is about building a website that helps people register for Chulalongkorn University's Open House 2026, shares information from each faculty in the university, 
+      and includes a minigame called Missing Pieces where people can collect and exchange pieces to connect with others.
+      <br><br>This project contributes to many parts.
+      <dd>1. <b>Landing Page</b> which is the first page. It includes announcement popups, 
+      promotional images from each faculty, a space for the university’s live streams,
+       FAQs, Sponsors and more.</dd>
+      <dd>2. <b>Register Page</b> where users can register and log in to the system via Google Account.</dd>
+      <dd>3. <b>Ticket Page</b> which displays the user's information, allows users to register, and provides access to the evaluation form.</dd>
+      <dd>4. <b>Faculty Page</b> which shows each faculty's detail.</dd>
+      <dd>5. <b>Workshop Page</b> which shows workshops from each faculty.</dd>
+      <dd>6. <b>Merchandise Page</b> which shows official event merchandise and allows users to view product details and purchase information.</dd>
+      <dd>7. <b>Missing Pieces Page</b> which is the minigame of this website. 
+      Users can enter codes to exchange faculty pieces with friends and collect 
+      all 20 faculties. The page also includes personal statistics and allows users 
+      to share their collected pieces and overall progress with others.</dd> 
+      <br>Furthermore, there is a <b>Staff Section</b> that can only be accessed by registered staff members of the event to scan participants' QR codes for check-in.
+      <br><br>Lastly, there is a <b>Evaluation form</b> to collect feedback from participants, with a certificate provided for high school users in return.
+      `,
+    cover_image: "assets/img/experience/openhouse-cu-isd-2026/cover.webp",
+    images: [
+      "assets/img/experience/openhouse-cu-isd-2026/content01.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content02.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content03.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content04.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content05.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content06.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content07.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content08.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content09.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content10.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content11.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content12.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content13.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content14.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content15.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content16.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content17.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content18.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content19.webp",
+      "assets/img/experience/openhouse-cu-isd-2026/content20.webp",
+    ],
+    can_preview_video: false,
+    preview_video: "",
+    can_demo: false,
+    preview_demo: "",
+    have_doc: false,
+    doc_type: "",
+    preview_doc: "",
+    learn: `There are 2 things I can learn by participating in this project.
+      <br><br>
+      <dd>
+        1. <b>Taking the role of Senior Frontend Developer in a large-scale project.</b>
+        <br>
+        This was my first time acting as a Senior Frontend Developer in a project
+        that served over 50,000 users. I was responsible for planning the frontend
+        feature set, dividing tasks among team members, reviewing code, and ensuring
+        overall progress. It taught me how to think beyond just writing code —
+        I had to consider the team's workflow, code consistency, and the impact
+        of every decision on a system used by a large number of real users.
+      </dd>
+      <br>
+      <dd>
+        2. <b>Building an automated certificate delivery system from scratch.</b>
+        <br>
+        This was my first time independently building a standalone Python script
+        outside of the main project. I learned how to generate personalized certificates
+        by overlaying user data onto an image template, convert them into the proper format,
+        and send them to thousands of recipients via email automatically.
+        It gave me a broader perspective on how a complete system works end-to-end,
+        not just the frontend side.
+      </dd>
+    `,
+    contribution: `<b>The parts I contributed to this project are as follows...</b>
+      <br><br>
+      <dd>
+        1. As a <b>Senior Frontend Developer</b> in a project serving over 50,000 users,
+        I planned the overall frontend feature set, defined workflows for each section,
+        and divided tasks among frontend team members while tracking progress throughout the development period.
+      </dd>
+      <br>
+      <dd>
+        2. I built a <b>Base Component Library</b> using React to ensure consistency across the project,
+        making it easier for team members to build new features quickly and maintain a unified UI standard.
+      </dd>
+      <br>
+      <dd>
+        3. I was primarily responsible for the <b>Missing Pieces minigame</b>,
+        including the page displaying each user's collected faculty pieces
+        and the flow for entering codes to receive pieces from other participants.
+      </dd>
+      <br>
+      <dd>
+        4. I built the <b>Faculty</b> and <b>Workshop</b> pages to display
+        detailed information about each faculty and their available workshops.
+      </dd>
+      <br>
+      <dd>
+        5. I developed the <b>Evaluation Form</b> page for collecting feedback from participants,
+        and handled various detail improvements across other pages throughout the project.
+      </dd>
+      <br>
+      <dd>
+        6. I independently built a <b>Certificate Sender system</b> using Python,
+        which automatically generates personalized certificates from a template
+        and sends them to participants via email based on data from a CSV file.
+        <a href="https://github.com/BadLuckZ/Project-Certificate-Sender" target="_blank"><b><u>Click</u></b></a> to view.
+      </dd>
+    `,
+    github: "",
+  },
+  {
     title: "Botnoi Turbo Platform",
     subtitle: "Frontend",
     type: "Web Development",
