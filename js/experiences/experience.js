@@ -14,7 +14,6 @@
 //   have_doc: false,
 //   doc_type: "", (pdf | article | "")
 //   preview_doc: "",
-//   tech_related: [],
 //   learn: "",
 //   contribution: "",
 //   github: ""
@@ -23,7 +22,7 @@
 export const experiences = [
   {
     title: "CUCM Reward 2025",
-    subtitle: "React",
+    subtitle: "Fullstack",
     type: "Web Development",
     start_month: 10,
     start_year: 2025,
@@ -109,7 +108,6 @@ export const experiences = [
     have_doc: false,
     doc_type: "",
     preview_doc: "",
-    tech_related: ["React", "TailwindCSS", "TypeScript"],
     learn: `There are 3 key takeaways I gained from participating in this project.
     <br><br>
     <dd>
@@ -166,7 +164,7 @@ export const experiences = [
   },
   {
     title: "Chula Openhouse 2025",
-    subtitle: "Next.js",
+    subtitle: "Frontend",
     type: "Web Development",
     start_month: 2,
     start_year: 2025,
@@ -220,7 +218,6 @@ export const experiences = [
     have_doc: false,
     doc_type: "",
     preview_doc: "",
-    tech_related: ["Next.js", "TailwindCSS", "TypeScript"],
     learn: `There are 2 things I can learn by participating in this project.
       <br><br>
       <dd>
@@ -269,7 +266,7 @@ export const experiences = [
   },
   {
     title: "Botnoi Turbo Platform",
-    subtitle: "Next.js",
+    subtitle: "Frontend",
     type: "Web Development",
     start_month: 6,
     start_year: 2025,
@@ -308,7 +305,6 @@ export const experiences = [
     have_doc: false,
     doc_type: "",
     preview_doc: "",
-    tech_related: ["Next.js", "TailwindCSS", "TypeScript"],
     learn: `There are 3 things I can learn by participating in this project.
       <br><br>
       <dd>1. <b>This was my first time leading the frontend team.</b>

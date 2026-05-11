@@ -113,21 +113,6 @@ if (preview_buttons.childNodes.length == 0) {
   preview_buttons.classList.add("hidden");
 }
 
-const tech_related_element = document.createElement("ul");
-if (data.tech_related.length > 0) {
-  data.tech_related.forEach((t, idx) => {
-    const tech = document.createElement("li");
-    tech.innerHTML = `<p><dd>${idx + 1}. ${t}</dd></p>`;
-    tech_related_element.appendChild(tech);
-  });
-  tech_related.innerHTML = `
-    <h2>Technologies Related</h2>
-`;
-  tech_related.appendChild(tech_related_element);
-} else {
-  tech_related.classList.add("hidden");
-}
-
 learn.innerHTML = `
   <h2>What I Learn</h2>
   <p>${data.learn}</p>

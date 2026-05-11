@@ -14,7 +14,6 @@
 //   have_doc: false,
 //   doc_type: "", (pdf | article | "")
 //   preview_doc: "",
-//   tech_related: [],
 //   learn: "",
 //   contribution: "",
 //   github: ""
@@ -23,7 +22,7 @@
 export const projects = [
   {
     title: "Baan-Saat",
-    subtitle: "React",
+    subtitle: "Fullstack",
     type: "Web Development",
     start_month: 8,
     start_year: 2025,
@@ -72,7 +71,6 @@ export const projects = [
     have_doc: false,
     doc_type: "",
     preview_doc: "",
-    tech_related: ["React", "TailwindCSS", "Express", "MongoDB", "Vercel"],
     learn: `Here're things I can learn by doing this project
       <br><br>
       <dd>
@@ -137,8 +135,8 @@ export const projects = [
   },
   {
     title: "Bitcoin Signal Prediction",
-    subtitle: "Python",
-    type: "Data Science",
+    subtitle: "Data Science",
+    type: "Data",
     start_month: 6,
     start_year: 2025,
     information: `<b>This is my personal project called Bitcoin Signal Prediction.
@@ -163,7 +161,6 @@ export const projects = [
     doc_type: "article",
     preview_doc:
       "https://medium.com/@BadLuckZ/building-crypto-trading-signal-models-from-api-to-machine-learning-models-f374cda06eda",
-    tech_related: ["Python"],
     learn: `There are 3 things I can learn by doing this project
       <br><br>
       <dd>
@@ -190,8 +187,8 @@ export const projects = [
   },
   {
     title: "Buriram Constituency 1 Election Analysis 2026",
-    subtitle: "Python",
-    type: "Data Science",
+    subtitle: "Data Analyst",
+    type: "Data",
     start_month: 4,
     start_year: 2026,
     information: `<b>This is my group project (4 members) called Buriram Constituency 1 Election Analysis.
@@ -214,7 +211,6 @@ export const projects = [
     have_doc: true,
     doc_type: "pdf",
     preview_doc: "assets/pdf/buriram_1_election_2026.pdf",
-    tech_related: ["Python"],
     learn: `There are 4 things I can learn by doing this project
       <br><br>
       <dd>
@@ -272,7 +268,7 @@ export const projects = [
   },
   {
     title: "My Flashcard",
-    subtitle: "React",
+    subtitle: "Frontend",
     type: "Web Development",
     start_month: 5,
     start_year: 2025,
@@ -310,7 +306,6 @@ export const projects = [
     have_doc: false,
     doc_type: "",
     preview_doc: "",
-    tech_related: ["React", "TailwindCSS", "JavaScript"],
     learn: `Here're what I learned from doing this project.
       <dd>
       1. <b>This is my first time making a full personal project by 
@@ -341,7 +336,7 @@ export const projects = [
   },
   {
     title: "Pixel Saga Game",
-    subtitle: "Java",
+    subtitle: "Game",
     type: "Others",
     start_month: 4,
     start_year: 2024,
@@ -373,7 +368,6 @@ export const projects = [
     have_doc: true,
     doc_type: "pdf",
     preview_doc: "assets/pdf/pixel_saga.pdf",
-    tech_related: ["Java"],
     learn: `There are 2 things I can learn by doing this project
       <br><br>
       <dd>
@@ -427,7 +421,7 @@ export const projects = [
   },
   {
     title: "E-Commerce Website",
-    subtitle: "React",
+    subtitle: "Frontend",
     type: "Web Development",
     start_month: 10,
     start_year: 2024,
@@ -462,7 +456,6 @@ export const projects = [
     have_doc: false,
     doc_type: "",
     preview_doc: "",
-    tech_related: ["React", "CSS", "JavaScript"],
     learn: `Here're things I can learn by doing this project
       <br><br>
       <dd>
