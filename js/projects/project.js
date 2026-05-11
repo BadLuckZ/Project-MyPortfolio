@@ -146,12 +146,12 @@ export const projects = [
       The main goal is to help make better trading decisions by analyzing real-time market data from APIs and generating buy or sell signals based on that data.
       <br><br>
       This project is built by Python and contains many key features such as <b>Data Collection</b>, <b>Feature Engineering</b>, <b>Model Training</b>, <b>Model Evaluation</b>, and <b>Backtesting</b>.`,
-    cover_image: "assets/img/project/bitcoin-signal-prediction/cover.png",
+    cover_image: "assets/img/project/bitcoin-signal-prediction/cover.webp",
     images: [
-      "assets/img/project/bitcoin-signal-prediction/content01.png",
-      "assets/img/project/bitcoin-signal-prediction/content02.png",
-      "assets/img/project/bitcoin-signal-prediction/content03.png",
-      "assets/img/project/bitcoin-signal-prediction/content04.png",
+      "assets/img/project/bitcoin-signal-prediction/content01.webp",
+      "assets/img/project/bitcoin-signal-prediction/content02.webp",
+      "assets/img/project/bitcoin-signal-prediction/content03.webp",
+      "assets/img/project/bitcoin-signal-prediction/content04.webp",
     ],
     can_preview_video: false,
     preview_video: "",
@@ -201,7 +201,7 @@ export const projects = [
       <br><br>
       This project is built by Python and contains many key features such as <b>OCR (Optical Character Recognition)</b> powered by Typhoon,
       <b>Data Validation</b>, <b>Data Analysis</b>, <b>Error Analysis</b>, and an interactive <b>Dashboard &amp; Visualization</b>.`,
-    cover_image: "assets/img/project/buriram-1-election-2026/cover.png",
+    cover_image: "assets/img/project/buriram-1-election-2026/cover.webp",
     images: [],
     can_preview_video: true,
     preview_video:
