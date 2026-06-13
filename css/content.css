@@ -171,8 +171,8 @@
 }
 
 .image-dots {
-  display: grid;
-  grid-template-columns: repeat(15, auto);
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
   margin-top: 12px;
@@ -182,15 +182,13 @@
   cursor: pointer;
   height: 16px;
   width: 16px;
-  margin: 0 4px;
-  background-color: #bbb;
+  background-color: var(--color-8-80);
   border-radius: 50%;
-  display: inline-block;
   transition: background-color 0.3s ease;
 }
 
 .image-dot:hover {
-  background-color: #888;
+  background-color: var(--color-35);
 }
 
 .dot-active {

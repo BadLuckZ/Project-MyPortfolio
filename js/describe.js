@@ -5,11 +5,10 @@ const information = document.getElementById("information");
 const image = document.getElementById("image");
 const preview_video = document.getElementById("preview-video");
 const preview_buttons = document.getElementById("preview-buttons");
-const tech_related = document.getElementById("tech-related");
 const learn = document.getElementById("learn");
 const contribution = document.getElementById("contribution");
 
-head.innerHTML = data.title;
+head.textContent = data.title;
 if (data.github) {
   const button = document.createElement("a");
   button.classList.add("head-button");
@@ -25,12 +24,10 @@ information.innerHTML = `
   <p>${data.information}</p>
 `;
 
-if (data.images.length == 0) {
+if (data.images.length === 0) {
   image.classList.add("hidden");
-} else if (data.images.length == 1) {
-  image.innerHTML = `
-    <img src=${data.images[0]} alt="${data.title} Image"/>
-`;
+} else if (data.images.length === 1) {
+  image.innerHTML = `<img src="${data.images[0]}" alt="${data.title} Image"/>`;
 } else {
   const slider = document.createElement("div");
   slider.classList.add("image-slider");
@@ -48,7 +45,7 @@ if (data.images.length == 0) {
   const dots = document.createElement("div");
   dots.classList.add("image-dots");
   for (let i = 0; i < data.images.length; i++) {
-    const dot = document.createElement("dot");
+    const dot = document.createElement("span");
     dot.classList.add("image-dot");
     dot.setAttribute("data-slide", i);
     dots.appendChild(dot);
@@ -64,12 +61,12 @@ if (data.can_preview_video) {
   preview_video.innerHTML = `
     <div>
       <h2>Preview Video</h2>
-      <iframe width="560" height="315" 
-        src=${data.preview_video}
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
+      <iframe width="560" height="315"
+        src="${data.preview_video}"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
       </iframe>
     </div>
@@ -91,25 +88,18 @@ if (data.can_demo) {
 if (data.have_doc) {
   const link_button = document.createElement("a");
   link_button.classList.add("preview-button");
-  if (data.doc_type == "pdf") {
+  if (data.doc_type === "pdf") {
     link_button.href = data.preview_doc;
-    link_button.innerHTML = `
-      Document
-      <i class="fa-solid fa-file"></i>
-    `;
-  } else if (data.doc_type == "article") {
-    link_button.addEventListener("click", () => {
-      window.location.href = data.preview_doc;
-    });
-    link_button.innerHTML = `
-      Article
-      <i class="fas fa-newspaper"></i>
-    `;
+    link_button.innerHTML = `Document <i class="fa-solid fa-file"></i>`;
+  } else if (data.doc_type === "article") {
+    link_button.href = data.preview_doc;
+    link_button.target = "_blank";
+    link_button.innerHTML = `Article <i class="fas fa-newspaper"></i>`;
   }
   preview_buttons.appendChild(link_button);
 }
 
-if (preview_buttons.childNodes.length == 0) {
+if (preview_buttons.childNodes.length === 0) {
   preview_buttons.classList.add("hidden");
 }
 

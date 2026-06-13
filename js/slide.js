@@ -4,7 +4,7 @@ if (data.images.length > 1) {
   const dots = document.querySelectorAll(".image-dot");
 
   let currentIndex = 0;
-  let totalSlides = images.length;
+  const totalSlides = images.length;
 
   function showSlide(index) {
     if (index >= totalSlides) {
@@ -41,10 +41,7 @@ if (data.images.length > 1) {
   showSlide(currentIndex);
 
   function updateSliderForScreenSize() {
-    const screenWidth = window.innerWidth;
-    const images = document.querySelectorAll(".image-slider img");
-
-    if (screenWidth <= 425) {
+    if (window.innerWidth <= 425) {
       images.forEach((image) => {
         image.style.display = "block";
       });
