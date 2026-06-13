@@ -120,6 +120,10 @@
   column-gap: 0.5rem;
 }
 
+.filter-content li {
+  width: 100%;
+}
+
 .filter-button {
   width: 100%;
   border: none;
@@ -186,7 +190,6 @@
   border-radius: 1rem;
   overflow: hidden;
   max-width: var(--card-width);
-  max-height: auto;
 }
 
 .card-description {

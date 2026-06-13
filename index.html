@@ -18,7 +18,7 @@
       <div class="profile-data">
         <div class="profile-border">
           <div class="profile-image-container">
-            <img src="assets/img/profile/my_profile.jpg" alt="" srcset="" />
+            <img src="assets/img/profile/my_profile.jpg" alt="Thanagorn Chaiyut" />
           </div>
         </div>
         <h2 class="profile-name">Thanagorn Chaiyut</h2>
@@ -65,12 +65,16 @@
     </header>
     <main>
       <ul class="filter-content">
-        <button class="filter-button filter-active" data-target="#project">
-          Projects
-        </button>
-        <button class="filter-button" data-target="#experience">
-          Experiences
-        </button>
+        <li>
+          <button class="filter-button filter-active" data-target="#project">
+            Projects
+          </button>
+        </li>
+        <li>
+          <button class="filter-button" data-target="#experience">
+            Experiences
+          </button>
+        </li>
       </ul>
       <div class="filter-sections">
         <div
@@ -81,8 +85,8 @@
         <div class="experience-content" data-content id="experience"></div>
       </div>
     </main>
+    <script src="js/filter.js"></script>
+    <script type="module" src="js/projects/showProject.js"></script>
+    <script type="module" src="js/experiences/showExperience.js"></script>
   </body>
-  <script src="js/filter.js"></script>
-  <script type="module" src="js/projects/showProject.js"></script>
-  <script type="module" src="js/experiences/showExperience.js"></script>
 </html>
