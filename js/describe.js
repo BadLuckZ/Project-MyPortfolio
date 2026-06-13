@@ -1,4 +1,4 @@
-const data = JSON.parse(localStorage.getItem("selected"));
+const data = JSON.parse(sessionStorage.getItem("selectedContent"));
 
 const head = document.getElementById("head-name");
 const information = document.getElementById("information");
@@ -61,14 +61,16 @@ if (data.can_preview_video) {
   preview_video.innerHTML = `
     <div>
       <h2>Preview Video</h2>
-      <iframe width="560" height="315"
-        src="${data.preview_video}"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
+      <div class="video-wrapper">
+        <iframe
+          src="${data.preview_video}"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
 `;
 } else {

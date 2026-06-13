@@ -1,4 +1,7 @@
-export function renderCards(items, { sectionId, counterId, cardboxClass, containerClass }) {
+export function renderCards(
+  items,
+  { sectionId, counterId, cardboxClass, containerClass },
+) {
   const section = document.getElementById(sectionId);
   const counter = document.getElementById(counterId);
   counter.textContent = items.length;
@@ -33,7 +36,9 @@ export function renderCards(items, { sectionId, counterId, cardboxClass, contain
             </div>
           </a>`;
         card.addEventListener("click", () => {
-          localStorage.setItem("selected", JSON.stringify(item));
+          sessionStorage.setItem("selectedContent", JSON.stringify(item));
+          sessionStorage.setItem("selectedTab", sectionId);
+          sessionStorage.setItem("selectedScrollY", window.scrollY);
         });
         container.appendChild(card);
       });

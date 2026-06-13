@@ -1,4 +1,4 @@
-const data = JSON.parse(localStorage.getItem("selected"));
+const data = JSON.parse(sessionStorage.getItem("selectedContent"));
 if (data.images.length > 1) {
   const images = document.querySelectorAll(".image-slider img");
   const dots = document.querySelectorAll(".image-dot");
