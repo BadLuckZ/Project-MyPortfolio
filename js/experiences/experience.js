@@ -468,6 +468,101 @@ export const experiences = [
     `,
     github: "",
   },
+  {
+    title: "CUNEX Quick Attend",
+    subtitle: "Frontend",
+    type: "Web Development",
+    start_month: 8,
+    start_year: 2025,
+    information: `<b>This project was from CUNEX, Chulalongkorn University.
+      <br>I worked on this project from August 2025 to June 2026.</b>
+      <br><br>This project involves developing the <b>LLE (Life-Long Education) Module</b> on the CUNEX App —
+      a centralized platform for managing and registering student activities and events
+      at Chulalongkorn University.
+      <br><br>The module supports multiple user roles and provides the following main features:
+      <dd>1. <b>Activity History</b> where users can view their past activity participation records.</dd>
+      <dd>2. <b>Activity Discovery</b> where users can browse available activities and events to join as a participant.</dd>
+      <dd>3. <b>Event Management</b> where users with elevated roles (Staff, Manager, or Owner)
+      can manage their events, including setting up activities and controlling access.</dd>
+      <dd>4. <b>QR Code Scanning</b> which allows Staff, Manager, and Owner roles to scan participants'
+      QR codes for attendee registration and check-in.</dd>
+      <dd>5. <b>CUNEX Authentication</b> where users log in using their CUNEX university account
+      for secure and unified access to the platform.</dd>
+    `,
+    cover_image: "assets/img/experience/cunex-quickattend/cover.webp",
+    images: [
+      "assets/img/experience/cunex-quickattend/content01.webp",
+      "assets/img/experience/cunex-quickattend/content02.webp",
+      "assets/img/experience/cunex-quickattend/content03.webp",
+      "assets/img/experience/cunex-quickattend/content04.webp",
+      "assets/img/experience/cunex-quickattend/content05.webp",
+      "assets/img/experience/cunex-quickattend/content06.webp",
+      "assets/img/experience/cunex-quickattend/content07.webp",
+      "assets/img/experience/cunex-quickattend/content08.webp",
+      "assets/img/experience/cunex-quickattend/content09.webp",
+    ],
+    can_preview_video: false,
+    preview_video: "",
+    can_demo: false,
+    preview_demo: "",
+    have_doc: false,
+    doc_type: "",
+    preview_doc: "",
+    learn: `There are 3 things I can learn by participating in this project.
+      <br><br>
+      <dd>
+        1. <b>This was my first time working on a production app used by real university students.</b>
+        <br>
+        Working on the CUNEX App gave me experience shipping features that are actively used
+        by Chulalongkorn University students. I had to be more careful about edge cases,
+        data consistency, and user experience compared to project-based work.
+      </dd>
+      <br>
+      <dd>
+        2. <b>I gained experience implementing role-based functionality in a complex system.</b>
+        <br>
+        The LLE Module has distinct permission levels for Participant, Staff, Manager, and Owner.
+        Building UI and logic that adapts cleanly to each role taught me how to structure
+        role-based access in a maintainable and scalable way.
+      </dd>
+      <br>
+      <dd>
+        3. <b>I learned how to integrate QR code scanning into a real-world workflow.</b>
+        <br>
+        Implementing QR code scanning for event check-in taught me how to bridge
+        hardware input (camera) with backend registration logic,
+        and how to handle scanning edge cases such as invalid codes or duplicate scans.
+      </dd>
+    `,
+    contribution: `<b>The parts I contributed to this project are as follows...</b>
+      <br><br>
+      <dd>
+        1. I implemented <b>CUNEX-based authentication</b>, allowing users to log in
+        with their university account and access the module with the appropriate role and permissions.
+      </dd>
+      <br>
+      <dd>
+        2. I built the <b>Activity History</b> feature, enabling users to track their
+        past participation records in a clear and organized view.
+      </dd>
+      <br>
+      <dd>
+        3. I developed the <b>Activity Discovery</b> section where users can browse
+        and join available activities and events as a participant.
+      </dd>
+      <br>
+      <dd>
+        4. I worked on <b>Event Management features</b> for Staff, Manager, and Owner roles,
+        including managing event details and controlling participant access.
+      </dd>
+      <br>
+      <dd>
+        5. I implemented the <b>QR Code Scanning</b> functionality for event check-in,
+        allowing staff-level users to scan participants' QR codes and register their attendance.
+      </dd>
+    `,
+    github: "",
+  },
 ].sort((e1, e2) => {
   if (e1.start_year !== e2.start_year) {
     return e1.start_year < e2.start_year ? 1 : -1;
