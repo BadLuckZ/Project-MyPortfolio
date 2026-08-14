@@ -470,24 +470,28 @@ export const experiences = [
   },
   {
     title: "CUNEX Quick Attend",
-    subtitle: "Frontend",
+    subtitle: "Fullstack",
     type: "Web Development",
     start_month: 8,
     start_year: 2025,
     information: `<b>This project was from CUNEX, Chulalongkorn University.
-      <br>I worked on this project from August 2025 to June 2026.</b>
+      <br>I worked on this project from August 2025 to July 2026.</b>
       <br><br>This project involves developing the <b>LLE (Life-Long Education) Module</b> on the CUNEX App —
       a centralized platform for managing and registering student activities and events
-      at Chulalongkorn University.
+      at Chulalongkorn University, implementing both frontend and backend features.
       <br><br>The module supports multiple user roles and provides the following main features:
       <dd>1. <b>Activity History</b> where users can view their past activity participation records.</dd>
       <dd>2. <b>Activity Discovery</b> where users can browse available activities and events to join as a participant.</dd>
-      <dd>3. <b>Event Management</b> where users with elevated roles (Staff, Manager, or Owner)
-      can manage their events, including setting up activities and controlling access.</dd>
-      <dd>4. <b>QR Code Scanning</b> which allows Staff, Manager, and Owner roles to scan participants'
-      QR codes for attendee registration and check-in.</dd>
-      <dd>5. <b>CUNEX Authentication</b> where users log in using their CUNEX university account
+      <dd>3. <b>Event Creation, Editing, and Deletion</b> where users can create new events, becoming the
+      <b>Owner</b> of that event, and manage its details afterward.</dd>
+      <dd>4. <b>Role-Based Access Control</b> where Owners can assign <b>Managers</b> and <b>Staff</b>
+      to their event, each with different permissions for managing and operating it.</dd>
+      <dd>5. <b>QR Code-Based Attendee Registration</b> which allows Staff, Manager, and Owner roles to scan
+      participants' QR codes for attendee registration and check-in.</dd>
+      <dd>6. <b>CUNEX Authentication</b> where users log in using their CUNEX university account
       for secure and unified access to the platform.</dd>
+      <dd>7. <b>Analytics Dashboard</b> providing Staff, Manager, and Owner roles with insights into
+      attendance numbers, check-in times, and attendee demographics by faculty.</dd>
     `,
     cover_image: "assets/img/experience/cunex-quickattend/cover.webp",
     images: [
@@ -498,8 +502,6 @@ export const experiences = [
       "assets/img/experience/cunex-quickattend/content05.webp",
       "assets/img/experience/cunex-quickattend/content06.webp",
       "assets/img/experience/cunex-quickattend/content07.webp",
-      "assets/img/experience/cunex-quickattend/content08.webp",
-      "assets/img/experience/cunex-quickattend/content09.webp",
     ],
     can_preview_video: false,
     preview_video: "",
@@ -552,13 +554,19 @@ export const experiences = [
       </dd>
       <br>
       <dd>
-        4. I worked on <b>Event Management features</b> for Staff, Manager, and Owner roles,
-        including managing event details and controlling participant access.
+        4. I worked on <b>Event Creation, Editing, and Deletion</b>, including the
+        <b>role-based access control</b> that lets Owners assign Managers and Staff
+        with different permissions on their event.
       </dd>
       <br>
       <dd>
-        5. I implemented the <b>QR Code Scanning</b> functionality for event check-in,
-        allowing staff-level users to scan participants' QR codes and register their attendance.
+        5. I implemented the <b>QR code-based attendee registration</b> functionality for event check-in,
+        allowing Staff, Manager, and Owner roles to scan participants' QR codes and register their attendance.
+      </dd>
+      <br>
+      <dd>
+        6. I built the <b>Analytics Dashboard</b>, giving Staff, Manager, and Owner roles insights
+        into attendance numbers, check-in times, and attendee demographics by faculty.
       </dd>
     `,
     github: "",
