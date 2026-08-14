@@ -18,12 +18,21 @@
   --color-10: hsla(var(--hue), 10%, 10%);
   --color-35: hsl(var(--hue), 35%, 35%);
   --color-50: hsl(var(--hue), 50%, 50%);
-  --color-80: hsl(var(--hue), 80%, 80%);
-  --color-95: hsl(var(--hue), 95%, 95%);
-  --color-98: hsl(var(--hue), 98%, 98%);
+  --color-80: hsl(var(--hue), 30%, 88%);
+  --color-95: hsl(var(--hue), 20%, 97%);
+  --color-98: hsl(var(--hue), 15%, 99%);
 
   --color-20-shadow-20: hsla(var(--hue), 20%, 20%, 0.2);
   --color-20-shadow-70: hsla(var(--hue), 20%, 20%, 0.7);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 2px hsla(var(--hue), 30%, 20%, 0.06);
+  --shadow-md: 0 8px 24px hsla(var(--hue), 30%, 20%, 0.08);
+  --shadow-lg: 0 20px 48px hsla(var(--hue), 30%, 15%, 0.14);
 
   --number-info: 2;
   --number-skill: 2;
@@ -86,4 +95,9 @@ video {
 .grid {
   display: grid;
   gap: 1.5rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-50);
+  outline-offset: 2px;
 }
