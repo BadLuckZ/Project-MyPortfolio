@@ -476,10 +476,10 @@ export const experiences = [
     start_year: 2025,
     information: `<b>This project was from CUNEX, Chulalongkorn University.
       <br>I worked on this project from August 2025 to July 2026.</b>
-      <br><br>This project involves developing the <b>LLE (Life-Long Education) Module</b> on the CUNEX App —
+      <br><br>This project involves developing a <b>website integrated with CUNEX Authentication</b> -
       a centralized platform for managing and registering student activities and events
       at Chulalongkorn University, implementing both frontend and backend features.
-      <br><br>The module supports multiple user roles and provides the following main features:
+      <br><br>The website supports multiple user roles and provides the following main features:
       <dd>1. <b>Activity History</b> where users can view their past activity participation records.</dd>
       <dd>2. <b>Activity Discovery</b> where users can browse available activities and events to join as a participant.</dd>
       <dd>3. <b>Event Creation, Editing, and Deletion</b> where users can create new events, becoming the
@@ -515,7 +515,7 @@ export const experiences = [
       <dd>
         1. <b>This was my first time working on a production app used by real university students.</b>
         <br>
-        Working on the CUNEX App gave me experience shipping features that are actively used
+        Working on this website gave me experience shipping features that are actively used
         by Chulalongkorn University students. I had to be more careful about edge cases,
         data consistency, and user experience compared to project-based work.
       </dd>
@@ -523,7 +523,7 @@ export const experiences = [
       <dd>
         2. <b>I gained experience implementing role-based functionality in a complex system.</b>
         <br>
-        The LLE Module has distinct permission levels for Participant, Staff, Manager, and Owner.
+        The website has distinct permission levels for Participant, Staff, Manager, and Owner.
         Building UI and logic that adapts cleanly to each role taught me how to structure
         role-based access in a maintainable and scalable way.
       </dd>
@@ -540,7 +540,7 @@ export const experiences = [
       <br><br>
       <dd>
         1. I implemented <b>CUNEX-based authentication</b>, allowing users to log in
-        with their university account and access the module with the appropriate role and permissions.
+        with their university account and access the website with the appropriate role and permissions.
       </dd>
       <br>
       <dd>
