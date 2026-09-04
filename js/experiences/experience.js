@@ -505,8 +505,8 @@ export const experiences = [
     ],
     can_preview_video: false,
     preview_video: "",
-    can_demo: false,
-    preview_demo: "",
+    can_demo: true,
+    preview_demo: "https://quickattend.cunex.club",
     have_doc: false,
     doc_type: "",
     preview_doc: "",
@@ -567,6 +567,93 @@ export const experiences = [
       <dd>
         6. I built the <b>Analytics Dashboard</b>, giving Staff, Manager, and Owner roles insights
         into attendance numbers, check-in times, and attendee demographics by faculty.
+      </dd>
+    `,
+    github: "",
+  },
+  {
+    title: "Smart Shift Solutions",
+    subtitle: "QA & Fullstack",
+    type: "Web Development",
+    start_month: 5,
+    start_year: 2026,
+    information: `<b>This was my 10-week internship at Smart Shift Solutions (SSS) as a QA & Fullstack Developer Intern.
+      <br>I worked here from May 18 to July 31, 2026, as part of my university's Engineering Practice course.</b>
+      <br><br>
+      Before my first day, I was given a one-week pretest project to fix bugs and add features, which doubled
+      as a soft onboarding to the company's code style, tech stack, and folder structure. After receiving
+      detailed feedback on it, I started working on two of the company's real, in-production systems:
+      <dd>1. <b>DOA (Delegation of Authority)</b> - a system that defines an approval hierarchy, where a
+      higher-authority approver can decide out of order without waiting on approvers before them.</dd>
+      <dd>2. <b>CRM (Customer Relationship Management)</b> - a system supporting the end-to-end property
+      sales workflow, covering reservations, approvals, contracts, payments, and document generation, which
+      relies on DOA's approval decisions to move documents forward.</dd>
+      <br>
+      In week 2, I asked to try the QA role and ended up staying on that path for the rest of the internship.
+      As QA, I worked from feature requirement slides and a detailed Test Script Sheet, covering:
+      <dd>1. <b>Manual Testing</b> through the real UI, filing new issues with clear pass/fail test steps
+      whenever I found a bug.</dd>
+      <dd>2. <b>Automated Testing</b> with Playwright to guard against regressions on features that already
+      worked.</dd>
+    `,
+    cover_image: "assets/img/experience/smart-shift-solution/cover.webp",
+    images: [
+      "assets/img/experience/smart-shift-solution/content01.webp",
+      "assets/img/experience/smart-shift-solution/content02.webp",
+      "assets/img/experience/smart-shift-solution/content03.webp",
+      "assets/img/experience/smart-shift-solution/content04.webp",
+      "assets/img/experience/smart-shift-solution/content05.webp",
+      "assets/img/experience/smart-shift-solution/content06.webp",
+      "assets/img/experience/smart-shift-solution/content07.webp",
+      "assets/img/experience/smart-shift-solution/content08.webp",
+      "assets/img/experience/smart-shift-solution/content09.webp",
+      "assets/img/experience/smart-shift-solution/content10.webp",
+    ],
+    can_preview_video: false,
+    preview_video: "",
+    can_demo: false,
+    preview_demo: "",
+    have_doc: true,
+    doc_type: "article",
+    preview_doc:
+      "https://medium.com/@BadLuckZ/what-10-weeks-as-a-fullstack-dev-qa-intern-taught-me-about-myself-at-smart-shift-solutions-482f88f2cd4b",
+    learn: `There are 2 key things I learned during this internship.
+      <br><br>
+      <dd>
+        1. <b>Writing good code isn't enough without understanding the business domain.</b>
+        <br>
+        Both as a Fullstack Developer fixing features and, even more so, as QA, I couldn't judge whether a
+        feature actually matched what the business needed - or whether it still had bugs - without
+        understanding the domain and the requirements behind it. This mattered even more since every flow
+        touched money and customer permissions.
+      </dd>
+      <br>
+      <dd>
+        2. <b>Thinking like QA changed how I write code as a developer.</b>
+        <br>
+        My mindset shifted from "does this feature work correctly" to "where could this break." Bringing that
+        habit back to Fullstack work made me more deliberate about planning test cases and handling edge cases
+        properly, instead of just the happy path.
+      </dd>
+    `,
+    contribution: `<b>My work during this internship covered both QA and Fullstack Development on the DOA and CRM systems.</b>
+      <br><br>
+      <dd>
+        1. As a <b>Fullstack Developer</b>, I developed and maintained both <b>frontend and backend</b> features
+        across DOA and CRM, picking up issues from the team's Working Sheet and fixing bugs reported through QA,
+        with my work reviewed by my mentor.
+      </dd>
+      <br>
+      <dd>
+        2. As <b>QA</b>, I studied feature requirements and edge cases across the CRM's reservation, approval,
+        contract, payment, and document generation flows, then wrote and ran manual test cases through the UI,
+        filing issues with clear reproduction steps for any bugs found.
+      </dd>
+      <br>
+      <dd>
+        3. I wrote <b>test documentation</b> in the team's Test Script Sheet and built <b>automated regression
+        tests with Playwright</b> to make sure previously working features stayed working as the system kept
+        changing.
       </dd>
     `,
     github: "",
