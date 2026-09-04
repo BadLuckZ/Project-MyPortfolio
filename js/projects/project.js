@@ -415,6 +415,69 @@ export const projects = [
       </dd>`,
     github: "https://github.com/BadLuckZ/Project-ECommerce-Div-Centering.git",
   },
+  {
+    title: "PromptPay QR Split",
+    subtitle: "Fullstack",
+    type: "Web Development",
+    start_month: 6,
+    start_year: 2026,
+    information: `<b>This is my personal project called PromptPay QR Split.
+      <br>This project started in June 2026.</b>
+      <br><br>
+      I built this to solve a problem I kept running into with friends: after eating out together,
+      I'm often busy and need to leave before everyone finishes, so I can't stick around to split
+      the bill and collect cash or transfers from each person. This app lets anyone create a bill,
+      add items and the people sharing them, and the system automatically calculates each person's
+      share and generates a personal PromptPay QR code for them, so everyone can pay on their own
+      time, whether or not the bill creator is still there.
+      <br><br>
+      This project is built with Next.js and Supabase, and contains key features such as
+      <b>Google Sign-in</b>, <b>Bill Creation with itemized splitting</b>, <b>Per-member PromptPay
+      QR Generation</b>, and <b>Payment Status Tracking</b>.`,
+    cover_image: "assets/img/project/promptpay-qr-split/cover.webp",
+    images: [
+      "assets/img/project/promptpay-qr-split/content01.webp",
+      "assets/img/project/promptpay-qr-split/content02.webp",
+      "assets/img/project/promptpay-qr-split/content03.webp",
+      "assets/img/project/promptpay-qr-split/content04.webp",
+      "assets/img/project/promptpay-qr-split/content05.webp",
+      "assets/img/project/promptpay-qr-split/content06.webp",
+      "assets/img/project/promptpay-qr-split/content07.webp",
+    ],
+    can_preview_video: false,
+    preview_video: "",
+    can_demo: true,
+    preview_demo: "https://www.pqrsplit.com/",
+    have_doc: true,
+    doc_type: "pdf",
+    preview_doc: "assets/pdf/pqr_split.pdf",
+    learn: `There are 3 things I can learn by doing this project
+      <br><br>
+      <dd>
+        1. <b>I learned how to build with the Next.js App Router alongside Supabase Auth and RLS.</b>
+        <br>
+        I practiced server-side auth with <code>@supabase/ssr</code>, protecting routes, and designing
+        row-level security policies so that each member can only see and pay their own share of a bill.
+      </dd>
+      <br>
+      <dd>
+        2. <b>I got hands-on experience with the PromptPay QR payload spec.</b>
+        <br>
+        I learned how to generate a valid EMVCo-based PromptPay QR payload per person and per amount,
+        and render it as a scannable QR code on the fly.
+      </dd>
+      <br>
+      <dd>
+        3. <b>I practiced designing a product around a real, personal pain point.</b>
+        <br>
+        Since I was solving my own problem, I had to think carefully about the actual flow of splitting
+        a bill with friends and make sure people could pay independently without needing to be in the
+        same place at the same time.
+      </dd>`,
+    contribution:
+      "Since this is my personal project, it means I have built everything in this project by myself.",
+    github: "https://github.com/BadLuckZ/Project-PromptPay-QR-Split.git",
+  },
 ].sort((e1, e2) => {
   if (e1.start_year !== e2.start_year) {
     return e1.start_year < e2.start_year ? 1 : -1;

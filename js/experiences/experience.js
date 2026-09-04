@@ -239,7 +239,7 @@ export const experiences = [
       <br><br>
       <dd>
         1. In <b>LandingPage</b>, I built the entire UI based on the Figma design and 
-        added features to match the project requirements—for example, 
+        added features to match the project requirements-for example, 
         a function to disable the registration button, which only becomes active when the registration date arrives.
       </dd>
       <br>
@@ -324,7 +324,7 @@ export const experiences = [
         This was my first time acting as a Senior Frontend Developer in a project
         that served over 50,000 users. I was responsible for planning the frontend
         feature set, dividing tasks among team members, reviewing code, and ensuring
-        overall progress. It taught me how to think beyond just writing code —
+        overall progress. It taught me how to think beyond just writing code -
         I had to consider the team's workflow, code consistency, and the impact
         of every decision on a system used by a large number of real users.
       </dd>
