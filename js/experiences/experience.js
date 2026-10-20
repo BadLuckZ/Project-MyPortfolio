@@ -385,7 +385,7 @@ export const experiences = [
     start_month: 6,
     start_year: 2025,
     information: `<b>This project was from IBOTNOI COMPANY LIMITED as my first-time Frontend Dev Intern.
-      <br>I worked on this project from June 2025 to July 2025.</b>
+      <br>I worked on this project from May 2025 to August 2025.</b>
       <br><br>The goal was to make a website where users can turn text into speech easily and the website should 
       work well on phones and computers.
       <br><br>Users can upload a script, type their own text, or use AI to make a script. 
@@ -577,7 +577,7 @@ export const experiences = [
     type: "Web Development",
     start_month: 5,
     start_year: 2026,
-    information: `<b>This was my 10-week internship at Smart Shift Solutions (SSS) as a QA & Fullstack Developer Intern.
+    information: `<b>This was my 10-week internship at Smart Shift Solutions (SSS) as a Fullstack Developer Intern.
       <br>I worked here from May 18 to July 31, 2026, as part of my university's Engineering Practice course.</b>
       <br><br>
       Before my first day, I was given a one-week pretest project to fix bugs and add features, which doubled
