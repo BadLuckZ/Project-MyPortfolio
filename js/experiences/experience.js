@@ -573,7 +573,7 @@ export const experiences = [
   },
   {
     title: "Smart Shift Solutions",
-    subtitle: "QA & Fullstack",
+    subtitle: "Fullstack",
     type: "Web Development",
     start_month: 5,
     start_year: 2026,
