@@ -382,7 +382,7 @@ export const experiences = [
     title: "Botnoi Turbo Platform",
     subtitle: "Frontend",
     type: "Web Development",
-    start_month: 6,
+    start_month: 5,
     start_year: 2025,
     information: `<b>This project was from IBOTNOI COMPANY LIMITED as my first-time Frontend Dev Intern.
       <br>I worked on this project from May 2025 to August 2025.</b>
