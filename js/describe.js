@@ -13,10 +13,11 @@ head.textContent = data.title;
 if (data.github) {
   const button = document.createElement("a");
   button.classList.add("head-button");
-  button.addEventListener("click", () => {
-    window.open(data.github, "_blank");
-  });
-  button.innerHTML = '<i class="fa-brands fa-github"></i>';
+  button.href = data.github;
+  button.target = "_blank";
+  button.rel = "noopener noreferrer";
+  button.setAttribute("aria-label", `${data.title} on GitHub`);
+  button.innerHTML = '<i class="fa-brands fa-github" aria-hidden="true"></i>';
   head.appendChild(button);
 }
 
@@ -35,27 +36,33 @@ information.innerHTML = `
 if (data.images.length === 0) {
   image.classList.add("hidden");
 } else if (data.images.length === 1) {
-  image.innerHTML = `<img src="${data.images[0]}" alt="${data.title} Image"/>`;
+  image.innerHTML = `<img src="${data.images[0]}" alt="${data.title} screenshot 1" loading="lazy"/>`;
 } else {
   const slider = document.createElement("div");
   slider.classList.add("image-slider");
-  data.images.forEach((imgLink) => {
+  data.images.forEach((imgLink, i) => {
     const img = document.createElement("img");
     img.src = imgLink;
+    img.alt = `${data.title} screenshot ${i + 1}`;
+    img.loading = "lazy";
     slider.appendChild(img);
   });
   const leftBtn = document.createElement("button");
   leftBtn.setAttribute("id", "prevBtn");
-  leftBtn.innerHTML = '<i class="fa-solid fa-angles-left"></i>';
+  leftBtn.setAttribute("aria-label", "Previous image");
+  leftBtn.innerHTML = '<i class="fa-solid fa-angles-left" aria-hidden="true"></i>';
   const rightBtn = document.createElement("button");
   rightBtn.setAttribute("id", "nextBtn");
-  rightBtn.innerHTML = '<i class="fa-solid fa-angles-right"></i>';
+  rightBtn.setAttribute("aria-label", "Next image");
+  rightBtn.innerHTML = '<i class="fa-solid fa-angles-right" aria-hidden="true"></i>';
   const dots = document.createElement("div");
   dots.classList.add("image-dots");
   for (let i = 0; i < data.images.length; i++) {
-    const dot = document.createElement("span");
+    const dot = document.createElement("button");
+    dot.type = "button";
     dot.classList.add("image-dot");
     dot.setAttribute("data-slide", i);
+    dot.setAttribute("aria-label", `Go to image ${i + 1}`);
     dots.appendChild(dot);
   }
 
@@ -86,12 +93,13 @@ if (data.can_preview_video) {
 }
 
 if (data.can_demo) {
-  const button = document.createElement("button");
+  const button = document.createElement("a");
   button.classList.add("preview-button");
-  button.innerHTML = 'Demo <i class="fa-solid fa-play"></i>';
-  button.addEventListener("click", () => {
-    window.open(data.preview_demo, "_blank");
-  });
+  button.href = data.preview_demo;
+  button.target = "_blank";
+  button.rel = "noopener noreferrer";
+  button.setAttribute("aria-label", `Open the ${data.title} demo`);
+  button.innerHTML = 'Demo <i class="fa-solid fa-play" aria-hidden="true"></i>';
   preview_buttons.appendChild(button);
 }
 
@@ -100,11 +108,14 @@ if (data.have_doc) {
   link_button.classList.add("preview-button");
   if (data.doc_type === "pdf") {
     link_button.href = data.preview_doc;
-    link_button.innerHTML = `Document <i class="fa-solid fa-file"></i>`;
+    link_button.setAttribute("aria-label", `Open the ${data.title} document`);
+    link_button.innerHTML = `Document <i class="fa-solid fa-file" aria-hidden="true"></i>`;
   } else if (data.doc_type === "article") {
     link_button.href = data.preview_doc;
     link_button.target = "_blank";
-    link_button.innerHTML = `Article <i class="fas fa-newspaper"></i>`;
+    link_button.rel = "noopener noreferrer";
+    link_button.setAttribute("aria-label", `Read the ${data.title} article`);
+    link_button.innerHTML = `Article <i class="fas fa-newspaper" aria-hidden="true"></i>`;
   }
   preview_buttons.appendChild(link_button);
 }

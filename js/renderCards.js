@@ -33,7 +33,13 @@ export function renderCards(
         card.classList.add("card");
         card.innerHTML = `
           <a href="content.html?id=${item.id}">
-            <img src="${item.cover_image}" class="card-image" />
+            <img
+              src="${item.cover_image}"
+              class="card-image"
+              alt="${item.title} cover"
+              loading="lazy"
+              decoding="async"
+            />
             <div class="card-description">
               <div>
                 <h3 class="card-subtitle">${

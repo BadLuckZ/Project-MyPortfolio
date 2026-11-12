@@ -389,7 +389,7 @@ export const experiences = [
         6. I independently built a <b>Certificate Sender system</b> using Python,
         which automatically generates personalized certificates from a template
         and sends them to participants via email based on data from a CSV file.
-        <a href="https://github.com/BadLuckZ/Project-Certificate-Sender" target="_blank"><b><u>Click</u></b></a> to view.
+        <a href="https://github.com/BadLuckZ/Project-Certificate-Sender" target="_blank" rel="noopener noreferrer"><b><u>Click</u></b></a> to view.
       </dd>
     `,
     github: "",
