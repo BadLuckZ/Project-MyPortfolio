@@ -1,4 +1,5 @@
 // const template_project = {
+//   id: "",
 //   title: "",
 //   subtitle: "",
 //   type: "",
@@ -21,6 +22,7 @@
 
 export const projects = [
   {
+    id: "baan-saat",
     title: "Baan-Saat",
     subtitle: "Fullstack",
     type: "Web Development",
@@ -134,6 +136,7 @@ export const projects = [
     github: "",
   },
   {
+    id: "bitcoin-signal-prediction",
     title: "Bitcoin Signal Prediction",
     subtitle: "Data Science",
     type: "Data",
@@ -186,6 +189,7 @@ export const projects = [
     github: "https://github.com/BadLuckZ/Project-Bitcoin-Signal-Prediction.git",
   },
   {
+    id: "buriram-con1-election-2026",
     title: "Buriram Constituency 1 Election Analysis 2026",
     subtitle: "Data Analyst",
     type: "Data",
@@ -267,6 +271,7 @@ export const projects = [
     github: "https://github.com/polar-bear-cu/dsde-buriram-1",
   },
   {
+    id: "pixel-saga-game",
     title: "Pixel Saga Game",
     subtitle: "Game",
     type: "Others",
@@ -352,6 +357,7 @@ export const projects = [
     github: "https://github.com/BadLuckZ/Project-PixelSaga.git",
   },
   {
+    id: "e-commerce-website",
     title: "E-Commerce Website",
     subtitle: "Frontend",
     type: "Web Development",
@@ -416,6 +422,7 @@ export const projects = [
     github: "https://github.com/BadLuckZ/Project-ECommerce-Div-Centering.git",
   },
   {
+    id: "promptpay-qr-split",
     title: "PromptPay QR Split",
     subtitle: "Fullstack",
     type: "Web Development",

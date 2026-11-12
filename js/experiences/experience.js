@@ -1,4 +1,5 @@
 // const template_experience = {
+//   id: "",
 //   title: "",
 //   subtitle: "",
 //   type: "",
@@ -21,6 +22,7 @@
 
 export const experiences = [
   {
+    id: "cucm-reward-2025",
     title: "CUCM Reward 2025",
     subtitle: "Fullstack",
     type: "Web Development",
@@ -163,6 +165,7 @@ export const experiences = [
     github: "",
   },
   {
+    id: "chula-openhouse-2025",
     title: "Chula Openhouse 2025",
     subtitle: "Frontend",
     type: "Web Development",
@@ -261,6 +264,7 @@ export const experiences = [
     github: "",
   },
   {
+    id: "chula-openhouse-2026",
     title: "Chula Openhouse 2026",
     subtitle: "Frontend",
     type: "Web Development",
@@ -379,6 +383,7 @@ export const experiences = [
     github: "",
   },
   {
+    id: "botnoi-turbo-platform",
     title: "Botnoi Turbo Platform",
     subtitle: "Frontend",
     type: "Web Development",
@@ -469,7 +474,8 @@ export const experiences = [
     github: "",
   },
   {
-    title: "CUNEX Quick Attend",
+    id: "cunex-quickattend",
+    title: "CUNEX QuickAttend",
     subtitle: "Fullstack",
     type: "Web Development",
     start_month: 8,
@@ -572,6 +578,7 @@ export const experiences = [
     github: "",
   },
   {
+    id: "smart-shift-solution",
     title: "Smart Shift Solutions",
     subtitle: "Fullstack",
     type: "Web Development",

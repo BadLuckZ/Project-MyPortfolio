@@ -1,4 +1,4 @@
-const data = JSON.parse(sessionStorage.getItem("selectedContent"));
+import { data } from "./getItems";
 
 const head = document.getElementById("head-name");
 const information = document.getElementById("information");

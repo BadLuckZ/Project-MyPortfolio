@@ -1,4 +1,5 @@
-const data = JSON.parse(sessionStorage.getItem("selectedContent"));
+import { data } from "./getItems";
+
 if (data.images.length > 1) {
   const images = document.querySelectorAll(".image-slider img");
   const dots = document.querySelectorAll(".image-dot");
