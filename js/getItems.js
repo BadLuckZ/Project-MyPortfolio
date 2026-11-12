@@ -5,4 +5,4 @@ const id = new URLSearchParams(location.search).get("id");
 export const data = [...projects, ...experiences].find((i) => i.id === id);
 
 if (!data) location.replace("index.html");
-else document.title = `${data.title} - Thanagorn Chaiyut`;
+else document.title = `${data.title} | Thanagorn Chaiyut`;
