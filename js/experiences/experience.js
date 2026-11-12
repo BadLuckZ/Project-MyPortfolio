@@ -596,8 +596,8 @@ export const experiences = [
     github: "",
   },
   {
-    id: "smart-shift-solutions",
-    title: "Smart Shift Solutions",
+    id: "doa-crm-systems",
+    title: "DOA and CRM Systems",
     subtitle: "Fullstack",
     org: "Smart Shift Solutions",
     type: "Web Development",
