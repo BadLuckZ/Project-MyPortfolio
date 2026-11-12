@@ -475,7 +475,7 @@ export const experiences = [
   },
   {
     id: "cunex-quickattend",
-    title: "CUNEX QuickAttend",
+    title: "CUNEX Quick Attend",
     subtitle: "Fullstack",
     type: "Web Development",
     start_month: 8,
