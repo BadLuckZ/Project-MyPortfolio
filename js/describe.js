@@ -1,4 +1,5 @@
 import { data } from "./getItems.js";
+import { formatPeriod } from "./formatPeriod.js";
 
 const head = document.getElementById("head-name");
 const information = document.getElementById("information");
@@ -18,6 +19,13 @@ if (data.github) {
   button.innerHTML = '<i class="fa-brands fa-github"></i>';
   head.appendChild(button);
 }
+
+const meta = document.createElement("p");
+meta.id = "head-meta";
+meta.textContent = data.org
+  ? `${data.org} | ${formatPeriod(data)}`
+  : formatPeriod(data);
+head.insertAdjacentElement("afterend", meta);
 
 information.innerHTML = `
   <h2 style="margin-bottom: 12px;">Information</h2>

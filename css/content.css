@@ -3,8 +3,10 @@
 /* == Header == */
 #head {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 4px;
   padding: 20px;
   background-color: var(--color-50);
 }
@@ -43,6 +45,13 @@
   align-items: center;
   text-align: center;
   color: var(--color-98);
+}
+
+#head-meta {
+  text-align: center;
+  font-size: var(--p-size);
+  color: var(--color-98);
+  opacity: 0.85;
 }
 
 @media screen and (max-width: 425px) {

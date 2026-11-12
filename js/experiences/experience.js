@@ -2,9 +2,12 @@
 //   id: "",
 //   title: "",
 //   subtitle: "",
+//   org: "",
 //   type: "",
 //   start_month: 0,
 //   start_year: 0,
+//   end_month: 0, (null if ongoing)
+//   end_year: 0, (null if ongoing)
 //   information: "",
 //   cover_image: "",
 //   images: [],
@@ -25,9 +28,12 @@ export const experiences = [
     id: "cucm-reward-2025",
     title: "CUCM Reward 2025",
     subtitle: "Fullstack",
+    org: "ISD, Chulalongkorn University",
     type: "Web Development",
     start_month: 10,
     start_year: 2025,
+    end_month: 12,
+    end_year: 2025,
     information: `<b>This is the project from ISD (Information System Development), Chulalongkorn University.
     <br>This project started in October 2025 and finished in December 2025.</b>
     <br><br>
@@ -168,9 +174,12 @@ export const experiences = [
     id: "chula-openhouse-2025",
     title: "Chula Openhouse 2025",
     subtitle: "Frontend",
+    org: "ISD, Chulalongkorn University",
     type: "Web Development",
     start_month: 2,
     start_year: 2025,
+    end_month: 4,
+    end_year: 2025,
     information: `<b>This is the project from ISD (Information System Development), Chulalongkorn University.
       <br>This project started in February 2025 and finished in April 2025.</b>
       <br><br>This project is about building a website that helps people register for Chulalongkorn University's Open House 2025 
@@ -267,9 +276,12 @@ export const experiences = [
     id: "chula-openhouse-2026",
     title: "Chula Openhouse 2026",
     subtitle: "Frontend",
+    org: "ISD, Chulalongkorn University",
     type: "Web Development",
     start_month: 1,
     start_year: 2026,
+    end_month: 4,
+    end_year: 2026,
     information: `<b>This is the project from ISD (Information System Development), Chulalongkorn University.
       <br>This project started in January 2026 and finished in April 2026.</b>
       <br><br>This project is about building a website that helps people register for Chulalongkorn University's Open House 2026, shares information from each faculty in the university, 
@@ -386,9 +398,12 @@ export const experiences = [
     id: "botnoi-turbo-platform",
     title: "Botnoi Turbo Platform",
     subtitle: "Frontend",
+    org: "IBOTNOI",
     type: "Web Development",
     start_month: 5,
     start_year: 2025,
+    end_month: 8,
+    end_year: 2025,
     information: `<b>This project was from IBOTNOI COMPANY LIMITED as my first-time Frontend Dev Intern.
       <br>I worked on this project from May 2025 to August 2025.</b>
       <br><br>The goal was to make a website where users can turn text into speech easily and the website should 
@@ -477,9 +492,12 @@ export const experiences = [
     id: "cunex-quick-attend",
     title: "CUNEX Quick Attend",
     subtitle: "Fullstack",
+    org: "CUNEX, Chulalongkorn University",
     type: "Web Development",
     start_month: 8,
     start_year: 2025,
+    end_month: 7,
+    end_year: 2026,
     information: `<b>This project was from CUNEX, Chulalongkorn University.
       <br>I worked on this project from August 2025 to July 2026.</b>
       <br><br>This project involves developing a <b>website integrated with CUNEX Authentication</b> -
@@ -581,9 +599,12 @@ export const experiences = [
     id: "smart-shift-solutions",
     title: "Smart Shift Solutions",
     subtitle: "Fullstack",
+    org: "Smart Shift Solutions",
     type: "Web Development",
     start_month: 5,
     start_year: 2026,
+    end_month: 7,
+    end_year: 2026,
     information: `<b>This was my 10-week internship at Smart Shift Solutions (SSS) as a Fullstack Developer Intern.
       <br>I worked here from May 18 to July 31, 2026, as part of my university's Engineering Practice course.</b>
       <br><br>

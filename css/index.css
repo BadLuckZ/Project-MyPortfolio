@@ -216,15 +216,24 @@
 }
 
 .card-title {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.125rem;
   font-size: var(--h3-size);
+  line-height: 1.2;
 }
 
 .card-subtitle {
-  font-size: var(--p-size);
+  margin-bottom: 0.125rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0.9;
 }
 
-/* Hover Card in Laptop */
+.card-period {
+  font-size: 0.875rem;
+  opacity: 0.75;
+}
+
+/* Card Overlay in Laptop */
 @media screen and (min-width: 769px) {
   .card img {
     width: 100%;
@@ -235,29 +244,17 @@
   .card-description {
     position: absolute;
     width: 100%;
-    height: 100%;
     background: linear-gradient(
       180deg,
-      hsla(var(--hue), 20%, 40%, 0.3) 0%,
-      hsla(var(--hue), 20%, 4%, 1) 95%
+      transparent 0%,
+      hsla(var(--hue), 20%, 4%, 0.95) 55%
     );
-    bottom: -100%;
-    left: 0;
-    display: grid;
-    align-items: flex-end;
-    transition: 0.3s;
-  }
-
-  .card:hover .card-description {
     bottom: 0;
+    left: 0;
+    padding-top: 2.5rem;
   }
 
   .card-title {
-    margin-bottom: 0.5rem;
-    font-size: var(--h2-size);
-  }
-
-  .card-subtitle {
     font-size: var(--h3-size);
   }
 }

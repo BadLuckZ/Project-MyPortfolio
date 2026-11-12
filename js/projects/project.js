@@ -5,6 +5,8 @@
 //   type: "",
 //   start_month: 0,
 //   start_year: 0,
+//   end_month: 0, (null if ongoing)
+//   end_year: 0, (null if ongoing)
 //   information: "",
 //   cover_image: "",
 //   images: [],
@@ -28,6 +30,8 @@ export const projects = [
     type: "Web Development",
     start_month: 8,
     start_year: 2025,
+    end_month: 11,
+    end_year: 2025,
     information: `<b>This is the group project for Software Engineering Subject in Year 3.
       <br>This project started in August 2025 and finished in November 2025.</b>
       <br><br>This project is about creating a matching platform between customers and cleaning service providers. 
@@ -142,6 +146,8 @@ export const projects = [
     type: "Data",
     start_month: 6,
     start_year: 2025,
+    end_month: 7,
+    end_year: 2025,
     information: `<b>This is my personal project called Bitcoin Signal Prediction.
       <br>This project started in June 2025 and it took me 2 months to complete this project.</b>
       <br><br>
@@ -195,6 +201,8 @@ export const projects = [
     type: "Data",
     start_month: 4,
     start_year: 2026,
+    end_month: 5,
+    end_year: 2026,
     information: `<b>This is my group project (4 members) called Buriram Constituency 1 Election Analysis.
       <br>This project started in April 2026 and it took 1 month to complete this analysis.</b>
       <br><br>
@@ -277,6 +285,8 @@ export const projects = [
     type: "Others",
     start_month: 4,
     start_year: 2024,
+    end_month: 5,
+    end_year: 2024,
     information: `<b>This is the group project for Programming Methodology Subject in Year 1.
       <br>This project started in April 2024 and finished in May 2024.</b>
       <br><br>
@@ -363,6 +373,8 @@ export const projects = [
     type: "Web Development",
     start_month: 10,
     start_year: 2024,
+    end_month: 10,
+    end_year: 2024,
     information: `<b>This is the group project from Skooldio Bootcamp, Web Development Bootcamp #2.
       <br>This project started in October 2024 and finished in the same month.</b>
       <br><br>This project is about creating the website that should have a responsive and appealing 
@@ -428,6 +440,8 @@ export const projects = [
     type: "Web Development",
     start_month: 6,
     start_year: 2026,
+    end_month: null,
+    end_year: null,
     information: `<b>This is my personal project called PromptPay QR Split.
       <br>This project started in June 2026.</b>
       <br><br>

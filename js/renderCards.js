@@ -1,3 +1,5 @@
+import { formatPeriod } from "./formatPeriod.js";
+
 export function renderCards(
   items,
   { sectionId, counterId, cardboxClass, containerClass },
@@ -34,8 +36,11 @@ export function renderCards(
             <img src="${item.cover_image}" class="card-image" />
             <div class="card-description">
               <div>
-                <h3 class="card-subtitle">${item.subtitle}</h3>
+                <h3 class="card-subtitle">${
+                  item.org ? `${item.org} | ${item.subtitle}` : item.subtitle
+                }</h3>
                 <h2 class="card-title">${item.title}</h2>
+                <p class="card-period">${formatPeriod(item)}</p>
               </div>
             </div>
           </a>`;
