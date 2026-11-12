@@ -22,12 +22,8 @@ export function renderCards(
     const container = document.createElement("div");
     container.classList.add(containerClass, "grid");
 
-    const newestFirst = (a, b) =>
-      b.start_year * 12 + b.start_month - (a.start_year * 12 + a.start_month);
-
     items
       .filter((item) => item.type === type)
-      .sort(newestFirst)
       .forEach((item) => {
         const card = document.createElement("article");
         card.classList.add("card");
