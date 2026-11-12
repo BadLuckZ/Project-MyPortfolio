@@ -7,6 +7,15 @@ if (data.images.length > 1) {
   let currentIndex = 0;
   const totalSlides = images.length;
 
+  function preloadNeighbours(index) {
+    [index + 1, index - 1].forEach((i) => {
+      const neighbour = images[(i + totalSlides) % totalSlides];
+      if (!neighbour || neighbour.complete) return;
+      const warm = new Image();
+      warm.src = neighbour.src;
+    });
+  }
+
   function showSlide(index) {
     if (index >= totalSlides) {
       currentIndex = 0;
@@ -23,6 +32,8 @@ if (data.images.length > 1) {
 
     dots.forEach((dot) => dot.classList.remove("dot-active"));
     dots[currentIndex].classList.add("dot-active");
+
+    preloadNeighbours(currentIndex);
   }
 
   document.getElementById("nextBtn").addEventListener("click", () => {

@@ -33,10 +33,24 @@ information.innerHTML = `
   <p>${data.information}</p>
 `;
 
+function markWhenLoaded(img) {
+  if (img.complete && img.naturalWidth > 0) {
+    img.classList.add("loaded");
+    return;
+  }
+  img.addEventListener("load", () => img.classList.add("loaded"), {
+    once: true,
+  });
+  img.addEventListener("error", () => img.classList.add("loaded"), {
+    once: true,
+  });
+}
+
 if (data.images.length === 0) {
   image.classList.add("hidden");
 } else if (data.images.length === 1) {
   image.innerHTML = `<img src="${data.images[0]}" alt="${data.title} screenshot 1" loading="lazy"/>`;
+  markWhenLoaded(image.querySelector("img"));
 } else {
   const slider = document.createElement("div");
   slider.classList.add("image-slider");
@@ -44,17 +58,21 @@ if (data.images.length === 0) {
     const img = document.createElement("img");
     img.src = imgLink;
     img.alt = `${data.title} screenshot ${i + 1}`;
-    img.loading = "lazy";
+    img.loading = i === 0 ? "eager" : "lazy";
+    img.decoding = "async";
+    markWhenLoaded(img);
     slider.appendChild(img);
   });
   const leftBtn = document.createElement("button");
   leftBtn.setAttribute("id", "prevBtn");
   leftBtn.setAttribute("aria-label", "Previous image");
-  leftBtn.innerHTML = '<i class="fa-solid fa-angles-left" aria-hidden="true"></i>';
+  leftBtn.innerHTML =
+    '<i class="fa-solid fa-angles-left" aria-hidden="true"></i>';
   const rightBtn = document.createElement("button");
   rightBtn.setAttribute("id", "nextBtn");
   rightBtn.setAttribute("aria-label", "Next image");
-  rightBtn.innerHTML = '<i class="fa-solid fa-angles-right" aria-hidden="true"></i>';
+  rightBtn.innerHTML =
+    '<i class="fa-solid fa-angles-right" aria-hidden="true"></i>';
   const dots = document.createElement("div");
   dots.classList.add("image-dots");
   for (let i = 0; i < data.images.length; i++) {
