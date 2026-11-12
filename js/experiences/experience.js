@@ -474,7 +474,7 @@ export const experiences = [
     github: "",
   },
   {
-    id: "cunex-quickattend",
+    id: "cunex-quick-attend",
     title: "CUNEX Quick Attend",
     subtitle: "Fullstack",
     type: "Web Development",
@@ -578,7 +578,7 @@ export const experiences = [
     github: "",
   },
   {
-    id: "smart-shift-solution",
+    id: "smart-shift-solutions",
     title: "Smart Shift Solutions",
     subtitle: "Fullstack",
     type: "Web Development",
