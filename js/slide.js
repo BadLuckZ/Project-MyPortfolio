@@ -1,4 +1,4 @@
-import { data } from "./getItems";
+import { data } from "./getItems.js";
 
 if (data.images.length > 1) {
   const images = document.querySelectorAll(".image-slider img");

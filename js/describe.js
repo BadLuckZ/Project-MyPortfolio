@@ -1,4 +1,4 @@
-import { data } from "./getItems";
+import { data } from "./getItems.js";
 
 const head = document.getElementById("head-name");
 const information = document.getElementById("information");
