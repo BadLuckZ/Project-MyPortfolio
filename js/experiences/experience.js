@@ -27,7 +27,7 @@ export const experiences = [
   {
     id: "cucm-reward-2025",
     title: "CUCM Reward 2025",
-    subtitle: "Fullstack",
+    subtitle: "Frontend",
     org: "ISD, Chulalongkorn University",
     type: "Web Development",
     start_month: 10,
