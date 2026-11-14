@@ -30,19 +30,44 @@
   justify-self: center;
   width: 165px;
   height: 165px;
-  border: 4px solid var(--primary);
   border-radius: 50%;
   display: grid;
   place-items: center;
   margin-bottom: 0.5rem;
   transform: scale(1);
-  transition: 0.5s;
+  transition: transform var(--duration-base) var(--ease);
+  position: relative;
+  background: conic-gradient(
+    var(--brand-50),
+    var(--brand-100),
+    var(--brand-300),
+    var(--brand-500),
+    var(--brand-700),
+    var(--brand-900),
+    var(--brand-700),
+    var(--brand-500),
+    var(--brand-300),
+    var(--brand-100),
+    var(--brand-50)
+  );
+}
+
+.profile-border::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background-color: var(--background);
+}
+
+.profile-image-container {
+  z-index: 1;
 }
 
 .profile-border:hover {
   transform: scale(1.03);
-  transition: 0.5s;
 }
+
 
 .profile-name {
   margin-bottom: 0.25rem;

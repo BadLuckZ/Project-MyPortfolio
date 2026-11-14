@@ -246,3 +246,51 @@ video {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
 }
+
+/* Theme toggle */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+  width: var(--target-min);
+  height: var(--target-min);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background-color: var(--surface);
+  color: var(--foreground);
+  font-size: 1.125rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: background-color var(--duration-base) var(--ease),
+              border-color var(--duration-base) var(--ease);
+}
+
+.theme-toggle:hover {
+  background-color: var(--surface-muted-hover);
+  border-color: var(--border-strong);
+}
+
+.theme-toggle .fa-moon {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .fa-sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .fa-moon {
+  display: inline-block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .fa-sun {
+    display: none;
+  }
+  :root:not([data-theme="light"]) .theme-toggle .fa-moon {
+    display: inline-block;
+  }
+}
