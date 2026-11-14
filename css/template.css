@@ -1,8 +1,50 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-
 :root {
-  --hue: 200;
+  /* Brand ramp (for charts and illustrations; components use role tokens) */
+  --brand-50: #F0F1C7;
+  --brand-100: #AECDC7;
+  --brand-300: #6F9C97;
+  --brand-500: #428A91;
+  --brand-700: #2D626A;
+  --brand-900: #173438;
 
+  /* Light theme roles */
+  --background: #F7F8F2;
+  --surface: #FFFFFF;
+  --surface-muted: #EAF0EC;
+  --surface-muted-hover: #DDE7E2;
+  --foreground: #173438;
+  --foreground-muted: #4A6468;
+  --foreground-disabled: #9AABA9;
+  --border: #D3DFDB;
+  --border-strong: #668F8A;
+
+  --primary: #2D626A;
+  --primary-hover: #24535A;
+  --primary-active: #1C444A;
+  --primary-foreground: #FFFFFF;
+  --primary-soft: #DCEBE7;
+  --primary-soft-foreground: #173438;
+  --accent: #428A91;
+  --highlight: #F0F1C7;
+  --highlight-foreground: #173438;
+  --ring: #428A91;
+
+  --danger: #B3363E;
+  --danger-soft: #FBE6E5;
+  --danger-soft-foreground: #8A2229;
+  --warning: #8A5A00;
+  --warning-soft: #FCF0D2;
+  --warning-soft-foreground: #6B4500;
+  --success: #3A6B1F;
+  --success-soft: #E5F1DC;
+  --success-soft-foreground: #2C5217;
+  --info: #2F5F8F;
+  --info-soft: #E1ECF7;
+  --info-soft-foreground: #234A70;
+
+  /* Typography */
+  --font-sans: "Anuphan", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", Consolas, monospace;
   --title-weight: 600;
   --subtitle-weight: 500;
   --content-weight: 400;
@@ -13,35 +55,128 @@
   --button-size: 1.25rem;
   --p-size: 1rem;
 
-  --color-8-80: hsl(var(--hue), 8%, 80%);
-  --color-8: hsl(var(--hue), 8%, 8%);
-  --color-10: hsla(var(--hue), 10%, 10%);
-  --color-35: hsl(var(--hue), 35%, 35%);
-  --color-50: hsl(var(--hue), 50%, 50%);
-  --color-80: hsl(var(--hue), 30%, 88%);
-  --color-95: hsl(var(--hue), 20%, 97%);
-  --color-98: hsl(var(--hue), 15%, 99%);
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
 
-  --color-20-shadow-20: hsla(var(--hue), 20%, 20%, 0.2);
-  --color-20-shadow-70: hsla(var(--hue), 20%, 20%, 0.7);
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
 
-  --radius-sm: 0.5rem;
-  --radius-md: 0.875rem;
-  --radius-lg: 1.25rem;
-  --radius-full: 999px;
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(23, 52, 56, 0.06);
+  --shadow-md: 0 8px 24px rgba(23, 52, 56, 0.08);
+  --shadow-lg: 0 20px 48px rgba(23, 52, 56, 0.14);
+  --shadow-overlay: rgba(23, 52, 56, 0.7);
 
-  --shadow-sm: 0 1px 2px hsla(var(--hue), 30%, 20%, 0.06);
-  --shadow-md: 0 8px 24px hsla(var(--hue), 30%, 20%, 0.08);
-  --shadow-lg: 0 20px 48px hsla(var(--hue), 30%, 15%, 0.14);
+  /* Motion */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
 
+  /* Touch target */
+  --target-min: 2.75rem;
+
+  /* Layout */
   --number-info: 2;
   --number-skill: 2;
-
   --card-width: 375px;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: #0F2124;
+    --surface: #15292C;
+    --surface-muted: #1C3538;
+    --surface-muted-hover: #244145;
+    --foreground: #EEF0E2;
+    --foreground-muted: #A9C2BE;
+    --foreground-disabled: #5D7774;
+    --border: #2A4649;
+    --border-strong: #6F9C97;
+
+    --primary: #AECDC7;
+    --primary-hover: #C4DCD7;
+    --primary-active: #D6E7E3;
+    --primary-foreground: #173438;
+    --primary-soft: #24464A;
+    --primary-soft-foreground: #D6E7E3;
+    --accent: #6FB0B6;
+    --highlight: #F0F1C7;
+    --highlight-foreground: #173438;
+    --ring: #6FB0B6;
+
+    --danger: #F2959A;
+    --danger-soft: #3E1F22;
+    --danger-soft-foreground: #F7B8BB;
+    --warning: #E8C068;
+    --warning-soft: #3A2E14;
+    --warning-soft-foreground: #F0D290;
+    --success: #9CCB7C;
+    --success-soft: #1F3318;
+    --success-soft-foreground: #BCDDA6;
+    --info: #93BCE6;
+    --info-soft: #182C40;
+    --info-soft-foreground: #B7D3F0;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.4);
+    --shadow-overlay: rgba(0, 0, 0, 0.8);
+  }
+}
+
+:root[data-theme="dark"] {
+  --background: #0F2124;
+  --surface: #15292C;
+  --surface-muted: #1C3538;
+  --surface-muted-hover: #244145;
+  --foreground: #EEF0E2;
+  --foreground-muted: #A9C2BE;
+  --foreground-disabled: #5D7774;
+  --border: #2A4649;
+  --border-strong: #6F9C97;
+
+  --primary: #AECDC7;
+  --primary-hover: #C4DCD7;
+  --primary-active: #D6E7E3;
+  --primary-foreground: #173438;
+  --primary-soft: #24464A;
+  --primary-soft-foreground: #D6E7E3;
+  --accent: #6FB0B6;
+  --highlight: #F0F1C7;
+  --highlight-foreground: #173438;
+  --ring: #6FB0B6;
+
+  --danger: #F2959A;
+  --danger-soft: #3E1F22;
+  --danger-soft-foreground: #F7B8BB;
+  --warning: #E8C068;
+  --warning-soft: #3A2E14;
+  --warning-soft-foreground: #F0D290;
+  --success: #9CCB7C;
+  --success-soft: #1F3318;
+  --success-soft-foreground: #BCDDA6;
+  --info: #93BCE6;
+  --info-soft: #182C40;
+  --info-soft-foreground: #B7D3F0;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.4);
+  --shadow-overlay: rgba(0, 0, 0, 0.8);
+}
+
 * {
-  font-family: Poppins, sans-serif;
+  font-family: var(--font-sans);
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -49,7 +184,17 @@
 
 body {
   font-size: 1rem;
-  background-color: var(--color-95);
+  background-color: var(--background);
+  color: var(--foreground);
+  line-height: 1.65;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 h1 {
@@ -98,6 +243,6 @@ video {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-50);
+  outline: 2px solid var(--ring);
   outline-offset: 2px;
 }
