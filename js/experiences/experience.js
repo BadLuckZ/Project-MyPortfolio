@@ -617,6 +617,46 @@ export const experiences = [
       sales workflow, covering reservations, approvals, contracts, payments, and document generation, which
       relies on DOA's approval decisions to move documents forward.</dd>
       <br>
+      <hr>
+      <br>
+      To make the CRM simple, here is one of its main MVP flows I remember - the property reservation flow:
+      <dd>1. A sales staff member creates a <b>quotation</b> for a customer who is interested in a unit,
+      based on the project data the project owner set up.</dd>
+      <dd>2. The staff then creates the <b>reservation</b> in the system for that customer, filling in the
+      customer's details along with the staff's own details. At this point, the system also creates the
+      <b>contract</b> with a "waiting for payment" status, along with the <b>installments</b> the project
+      owner set up for that unit, each waiting to be paid.</dd>
+      <dd>3. The staff picks the <b>payment method</b> (card, QR, cash, or another channel) and uploads the
+      <b>payment document</b> as proof of the <b>reservation fee</b>.</dd>
+      <dd>4. The reservation is then <b>approved step by step</b> by the staff who check the documents,
+      following the approval order that DOA defines.</dd>
+      <dd>5. Once the last approver approves it, the reservation is complete and the contract moves to
+      "waiting for ownership transfer". The customer then pays the remaining installments against the
+      contract.</dd>
+      <dd>6. Once the required payments are settled, the <b>ownership of the unit is transferred</b>.
+      After that, ongoing charges such as <b>common area fees</b> continue to be billed by the
+      company's Property Management (PM) module, period by period.</dd>
+      <br>
+      <hr>
+      <br>
+      เผื่อว่างงๆ (คนเขียนแบบผมเองก็งง หรือก็มีลืมครับ lol) MVP คร่าวๆ ก็จะเป็นประมาณนี้ครับ
+      <br>
+      <dd>1. เจ้าหน้าที่ขายสร้าง <b>ใบเสนอราคา</b> ให้ลูกค้าที่สนใจยูนิต
+      โดยอ้างอิงข้อมูลโครงการที่เจ้าของโครงการ setup ไว้</dd>
+      <dd>2. จากนั้นเจ้าหน้าที่สร้าง <b>ใบจอง</b> ในระบบให้ลูกค้า กรอกข้อมูลลูกค้าพร้อมข้อมูลของเจ้าหน้าที่เอง
+      ณ จุดนี้ระบบจะสร้าง <b>สัญญา</b> พร้อมสถานะ "รอชำระเงิน" และ <b>งวดชำระ</b>
+      ตามที่เจ้าของโครงการ setup ไว้กับยูนิตนั้น โดยแต่ละงวดรอการชำระ</dd>
+      <dd>3. เจ้าหน้าที่เลือก <b>วิธีชำระเงิน</b> (บัตร QR เงินสด หรือช่องทางอื่น)
+      และอัปโหลด <b>เอกสารการชำระเงิน</b> เป็นหลักฐานของ <b>เงินจอง</b></dd>
+      <dd>4. ใบจองจะถูก <b>อนุมัติเป็นทอด ๆ</b> โดยเจ้าหน้าที่ที่ตรวจเอกสาร
+      ตามลำดับการอนุมัติที่ DOA กำหนด</dd>
+      <dd>5. เมื่อผู้อนุมัติคนสุดท้ายอนุมัติ การจองถือว่าสำเร็จ และสัญญาเข้าสถานะ "รอโอนกรรมสิทธิ์"
+      จากนั้นลูกค้าชำระงวดที่เหลือตามสัญญา</dd>
+      <dd>6. เมื่อชำระครบตามที่กำหนด จะมีการ <b>โอนกรรมสิทธิ์ของยูนิต</b> หลังจากนั้น
+      ค่าใช้จ่ายต่อเนื่อง เช่น <b>ค่าส่วนกลาง</b> จะถูกเรียกเก็บรายงวดผ่านโมดูล Property Management (PM) ของบริษัท</dd>
+      <br>
+      <hr>
+      <br>
       In week 2, I asked to try the QA role and ended up staying on that path for the rest of the internship.
       As QA, I worked from feature requirement slides and a detailed Test Script Sheet, covering:
       <dd>1. <b>Manual Testing</b> through the real UI, filing new issues with clear pass/fail test steps

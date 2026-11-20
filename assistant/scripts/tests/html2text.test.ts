@@ -12,6 +12,12 @@ describe("htmlToText", () => {
     );
   });
 
+  it("puts each <hr> item on its own line", () => {
+    expect(htmlToText("Intro<hr>1. One\n   <hr>2. Two")).toBe(
+      "Intro\n1. One\n2. Two",
+    );
+  });
+
   it("collapses source indentation like a browser", () => {
     expect(htmlToText("line one\n      continues")).toBe("line one continues");
   });

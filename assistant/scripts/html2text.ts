@@ -6,7 +6,7 @@ const ENTITIES: Record<string, string> = {
   "&#39;": "'",
 };
 
-const HTML_TAGS = new Set(["a", "b", "u", "br", "dd", "code"]);
+const HTML_TAGS = new Set(["a", "b", "u", "br", "hr", "dd", "code"]);
 
 export function htmlToText(html: string): string {
   assertKnownTags(html);
@@ -20,6 +20,7 @@ export function htmlToText(html: string): string {
     )
     .replace(/<code>(.*?)<\/code>/gi, "`$1`")
     .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<hr\s*\/?>/gi, "\n")
     .replace(/<dd>/gi, "\n")
     .replace(/<\/dd>/gi, "");
 
