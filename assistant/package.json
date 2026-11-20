@@ -5,11 +5,16 @@
   "scripts": {
     "dev": "wrangler dev",
     "types": "wrangler types",
-    "type-check": "wrangler types && tsc --noEmit",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "type-check": "wrangler types && tsc --noEmit && tsc --noEmit -p scripts",
+    "test": "vitest run",
+    "build:profile": "node scripts/build-profile.ts"
   },
   "devDependencies": {
-    "wrangler": "4.165.0",
-    "typescript": "7.0.2"
+    "@types/node": "^26.6.6",
+    "typescript": "7.0.2",
+    "wrangler": "4.165.0"
+  },
+  "dependencies": {
+    "vitest": "^5.1.1"
   }
 }
