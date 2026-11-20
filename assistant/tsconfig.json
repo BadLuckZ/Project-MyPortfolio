@@ -1,16 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es2024",
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "types": ["node"],
+    "target": "es2022",
+    "module": "es2022",
+    "moduleResolution": "bundler",
+    "lib": ["es2022"],
+    "types": ["./worker-configuration.d.ts"],
     "strict": true,
     "noEmit": true,
-    "allowImportingTsExtensions": true,
-    "erasableSyntaxOnly": true,
-    "allowJs": true,
-    "checkJs": false,
+    "isolatedModules": true,
     "skipLibCheck": true
   },
-  "include": ["./**/*.ts", "../test/**/*.ts"]
+  "include": ["src"]
 }
