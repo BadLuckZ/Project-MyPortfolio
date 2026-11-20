@@ -7,10 +7,12 @@
     "types": "wrangler types",
     "type-check": "wrangler types && tsc --noEmit && tsc --noEmit -p scripts",
     "test": "vitest run",
-    "build:profile": "node scripts/build-profile.ts"
+    "build:profile": "node scripts/build-profile.ts",
+    "count:token": "node scripts/count-token.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
+    "gpt-tokenizer": "4.1.2",
     "typescript": "7.0.2",
     "wrangler": "4.165.0"
   },
