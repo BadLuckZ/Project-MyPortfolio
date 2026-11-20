@@ -7,7 +7,9 @@ describe("htmlToText", () => {
   });
 
   it("puts each <dd> item on its own line", () => {
-    expect(htmlToText("Intro<dd>1. One</dd>\n   <dd>2. Two</dd>")).toBe("Intro\n1. One\n2. Two");
+    expect(htmlToText("Intro<dd>1. One</dd>\n   <dd>2. Two</dd>")).toBe(
+      "Intro\n1. One\n2. Two",
+    );
   });
 
   it("collapses source indentation like a browser", () => {
@@ -15,12 +17,15 @@ describe("htmlToText", () => {
   });
 
   it("converts links to markdown and keeps the URL", () => {
-    const html = '<a href="https://example.com" target="_blank"><b><u>Click</u></b></a> to view.';
+    const html =
+      '<a href="https://example.com" target="_blank"><b><u>Click</u></b></a> to view.';
     expect(htmlToText(html)).toBe("[Click](https://example.com) to view.");
   });
 
   it("keeps <code> as inline code", () => {
-    expect(htmlToText("used <code>@supabase/ssr</code> here")).toBe("used `@supabase/ssr` here");
+    expect(htmlToText("used <code>@supabase/ssr</code> here")).toBe(
+      "used `@supabase/ssr` here",
+    );
   });
 
   it("drops formatting tags", () => {
@@ -32,7 +37,9 @@ describe("htmlToText", () => {
   });
 
   it("rejects unknown tags", () => {
-    expect(() => htmlToText("<script>x</script>")).toThrow("Unknown HTML tag <script>");
+    expect(() => htmlToText("<script>x</script>")).toThrow(
+      "Unknown HTML tag <script>",
+    );
   });
 
   it("rejects unknown entities", () => {

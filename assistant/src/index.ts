@@ -4,9 +4,12 @@ export default {
     if (request.method === "GET" && url.pathname === "/health") {
       return Response.json({ status: "ok" });
     }
-    
-    return Response.json({ error: "not_found" }, {
-       status: 404 }
+
+    return Response.json(
+      { error: "not_found" },
+      {
+        status: 404,
+      },
     );
   },
 } satisfies ExportedHandler<Env>;

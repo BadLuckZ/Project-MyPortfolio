@@ -11,10 +11,12 @@ const HTML_TAGS = new Set(["a", "b", "u", "br", "dd", "code"]);
 export function htmlToText(html: string): string {
   assertKnownTags(html);
 
-  const text = html.replace(/\s+/g, " ")
+  const text = html
+    .replace(/\s+/g, " ")
     .replace(
       /<a\s[^>]*href="([^"]+)"[^>]*>(.*?)<\/a>/gi,
-      (_m: string, href: string, label: string) => `[${stripTags(label).trim()}](${href})`,
+      (_m: string, href: string, label: string) =>
+        `[${stripTags(label).trim()}](${href})`,
     )
     .replace(/<code>(.*?)<\/code>/gi, "`$1`")
     .replace(/<br\s*\/?>/gi, "\n")
