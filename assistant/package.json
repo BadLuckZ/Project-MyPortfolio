@@ -1,0 +1,17 @@
+{
+  "name": "assistant",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "types": "wrangler types",
+    "type-check": "wrangler types && tsc --noEmit",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.165.0"
+  }
+}
