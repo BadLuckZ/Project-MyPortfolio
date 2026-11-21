@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
-import { createGeminiProvider } from "../providers/gemini";
-import { ProviderError, type GenerateRequest } from "../types/llm";
+import { createGeminiProvider } from "../../providers/gemini";
+import { ProviderError, type GenerateRequest } from "../../types/llm";
 
 const API_KEY_TEST = "test-key";
 const MODEL_TEST = "gemini-3.5-flash-lite";
