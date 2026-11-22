@@ -47,12 +47,12 @@ export async function handleChat(
   try {
     raw = await request.json();
   } catch {
-    return Response.json({ error: "invalid json" }, { status: 400 });
+    return Response.json({ error: "invalid_json" }, { status: 400 });
   }
 
   const messages = parseMessages(raw);
   if (!messages) {
-    return Response.json({ error: "invalid request" }, { status: 400 });
+    return Response.json({ error: "invalid_request" }, { status: 400 });
   }
 
   const started = Date.now();
@@ -82,7 +82,7 @@ export async function handleChat(
       latencyMs: Date.now() - started,
     });
     return Response.json(
-      { error: status === 503 ? "temporarily unavailable" : "upstream error" },
+      { error: status === 503 ? "temporarily_unavailable" : "upstream_error" },
       { status },
     );
   }

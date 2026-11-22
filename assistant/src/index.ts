@@ -15,10 +15,10 @@ export default {
     if (request.method === "POST" && url.pathname === "/chat") {
       if (!env.GEMINI_API_KEY) {
         console.log(
-          JSON.stringify({ event: "config error", missing: "GEMINI_API_KEY" }),
+          JSON.stringify({ event: "config_error", missing: "GEMINI_API_KEY" }),
         );
         return Response.json(
-          { error: "temporarily unavailable" },
+          { error: "temporarily_unavailable" },
           { status: 503 },
         );
       }
@@ -26,6 +26,6 @@ export default {
       return handleChat(request, { provider, systemPrompt });
     }
 
-    return Response.json({ error: "not found" }, { status: 404 });
+    return Response.json({ error: "not_found" }, { status: 404 });
   },
 } satisfies ExportedHandler<Env>;
