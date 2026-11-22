@@ -1,0 +1,2 @@
+GEMINI_API_KEY=gemini-api-key
+ALLOWED_ORIGINS="http://1,https://2,http://3

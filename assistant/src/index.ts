@@ -1,4 +1,10 @@
 import profile from "../generated/profile.md";
+import {
+  corsHeaders,
+  isAllowedOrigin,
+  parseAllowedOrigins,
+  withCors,
+} from "./guards/origin";
 import { handleChat } from "./handlers/chat";
 import { buildSystemPrompt } from "./prompt/rule";
 import { createGeminiProvider } from "./providers/gemini";
@@ -12,18 +18,44 @@ export default {
     if (request.method === "GET" && url.pathname === "/health") {
       return Response.json({ status: "ok" });
     }
-    if (request.method === "POST" && url.pathname === "/chat") {
+    if (url.pathname === "/chat") {
+      const origin = request.headers.get("Origin");
+      if (!isAllowedOrigin(origin, parseAllowedOrigins(env.ALLOWED_ORIGINS))) {
+        return Response.json({ error: "forbidden_origin" }, { status: 403 });
+      }
+
+      if (request.method === "OPTIONS") {
+        return new Response(null, {
+          status: 204,
+          headers: corsHeaders(origin),
+        });
+      }
+
+      if (request.method !== "POST") {
+        return withCors(
+          Response.json(
+            { error: "method_not_allowed" },
+            { status: 405, headers: { Allow: "POST, OPTIONS" } },
+          ),
+          origin,
+        );
+      }
+
       if (!env.GEMINI_API_KEY) {
         console.log(
           JSON.stringify({ event: "config_error", missing: "GEMINI_API_KEY" }),
         );
-        return Response.json(
-          { error: "temporarily_unavailable" },
-          { status: 503 },
+        return withCors(
+          Response.json({ error: "temporarily_unavailable" }, { status: 503 }),
+          origin,
         );
       }
+
       const provider = createGeminiProvider(env.GEMINI_API_KEY, MODEL);
-      return handleChat(request, { provider, systemPrompt });
+      return withCors(
+        await handleChat(request, { provider, systemPrompt }),
+        origin,
+      );
     }
 
     return Response.json({ error: "not_found" }, { status: 404 });

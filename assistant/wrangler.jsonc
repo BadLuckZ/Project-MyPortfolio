@@ -4,4 +4,5 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-11-20",
   "rules": [{ "type": "Text", "globs": ["**/*.md"], "fallthrough": true }],
+  "vars": { "ALLOWED_ORIGINS": "https://thanagorn.com" },
 }

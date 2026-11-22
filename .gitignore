@@ -4,5 +4,6 @@ Thumbs.db
 
 # wrangler
 .dev.vars*
+!.dev.vars.example
 .env*
 .wrangler/
