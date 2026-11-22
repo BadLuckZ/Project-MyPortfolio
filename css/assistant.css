@@ -1,0 +1,32 @@
+.assistant-launcher {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--target-min);
+  padding: 0 1.25rem;
+  border: none;
+  border-radius: var(--radius-full);
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font: inherit;
+  font-weight: var(--subtitle-weight);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: background-color var(--duration-base) var(--ease);
+}
+
+.assistant-launcher:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ---------- Mobile: full screen ---------- */
+
+@media screen and (max-width: 600px) {
+  body:has(.assistant[open]) .assistant-launcher {
+    display: none;
+  }
+}
