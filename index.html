@@ -184,6 +184,7 @@
         AI can make mistakes. Messages go to Google Gemini and may be used to improve it, so don't share personal info.
       </p>
 
+      <!-- Logs -->
       <div class="assistant-log" id="assistant-log" role="log" aria-live="polite">
         <div class="assistant-empty" id="assistant-empty">
           <p class="assistant-message assistant-message--bot">Hi! Ask me about Thanagorn's projects and experience, in English or Thai.</p>
@@ -194,6 +195,29 @@
           </div>
         </div>
       </div>
+
+      <!-- Form -->
+      <form class="assistant-form" id="assistant-form">
+        <label for="assistant-input" class="assistant-visually-hidden">Your question</label>
+        <div class="assistant-input-row">
+          <textarea
+            class="assistant-input"
+            id="assistant-input"
+            name="message"
+            rows="1"
+            maxlength="500"
+            placeholder="Ask something..."
+            required
+          ></textarea>
+          <button type="submit" class="assistant-send" id="assistant-send" aria-label="Send">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="assistant-meta">
+          <span id="assistant-turns">6 questions per chat</span>
+          <span id="assistant-count">0 / 500</span>
+        </div>
+      </form>
     </dialog>
 
     <script src="js/filter.js"></script>
