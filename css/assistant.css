@@ -129,13 +129,54 @@
   overflow-wrap: anywhere;
 }
 
+.assistant-message--user {
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
 .assistant-message--bot {
   align-self: flex-start;
   border-bottom-left-radius: 4px;
   background-color: var(--surface-muted);
 }
 
+.assistant-typing {
+  display: flex;
+  gap: 4px;
+  padding-block: 0.875rem;
+}
+
+.assistant-typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--foreground-muted);
+  animation: assistant-blink 1.2s infinite ease-in-out;
+}
+
+.assistant-typing-dot:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.assistant-typing-dot:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes assistant-blink {
+  0%, 80%, 100% { opacity: 0.3; }
+  40% { opacity: 1; }
+}
+
+.assistant-message--error {
+  align-self: flex-start;
+  background-color: var(--danger-soft);
+  color: var(--danger-soft-foreground);
+}
+
 /* == When Empty Messages == */
+
 .assistant-empty p {
   margin: 0 0 var(--space-3);
   font-size: 0.9375rem;
