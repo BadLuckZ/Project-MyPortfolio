@@ -166,8 +166,36 @@
         <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
         <span>Any Questions?</span>
       </button>
-
     </main>
+
+    <dialog class="assistant" id="assistant" aria-labelledby="assistant-title">
+      <div class="assistant-header">
+        <div class="assistant-heading">
+          <h2 class="assistant-title" id="assistant-title">Ask about Thanagorn</h2>
+          <p class="assistant-subtitle">Thanagorn's Portfolio Clarification</p>
+        </div>
+
+        <button type="button" class="assistant-close" id="assistant-close" aria-label="Close chat">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <p class="assistant-notice">
+        AI can make mistakes. Messages go to Google Gemini and may be used to improve it, so don't share personal info.
+      </p>
+
+      <div class="assistant-log" id="assistant-log" role="log" aria-live="polite">
+        <div class="assistant-empty" id="assistant-empty">
+          <p class="assistant-message assistant-message--bot">Hi! Ask me about Thanagorn's projects and experience, in English or Thai.</p>
+          <div class="assistant-suggestions">
+            <button type="button" class="assistant-chip">What projects has he built?</button>
+            <button type="button" class="assistant-chip">Where did he do internships?</button>
+            <button type="button" class="assistant-chip" lang="th">ธนกรเคยทำโปรเจกต์อะไรบ้าง</button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
     <script src="js/filter.js"></script>
     <script type="module" src="js/projects/showProject.js"></script>
     <script type="module" src="js/experiences/showExperience.js"></script>
