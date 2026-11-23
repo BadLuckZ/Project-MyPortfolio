@@ -5,4 +5,10 @@
   "compatibility_date": "2026-11-20",
   "rules": [{ "type": "Text", "globs": ["**/*.md"], "fallthrough": true }],
   "vars": { "ALLOWED_ORIGINS": "https://thanagorn.com" },
+  "durable_objects": {
+    "bindings": [{ "name": "USAGE_GUARD", "class_name": "UsageGuard" }],
+  },
+  "exports": {
+    "UsageGuard": { "type": "durable-object", "storage": "sqlite" },
+  },
 }

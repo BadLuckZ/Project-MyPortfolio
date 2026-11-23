@@ -8,6 +8,7 @@ import {
 import { handleChat } from "./handlers/chat";
 import { buildSystemPrompt } from "./prompt/rule";
 import { createGeminiProvider } from "./providers/gemini";
+export { UsageGuard } from "./durable/usage-guard";
 
 const MODEL = "gemini-3.5-flash-lite";
 const systemPrompt = buildSystemPrompt(profile);
