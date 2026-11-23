@@ -75,6 +75,17 @@ describe("handleChat", () => {
     expect(res.status).toBe(400);
   });
 
+  it("rejects an oversized body with 413 before calling the provider", async () => {
+    const provider = okProvider();
+    const res = await handleChat(post("x".repeat(16 * 1024 + 1)), {
+      provider,
+      systemPrompt: SYSTEM_PROMPT_TEST,
+    });
+    expect(res.status).toBe(413);
+    expect(await res.json()).toEqual({ error: "payload_too_large" });
+    expect(provider.generate).not.toHaveBeenCalled();
+  });
+
   it("maps a provider rate limit to 503", async () => {
     const provider = fakeProvider(async () => {
       throw new ProviderError("quota", 429);

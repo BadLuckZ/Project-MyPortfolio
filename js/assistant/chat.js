@@ -99,6 +99,7 @@ function showTyping() {
 
 function errorMessage(status) {
   switch (status) {
+    case 413:
     case 400:
       return "That message couldn't be sent. Try a shorter question.";
     case 403:
