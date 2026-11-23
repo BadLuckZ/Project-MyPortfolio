@@ -1,4 +1,9 @@
 import {
+  readJsonBody,
+  validateMessages,
+  ValidationFailure,
+} from "../guards/validate";
+import {
   ProviderError,
   type ChatMessage,
   type LLMProvider,
@@ -12,26 +17,13 @@ export interface ChatDeps {
   systemPrompt: string;
 }
 
-function parseMessages(raw: unknown): ChatMessage[] | null {
-  if (typeof raw !== "object" || raw === null) return null;
-  const messages = (raw as { messages?: unknown }).messages;
-  if (!Array.isArray(messages) || messages.length === 0) return null;
-  const valid = messages.every(
-    (m) =>
-      typeof m === "object" &&
-      m !== null &&
-      (m.role === "user" || m.role === "assistant") &&
-      typeof m.content === "string",
-  );
-
-  if (!valid) return null;
-  if (messages[messages.length - 1].role !== "user") return null;
-
-  return messages as ChatMessage[];
-}
-
 function logChat(fields: Record<string, string | number>): void {
   console.log(JSON.stringify({ event: "chat", ...fields }));
+}
+
+function reject(failure: ValidationFailure): Response {
+  logChat({ status: failure.status, rule: failure.rule });
+  return Response.json({ error: failure.error }, { status: failure.status });
 }
 
 function toClientStatus(err: unknown): number {
@@ -43,17 +35,11 @@ export async function handleChat(
   request: Request,
   deps: ChatDeps,
 ): Promise<Response> {
-  let raw: unknown;
-  try {
-    raw = await request.json();
-  } catch {
-    return Response.json({ error: "invalid_json" }, { status: 400 });
-  }
-
-  const messages = parseMessages(raw);
-  if (!messages) {
-    return Response.json({ error: "invalid_request" }, { status: 400 });
-  }
+  const body = await readJsonBody(request);
+  if (!body.ok) return reject(body);
+  const validated = validateMessages(body.value);
+  if (!validated.ok) return reject(validated);
+  const messages = validated.value;
 
   const started = Date.now();
   try {
