@@ -50,11 +50,28 @@
   color: var(--foreground);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
+  flex-direction: column;
+
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+  transform-origin: bottom right;
+  transition:
+    opacity var(--duration-base) var(--ease),
+    transform var(--duration-base) var(--ease),
+    display var(--duration-base) allow-discrete;
 }
 
 .assistant[open] {
   display: flex;
-  flex-direction: column;
+  opacity: 1;
+  transform: none;
+}
+
+@starting-style {
+  .assistant[open] {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
 }
 
 .assistant-header {
@@ -266,6 +283,17 @@
   justify-content: space-between;
   font-size: 0.75rem;
   color: var(--foreground-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .assistant,
+  .assistant[open] {
+    transform: none;
+  }
+
+  .assistant-typing-dot {
+    animation: none;
+  }
 }
 
 /* == Mobile: full screen == */
