@@ -52,4 +52,10 @@ describe("withCors", () => {
   it("never uses a wildcard origin", () => {
     expect(corsHeaders(SITE)["Access-Control-Allow-Origin"]).not.toBe("*");
   });
+
+  it("lets the browser read Retry-After", () => {
+    expect(corsHeaders(SITE)["Access-Control-Expose-Headers"]).toBe(
+      "Retry-After",
+    );
+  });
 });
