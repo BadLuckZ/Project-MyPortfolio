@@ -1,5 +1,6 @@
 const ALLOWED_METHODS = "POST, OPTIONS";
 const ALLOWED_HEADERS = "Content-Type";
+const EXPOSED_HEADERS = "Retry-After";
 const PREFLIGHT_MAX_AGE_SECONDS = "86400";
 
 export function parseAllowedOrigins(value: string | undefined): Set<string> {
@@ -25,6 +26,7 @@ export function corsHeaders(origin: string): Record<string, string> {
     "Access-Control-Allow-Headers": ALLOWED_HEADERS,
     "Access-Control-Max-Age": PREFLIGHT_MAX_AGE_SECONDS,
     Vary: "Origin",
+    "Access-Control-Expose-Headers": EXPOSED_HEADERS,
   };
 }
 

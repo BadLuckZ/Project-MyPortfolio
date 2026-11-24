@@ -97,7 +97,16 @@ function showTyping() {
   return typing;
 }
 
-function errorMessage(status) {
+function errorMessage(status, code, retryAfterSeconds) {
+  if (code === "daily_limit") {
+    return "You've reached today's question limit. Please try again later.";
+  }
+  if (status === 429 && retryAfterSeconds > 0) {
+    const minutes = Math.ceil(retryAfterSeconds / 60);
+    const unit = minutes === 1 ? "minute" : "minutes";
+    return `Too many questions in a short time. Please try again in ${minutes} ${unit}.`;
+  }
+
   switch (status) {
     case 413:
     case 400:
@@ -140,7 +149,8 @@ async function send(text) {
     const data = await response.json().catch(() => null);
     typing.remove();
     if (!response.ok || typeof data?.reply !== "string") {
-      addMessage("error", errorMessage(response.status));
+      const retryAfter = Number(response.headers.get("Retry-After"));
+      addMessage("error", errorMessage(response.status, data?.error, retryAfter));
       input.value = question;
       return;
     }
