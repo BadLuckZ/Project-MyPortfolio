@@ -32,3 +32,18 @@ export class ProviderError extends Error {
     this.status = status;
   }
 }
+
+export type StreamEvent =
+  | { type: "text"; text: string }
+  | {
+      type: "done";
+      model: string;
+      inputTokens: number;
+      outputTokens: number;
+    };
+
+export interface LLMProvider {
+  readonly name: string;
+  generate(request: GenerateRequest): Promise<GenerateResult>;
+  stream(request: GenerateRequest): AsyncGenerator<StreamEvent>;
+}

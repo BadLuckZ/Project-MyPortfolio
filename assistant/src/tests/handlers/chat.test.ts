@@ -7,7 +7,11 @@ const SYSTEM_PROMPT_TEST = "SYSTEM";
 const QUESTION = "What is Baan-Saat?";
 
 function fakeProvider(generate: LLMProvider["generate"]): LLMProvider {
-  return { name: "fake", generate: vi.fn(generate) };
+  return {
+    name: "fake",
+    generate: vi.fn(generate),
+    stream: async function* () {},
+  };
 }
 
 const okProvider = () =>
