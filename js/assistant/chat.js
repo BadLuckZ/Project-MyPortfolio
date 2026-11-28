@@ -75,6 +75,11 @@ function addMessage(kind, text) {
   message.textContent = text;
   log.append(message);
   log.scrollTop = log.scrollHeight;
+  return message;
+}
+
+function isNearBottom() {
+  return log.scrollHeight - log.scrollTop - log.clientHeight < 40;
 }
 
 function showTyping() {
@@ -124,6 +129,31 @@ function errorMessage(status, code, retryAfterSeconds) {
   }
 }
 
+class ChatError extends Error {}
+
+async function* readEvents(response) {
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = "";
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) return;
+      buffer += decoder.decode(value, { stream: true });
+      let end;
+      while ((end = buffer.indexOf("\n\n")) !== -1) {
+        const block = buffer.slice(0, end);
+        buffer = buffer.slice(end + 2);
+        const event = block.match(/^event: (.*)$/m)?.[1];
+        const data = block.match(/^data: (.*)$/m)?.[1];
+        if (event && data !== undefined) yield { event, data: JSON.parse(data) };
+      }
+    }
+  } finally {
+    reader.releaseLock();
+  }
+}
+
 async function send(text) {
   const question = text.trim();
   if (!question || pending || questionsAsked() >= MAX_QUESTIONS) return;
@@ -136,6 +166,7 @@ async function send(text) {
   log.setAttribute("aria-busy", "true");
   updateMeta();
   const typing = showTyping();
+  let bubble = null;
 
   const messages = [...history, { role: "user", content: question }];
   try {
@@ -146,23 +177,46 @@ async function send(text) {
       signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     });
 
-    const data = await response.json().catch(() => null);
-    typing.remove();
-    if (!response.ok || typeof data?.reply !== "string") {
+    if (!response.ok) {
+      const data = await response.json().catch(() => null);
       const retryAfter = Number(response.headers.get("Retry-After"));
-      addMessage("error", errorMessage(response.status, data?.error, retryAfter));
-      input.value = question;
-      return;
+      throw new ChatError(
+        errorMessage(response.status, data?.error, retryAfter),
+      );
     }
+
+    let reply = "";
+    let completed = false;
+    for await (const { event, data } of readEvents(response)) {
+      if (event === "delta") {
+        if (!bubble) {
+          typing.remove();
+          bubble = addMessage("bot", "");
+        }
+        const follow = isNearBottom();
+        reply += data.text;
+        bubble.textContent = reply;
+        if (follow) log.scrollTop = log.scrollHeight;
+      } else if (event === "done") {
+        completed = true;
+      } else if (event === "error") {
+        const status = data.error === "temporarily_unavailable" ? 503 : 502;
+        throw new ChatError(errorMessage(status, data.error));
+      }
+    }
+    if (!completed) throw new ChatError(errorMessage(502));
 
     history.push(
       { role: "user", content: question },
-      { role: "assistant", content: data.reply },
+      { role: "assistant", content: reply },
     );
-    addMessage("bot", data.reply);
-  } catch {
+  } catch (err) {
     typing.remove();
-    addMessage("error", errorMessage(0));
+    bubble?.remove();
+    addMessage(
+      "error",
+      err instanceof ChatError ? err.message : errorMessage(0),
+    );
     input.value = question;
   } finally {
     pending = false;
