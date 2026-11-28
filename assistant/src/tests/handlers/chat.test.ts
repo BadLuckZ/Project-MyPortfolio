@@ -1,26 +1,43 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { UsageDecision } from "../../guards/usage";
 import { handleChat, type ChatDeps } from "../../handlers/chat";
-import { ProviderError, type LLMProvider } from "../../types/llm";
+import { parseSse } from "../../sse/parse";
+import {
+  ProviderError,
+  type LLMProvider,
+  type StreamEvent,
+} from "../../types/llm";
 
 const SYSTEM_PROMPT_TEST = "SYSTEM";
 const QUESTION = "What is Baan-Saat?";
 
-function fakeProvider(generate: LLMProvider["generate"]): LLMProvider {
+const DONE: StreamEvent = {
+  type: "done",
+  model: "fake-model",
+  inputTokens: 10,
+  outputTokens: 3,
+};
+
+function fakeProvider(stream: LLMProvider["stream"]) {
   return {
     name: "fake",
-    generate: vi.fn(generate),
-    stream: async function* () {},
-  };
+    generate: vi.fn(),
+    stream: vi.fn(stream),
+  } satisfies LLMProvider;
 }
 
 const okProvider = () =>
-  fakeProvider(async () => ({
-    text: "A project.",
-    model: "fake-model",
-    inputTokens: 10,
-    outputTokens: 3,
-  }));
+  fakeProvider(async function* () {
+    yield { type: "text", text: "A group " };
+    yield { type: "text", text: "project." };
+    yield DONE;
+  });
+
+function failingProvider(err: unknown) {
+  return fakeProvider(async function* () {
+    throw err;
+  });
+}
 
 function usage(decision: UsageDecision) {
   return vi.fn(async () => decision);
@@ -42,6 +59,14 @@ function post(body: unknown): Request {
   });
 }
 
+async function readEvents(res: Response) {
+  const events: { event: string; data: unknown }[] = [];
+  for await (const { event, data } of parseSse(res.body!)) {
+    events.push({ event, data: JSON.parse(data) });
+  }
+  return events;
+}
+
 const validBody = { messages: [{ role: "user", content: QUESTION }] };
 
 beforeEach(() => {
@@ -50,13 +75,17 @@ beforeEach(() => {
 afterEach(() => vi.restoreAllMocks());
 
 describe("handleChat", () => {
-  it("returns the provider reply and passes the system prompt and messages", async () => {
+  it("streams the reply as delta events, then done", async () => {
     const provider = okProvider();
     const res = await handleChat(post(validBody), deps({ provider }));
-
     expect(res.status).toBe(200);
-    expect(await res.json()).toEqual({ reply: "A project." });
-    expect(provider.generate).toHaveBeenCalledWith(
+    expect(res.headers.get("Content-Type")).toContain("text/event-stream");
+    expect(await readEvents(res)).toEqual([
+      { event: "delta", data: { text: "A group " } },
+      { event: "delta", data: { text: "project." } },
+      { event: "done", data: {} },
+    ]);
+    expect(provider.stream).toHaveBeenCalledWith(
       expect.objectContaining({
         system: SYSTEM_PROMPT_TEST,
         messages: validBody.messages,
@@ -89,39 +118,88 @@ describe("handleChat", () => {
     );
     expect(res.status).toBe(413);
     expect(await res.json()).toEqual({ error: "payload_too_large" });
-    expect(provider.generate).not.toHaveBeenCalled();
+    expect(provider.stream).not.toHaveBeenCalled();
   });
 
-  it("maps a provider rate limit to 503", async () => {
-    const provider = fakeProvider(async () => {
-      throw new ProviderError("quota", 429);
-    });
+  it("maps a provider rate limit before streaming to 503", async () => {
+    const provider = failingProvider(new ProviderError("quota", 429));
     const res = await handleChat(post(validBody), deps({ provider }));
     expect(res.status).toBe(503);
+    expect(await res.json()).toEqual({ error: "temporarily_unavailable" });
   });
 
-  it("maps other provider failures to 502 without leaking details", async () => {
-    const provider = fakeProvider(async () => {
-      throw new ProviderError("Gemini returned status 500", 500);
-    });
+  it("maps other provider failures before streaming to 502 without details", async () => {
+    const provider = failingProvider(
+      new ProviderError("Gemini returned status 500", 500),
+    );
     const res = await handleChat(post(validBody), deps({ provider }));
     expect(res.status).toBe(502);
     expect(JSON.stringify(await res.json())).not.toContain("Gemini");
   });
 
-  it("maps unexpected errors to 500", async () => {
-    const provider = fakeProvider(async () => {
-      throw new TypeError("bug");
-    });
+  it("maps unexpected errors before streaming to 500", async () => {
+    const provider = failingProvider(new TypeError("bug"));
     const res = await handleChat(post(validBody), deps({ provider }));
     expect(res.status).toBe(500);
   });
 
-  it("never logs the visitor's message", async () => {
+  it("sends an error event when the provider fails mid-stream", async () => {
+    const provider = fakeProvider(async function* () {
+      yield { type: "text", text: "A group " };
+      throw new ProviderError("Gemini stream error", 502);
+    });
+    const res = await handleChat(post(validBody), deps({ provider }));
+    expect(res.status).toBe(200);
+    expect(await readEvents(res)).toEqual([
+      { event: "delta", data: { text: "A group " } },
+      { event: "error", data: { error: "upstream_error" } },
+    ]);
+  });
+
+  it("stops the provider when the visitor disconnects", async () => {
+    let stopped = false;
+    const provider = fakeProvider(async function* () {
+      try {
+        yield { type: "text", text: "one" };
+        yield { type: "text", text: "two" };
+        yield { type: "text", text: "three" };
+        yield DONE;
+      } finally {
+        stopped = true;
+      }
+    });
+    const res = await handleChat(post(validBody), deps({ provider }));
+    const reader = res.body!.getReader();
+    await reader.read();
+    await reader.cancel();
+    expect(stopped).toBe(true);
+  });
+
+  it("logs time to first byte and token usage", async () => {
     const log = vi.spyOn(console, "log").mockImplementation(() => {});
-    await handleChat(post(validBody), deps());
+    const res = await handleChat(post(validBody), deps());
+    await readEvents(res);
+
+    const entry = JSON.parse(String(log.mock.calls.at(-1)?.[0]));
+    expect(entry).toMatchObject({
+      event: "chat",
+      status: 200,
+      outcome: "completed",
+      inputTokens: 10,
+      outputTokens: 3,
+    });
+    expect(entry.ttfbMs).toEqual(expect.any(Number));
+  });
+
+  it("never logs the visitor's message or the reply", async () => {
+    const log = vi.spyOn(console, "log").mockImplementation(() => {});
+    const res = await handleChat(post(validBody), deps());
+    await readEvents(res);
+
+    const logged = log.mock.calls.flat().join(" ");
     expect(log).toHaveBeenCalled();
-    expect(log.mock.calls.flat().join(" ")).not.toContain(QUESTION);
+    expect(logged).not.toContain(QUESTION);
+    expect(logged).not.toContain("A group");
   });
 });
 
@@ -143,11 +221,10 @@ describe("handleChat usage guard", () => {
       post(validBody),
       deps({ provider, checkUsage }),
     );
-
     expect(res.status).toBe(429);
     expect(res.headers.get("Retry-After")).toBe("120");
     expect(await res.json()).toEqual({ error: "rate_limited" });
-    expect(provider.generate).not.toHaveBeenCalled();
+    expect(provider.stream).not.toHaveBeenCalled();
   });
 
   it("returns 429 when the visitor hit the daily limit", async () => {
@@ -165,10 +242,9 @@ describe("handleChat usage guard", () => {
       post(validBody),
       deps({ provider, checkUsage }),
     );
-
     expect(res.status).toBe(503);
     expect(await res.json()).toEqual({ error: "temporarily_unavailable" });
-    expect(provider.generate).not.toHaveBeenCalled();
+    expect(provider.stream).not.toHaveBeenCalled();
   });
 
   it("fails closed with 503 when the usage guard throws", async () => {
@@ -180,8 +256,7 @@ describe("handleChat usage guard", () => {
       post(validBody),
       deps({ provider, checkUsage }),
     );
-
     expect(res.status).toBe(503);
-    expect(provider.generate).not.toHaveBeenCalled();
+    expect(provider.stream).not.toHaveBeenCalled();
   });
 });

@@ -4,7 +4,11 @@ import {
   validateMessages,
   type ValidationFailure,
 } from "../guards/validate";
-import { ProviderError, type LLMProvider } from "../types/llm";
+import {
+  ProviderError,
+  type LLMProvider,
+  type StreamEvent,
+} from "../types/llm";
 
 const MAX_OUTPUT_TOKENS = 512;
 const TEMPERATURE = 0.2;
@@ -54,6 +58,86 @@ function toClientStatus(err: unknown): number {
   return err.status === 429 ? 503 : 502;
 }
 
+function errorCode(status: number): string {
+  return status === 503 ? "temporarily_unavailable" : "upstream_error";
+}
+
+function upstreamStatus(err: unknown): number {
+  return err instanceof ProviderError ? err.status : 0;
+}
+
+const encoder = new TextEncoder();
+
+function sseEvent(event: string, data: unknown): Uint8Array {
+  return encoder.encode(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
+}
+
+function streamReply(
+  first: StreamEvent,
+  rest: AsyncGenerator<StreamEvent>,
+  log: Record<string, string | number>,
+  started: number,
+): Response {
+  let pending: StreamEvent | null = first;
+
+  const body = new ReadableStream<Uint8Array>({
+    async pull(controller) {
+      try {
+        let event = pending;
+        pending = null;
+        if (!event) {
+          const next = await rest.next();
+          if (next.done) throw new ProviderError("Stream ended early", 502);
+          event = next.value;
+        }
+
+        if (event.type === "text") {
+          controller.enqueue(sseEvent("delta", { text: event.text }));
+          return;
+        }
+
+        controller.enqueue(sseEvent("done", {}));
+        controller.close();
+        logChat({
+          ...log,
+          outcome: "completed",
+          model: event.model,
+          inputTokens: event.inputTokens,
+          outputTokens: event.outputTokens,
+          latencyMs: Date.now() - started,
+        });
+      } catch (err) {
+        controller.enqueue(
+          sseEvent("error", { error: errorCode(toClientStatus(err)) }),
+        );
+        controller.close();
+        logChat({
+          ...log,
+          outcome: "stream_error",
+          upstreamStatus: upstreamStatus(err),
+          latencyMs: Date.now() - started,
+        });
+      }
+    },
+
+    async cancel() {
+      await rest.return(undefined);
+      logChat({
+        ...log,
+        outcome: "cancelled",
+        latencyMs: Date.now() - started,
+      });
+    },
+  });
+
+  return new Response(body, {
+    headers: {
+      "Content-Type": "text/event-stream; charset=utf-8",
+      "Cache-Control": "no-store",
+    },
+  });
+}
+
 export async function handleChat(
   request: Request,
   deps: ChatDeps,
@@ -73,34 +157,33 @@ export async function handleChat(
   if (!usage.allowed) return denyUsage(usage);
 
   const started = Date.now();
-  try {
-    const result = await deps.provider.generate({
-      system: deps.systemPrompt,
-      messages,
-      maxOutputTokens: MAX_OUTPUT_TOKENS,
-      temperature: TEMPERATURE,
-    });
+  const events = deps.provider.stream({
+    system: deps.systemPrompt,
+    messages,
+    maxOutputTokens: MAX_OUTPUT_TOKENS,
+    temperature: TEMPERATURE,
+  });
 
-    logChat({
-      status: 200,
-      provider: deps.provider.name,
-      model: result.model,
-      inputTokens: result.inputTokens,
-      outputTokens: result.outputTokens,
-      latencyMs: Date.now() - started,
-    });
-    return Response.json({ reply: result.text });
+  // Wait for the first event so early failures still get a real status code.
+  let first: IteratorResult<StreamEvent>;
+  try {
+    first = await events.next();
+    if (first.done) throw new ProviderError("Stream ended early", 502);
   } catch (err) {
     const status = toClientStatus(err);
     logChat({
       status,
       provider: deps.provider.name,
-      upstreamStatus: err instanceof ProviderError ? err.status : 0,
+      upstreamStatus: upstreamStatus(err),
       latencyMs: Date.now() - started,
     });
-    return Response.json(
-      { error: status === 503 ? "temporarily_unavailable" : "upstream_error" },
-      { status },
-    );
+    return Response.json({ error: errorCode(status) }, { status });
   }
+
+  const log = {
+    status: 200,
+    provider: deps.provider.name,
+    ttfbMs: Date.now() - started,
+  };
+  return streamReply(first.value, events, log, started);
 }
