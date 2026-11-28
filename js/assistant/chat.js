@@ -21,20 +21,41 @@ const chips = document.querySelectorAll(".assistant-chip");
 const history = [];
 let pending = false;
 
+const mobileLayout = window.matchMedia("(max-width: 600px)");
+let lockedScrollY = 0;
+
+function lockPageScroll() {
+  if (!mobileLayout.matches) return;
+  lockedScrollY = window.scrollY;
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${lockedScrollY}px`;
+  document.body.style.width = "100%";
+}
+
+function unlockPageScroll() {
+  if (document.body.style.position !== "fixed") return;
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.width = "";
+  window.scrollTo({ top: lockedScrollY, behavior: "instant" });
+}
+
 function openPanel() {
   dialog.show();
+  lockPageScroll();
   launcher.setAttribute("aria-expanded", "true");
   input.focus();
 }
 
-function closePanel() {
-  dialog.close();
-}
-
 dialog.addEventListener("close", () => {
+  unlockPageScroll();
   launcher.setAttribute("aria-expanded", "false");
   launcher.focus();
 });
+
+function closePanel() {
+  dialog.close();
+}
 
 launcher.addEventListener("click", () => {
   if (dialog.open) closePanel();

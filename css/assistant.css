@@ -309,7 +309,7 @@
     border-radius: 0;
   }
 
-  ody:has(.assistant[open]) .assistant-launcher {
+  body:has(.assistant[open]) .assistant-launcher {
     display: none;
   }
 
