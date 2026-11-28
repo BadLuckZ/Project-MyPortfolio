@@ -309,7 +309,11 @@
     border-radius: 0;
   }
 
-  body:has(.assistant[open]) .assistant-launcher {
+  ody:has(.assistant[open]) .assistant-launcher {
     display: none;
+  }
+
+  :root:has(.assistant[open]) {
+    overflow: hidden;
   }
 }
