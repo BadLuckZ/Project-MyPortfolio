@@ -19,11 +19,6 @@ export interface GenerateResult {
   outputTokens: number;
 }
 
-export interface LLMProvider {
-  readonly name: string;
-  generate(request: GenerateRequest): Promise<GenerateResult>;
-}
-
 export class ProviderError extends Error {
   readonly status: number;
   constructor(message: string, status: number) {
