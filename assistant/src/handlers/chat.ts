@@ -10,7 +10,7 @@ import {
   type StreamEvent,
 } from "../types/llm";
 
-const MAX_OUTPUT_TOKENS = 512;
+const MAX_OUTPUT_TOKENS = 1024;
 const TEMPERATURE = 0.2;
 
 export interface ChatDeps {
