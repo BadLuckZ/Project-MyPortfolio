@@ -1,4 +1,6 @@
-const ENDPOINT = "http://localhost:8787/chat";
+const ENDPOINT = ["localhost", "127.0.0.1"].includes(location.hostname)
+  ? "http://localhost:8787/chat"
+  : "https://portfolio-assistant.thanagorn.workers.dev/chat";
 const MAX_QUESTIONS = 6;
 const MAX_CHARS = 500;
 const REQUEST_TIMEOUT_MS = 30000;
