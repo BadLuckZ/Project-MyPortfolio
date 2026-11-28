@@ -1,0 +1,315 @@
+/* == Launcher (Button) == */
+
+.assistant-launcher {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--target-min);
+  padding: 0 1.25rem;
+  border: none;
+  border-radius: var(--radius-full);
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font: inherit;
+  font-weight: var(--subtitle-weight);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: background-color var(--duration-base) var(--ease);
+}
+
+.assistant-launcher:hover {
+  background-color: var(--primary-hover);
+}
+
+.assistant-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* == Panel == */
+
+.assistant {
+  position: fixed;
+  inset: auto 24px 88px auto;
+  z-index: 101;
+  width: min(392px, calc(100vw - 48px));
+  height: min(600px, calc(100dvh - 120px));
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background-color: var(--surface);
+  color: var(--foreground);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  flex-direction: column;
+
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+  transform-origin: bottom right;
+  transition:
+    opacity var(--duration-base) var(--ease),
+    transform var(--duration-base) var(--ease),
+    display var(--duration-base) allow-discrete;
+}
+
+.assistant[open] {
+  display: flex;
+  opacity: 1;
+  transform: none;
+}
+
+@starting-style {
+  .assistant[open] {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+}
+
+.assistant-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.assistant-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.assistant-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: var(--title-weight);
+}
+
+.assistant-subtitle {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--foreground-muted);
+}
+
+.assistant-close {
+  width: var(--target-min);
+  height: var(--target-min);
+  border: none;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--foreground-muted);
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+
+.assistant-close:hover {
+  background-color: var(--surface-muted);
+  color: var(--foreground);
+}
+
+.assistant-notice {
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  background-color: var(--info-soft);
+  color: var(--info-soft-foreground);
+}
+
+/* == Messages == */
+
+.assistant-log {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.assistant-message {
+  max-width: 85%;
+  padding: 0.625rem 0.875rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.assistant-message--user {
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.assistant-message--bot {
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  background-color: var(--surface-muted);
+}
+
+.assistant-typing {
+  display: flex;
+  gap: 4px;
+  padding-block: 0.875rem;
+}
+
+.assistant-typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--foreground-muted);
+  animation: assistant-blink 1.2s infinite ease-in-out;
+}
+
+.assistant-typing-dot:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.assistant-typing-dot:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes assistant-blink {
+  0%, 80%, 100% { opacity: 0.3; }
+  40% { opacity: 1; }
+}
+
+.assistant-message--error {
+  align-self: flex-start;
+  background-color: var(--danger-soft);
+  color: var(--danger-soft-foreground);
+}
+
+/* == When Empty Messages == */
+
+.assistant-empty p {
+  margin: 0 0 var(--space-3);
+  font-size: 0.9375rem;
+}
+
+.assistant-suggestions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+
+.assistant-chip {
+  min-height: var(--target-min);
+  padding: var(--space-2) 0.875rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--foreground);
+  font: inherit;
+  font-size: 0.875rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.assistant-chip:hover {
+  background-color: var(--surface-muted);
+}
+
+/* == Message Input Form == */
+
+.assistant-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--border);
+}
+
+.assistant-input-row {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-2);
+}
+
+.assistant-input {
+  flex: 1;
+  width: 100%;
+  min-height: var(--target-min);
+  max-height: 8em;
+  field-sizing: content;
+  box-sizing: border-box;
+  padding: 0.6875rem 0.75rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background-color: var(--background);
+  color: var(--foreground);
+  font: inherit;
+  font-size: 0.9375rem;
+  resize: none;
+}
+
+.assistant-send {
+  flex-shrink: 0;
+  width: var(--target-min);
+  height: var(--target-min);
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  cursor: pointer;
+}
+
+.assistant-send:hover {
+  background-color: var(--primary-hover);
+}
+
+.assistant-send:disabled,
+.assistant-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.assistant-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--foreground-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .assistant,
+  .assistant[open] {
+    transform: none;
+  }
+
+  .assistant-typing-dot {
+    animation: none;
+  }
+}
+
+/* == Mobile: full screen == */
+
+@media screen and (max-width: 600px) {
+  .assistant {
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    border: none;
+    border-radius: 0;
+  }
+
+  body:has(.assistant[open]) .assistant-launcher {
+    display: none;
+  }
+}
