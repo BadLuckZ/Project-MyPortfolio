@@ -3,7 +3,7 @@ import type { ChatMessage } from "../types/llm";
 export const LIMITS = {
   maxBodyBytes: 16 * 1024,
   maxUserChars: 500,
-  maxAssistantChars: 4000,
+  maxAssistantChars: 6000,
   maxUserTurns: 6,
 } as const;
 
