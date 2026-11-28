@@ -10,16 +10,22 @@
     "build:profile": "node scripts/build-profile.ts",
     "count:token": "node scripts/count-token.ts",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "check": "npm run type-check && npm test && npm run format:check",
+    "login": "wrangler login",
+    "deploy:dry": "wrangler deploy --dry-run",
+    "deploy": "npm run check && wrangler deploy",
+    "tail": "wrangler tail",
+    "secret:gemini": "wrangler secret put GEMINI_API_KEY",
+    "secret:ip-hash": "wrangler secret put IP_HASH_SECRET",
+    "secret:list": "wrangler secret list"
   },
   "devDependencies": {
-    "@types/node": "^26.6.6",
+    "@types/node": "24.19.4",
     "gpt-tokenizer": "4.1.2",
     "prettier": "3.10.1",
     "typescript": "7.0.2",
+    "vitest": "5.1.1",
     "wrangler": "4.165.0"
-  },
-  "dependencies": {
-    "vitest": "^5.1.1"
   }
 }
